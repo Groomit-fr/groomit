@@ -1,0 +1,22 @@
+@import "../../main.scss";
+
+.product {
+
+    h1 {
+        text-align: center;
+    }
+
+    .product__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border: 1px solid $black;
+        }
+    }
+}

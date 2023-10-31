@@ -1,0 +1,10 @@
+@import "../../main.scss";
+
+.cart{
+    position: absolute;
+    background-color: $beige;
+    right: 20px;
+    top: 80px;
+    padding: 20px;
+    z-index: 999;
+}
