@@ -1,0 +1,21 @@
+@import "../../main.scss";
+@import "../../stylesheet/variables";
+
+.button {
+    width: 10.1875rem;
+    height: 2.161rem;
+    flex-shrink: 0;
+    margin-top: 2.03rem;
+
+    border: none;
+    background-color: $black;
+    color: $beige;
+
+    text-align: center;
+    font-family: Helvetica Neue LT Std;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}

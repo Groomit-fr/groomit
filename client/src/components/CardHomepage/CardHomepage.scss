@@ -1,0 +1,63 @@
+@import "../../main.scss";
+@import "../../stylesheet/variables";
+
+.cardHomepage {
+    display: flex;
+    height: 24.4375rem;
+
+    flex-shrink: 0;
+
+    border-radius: 1.00981rem;
+    transition: all 1.5s;
+
+    .cardContent {
+        width: 37.38275rem;
+        height: 22.4375rem;
+
+        padding: 1.8rem 2.5rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+            color: $black;
+            font-family: Helvetica Neue LT Std;
+            font-size: 1.81769rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 105%;
+            
+        }
+
+        img{
+            margin: 1.26rem 0;
+            height: 8.53319rem;
+        }
+
+        .textContent {
+            width: 34.99006rem;
+            color: var(--Noir, #1E1E1E);
+            text-align: center;
+            font-family: Helvetica Neue LT Std;
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+    .top {
+        position: relative;
+        top: -2%;
+        left: -1.5%;
+        width: 102.5%;
+    }
+
+    .bottom {
+        position: relative;
+        left: -1.5%;
+        top: 0.9%;
+        width: 102.5%;
+    }
+}
