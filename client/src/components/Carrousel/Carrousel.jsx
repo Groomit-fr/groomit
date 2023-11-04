@@ -8,13 +8,17 @@ function Carrousel() {
 
 
     const carrouselWrapperElement = React.useRef(null);
-    const previousElement = React.useRef(null);
+    const previousElement1 = React.useRef(null);
+    const previousElement2 = React.useRef(null);
+    const previousElement3 = React.useRef(null);
     const currentElement = React.useRef(null);
-    const nextElement = React.useRef(null);
+    const nextElement1 = React.useRef(null);
+    const nextElement2 = React.useRef(null);
+    const nextElement3 = React.useRef(null);
 
     const timeScroll = 450;
 
-    console.log(carrouselWrapperElement.current.content)
+
 
     useEffect(() => {
         // The DOM element is accessible here.
@@ -25,11 +29,18 @@ function Carrousel() {
     }, []);
 
     function Next() {
-        nextElement.current.scrollIntoView({
+        nextElement1.current.scrollIntoView({
             behavior: "smooth",
             block: 'nearest',
             inline: 'center'
         });
+
+        nextElement1.current.classList.remove("noTransition")
+        nextElement1.current.classList.remove("next1")
+        nextElement1.current.classList.add("current")
+        currentElement.current.classList.remove("noTransition")
+        currentElement.current.classList.remove("current")
+        currentElement.current.classList.add("previous1")
 
         setTimeout(() => {
             if (currentCard >= 2) {
@@ -42,27 +53,54 @@ function Carrousel() {
                 block: 'nearest',
                 inline: 'center'
             });
+
+            nextElement1.current.classList.add("noTransition")
+            nextElement1.current.classList.add("next1")
+            nextElement1.current.classList.remove("current")
+            currentElement.current.classList.add("noTransition")
+            currentElement.current.classList.add("current")
+            currentElement.current.classList.remove("previous1")
+            
         }, timeScroll);
     }
 
     function Prev() {
-        previousElement.current.scrollIntoView({
+        previousElement1.current.scrollIntoView({
             behavior: "smooth",
             block: 'nearest',
             inline: 'center'
         });
 
+        previousElement1.current.classList.remove("noTransition")
+        previousElement1.current.classList.remove("previous1")
+        previousElement1.current.classList.add("current")
+        currentElement.current.classList.remove("noTransition")
+        currentElement.current.classList.remove("current")
+        currentElement.current.classList.add("next1")
+
         setTimeout(() => {
+            
             if (currentCard <= 0) {
                 setCurrentCard(2)
             } else {
                 setCurrentCard(currentCard - 1);
             }
 
+
+
             currentElement.current.scrollIntoView({
                 block: 'nearest',
                 inline: 'center'
             });
+
+
+            previousElement1.current.classList.add("noTransition")
+            previousElement1.current.classList.add("previous1")
+            previousElement1.current.classList.remove("current")
+            currentElement.current.classList.add("noTransition")
+            currentElement.current.classList.add("current")
+            currentElement.current.classList.remove("next1")
+
         }, timeScroll);
     }
 
@@ -88,25 +126,25 @@ function Carrousel() {
             <section className='carrousel'>
                 <section className='carrouselContainer'>
                     <section className='carrouselWrapper' ref={carrouselWrapperElement}>
-                        <div className='carrouselElement previous3'>
+                        <div className='carrouselElement previous3' ref={previousElement3}>
                             {(currentCard === 0 ? boutiqueGroomit : (currentCard === 1 ? groomitFactory : aPropos))}
                         </div>
-                        <div className='carrouselElement previous2'>
+                        <div className='carrouselElement previous2' ref={previousElement2}>
                             {(currentCard === 0 ? groomitFactory : (currentCard === 1 ? aPropos : boutiqueGroomit))}
                         </div>
-                        <div className='carrouselElement previous1' ref={previousElement}>
+                        <div className='carrouselElement previous1' ref={previousElement1}>
                             {(currentCard === 0 ? aPropos : (currentCard === 1 ? boutiqueGroomit : groomitFactory))}
                         </div>
                         <div className='carrouselElement current' ref={currentElement}>
                             {(currentCard === 0 ? boutiqueGroomit : (currentCard === 1 ? groomitFactory : aPropos))}
                         </div>
-                        <div className='carrouselElement next1' ref={nextElement}>
+                        <div className='carrouselElement next1' ref={nextElement1}>
                             {(currentCard === 0 ? groomitFactory : (currentCard === 1 ? aPropos : boutiqueGroomit))}
                         </div>
-                        <div className='carrouselElement next2'>
+                        <div className='carrouselElement next2' ref={nextElement2}>
                             {(currentCard === 0 ? aPropos : (currentCard === 1 ? boutiqueGroomit : groomitFactory))}
                         </div>
-                        <div className='carrouselElement next3'>
+                        <div className='carrouselElement next3' ref={nextElement3}>
                             {(currentCard === 0 ? boutiqueGroomit : (currentCard === 1 ? groomitFactory : aPropos))}
                         </div>
                     </section>

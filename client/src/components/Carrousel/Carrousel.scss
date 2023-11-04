@@ -22,7 +22,7 @@
             }
 
             .current{
-                margin-top: 0rem;
+                margin-top: 2rem;
             }
 
             .next1{
@@ -34,4 +34,8 @@
             }
         }
     }
+}
+
+.noTransition{
+    transition: none !important;
 }
