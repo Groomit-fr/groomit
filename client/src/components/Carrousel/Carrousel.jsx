@@ -4,104 +4,118 @@ import CardHomepage from '../CardHomepage/CardHomepage'
 
 function Carrousel() {
 
-    const [currentCard, setCurrentCard] = useState(0);
-
-
     const carrouselWrapperElement = React.useRef(null);
-    const previousElement1 = React.useRef(null);
-    const previousElement2 = React.useRef(null);
-    const previousElement3 = React.useRef(null);
-    const currentElement = React.useRef(null);
-    const nextElement1 = React.useRef(null);
-    const nextElement2 = React.useRef(null);
-    const nextElement3 = React.useRef(null);
-
-    const timeScroll = 450;
-
-
+    const [isScrolling, setIsScrolling] = useState(false);
 
     useEffect(() => {
         // The DOM element is accessible here.
-        currentElement.current.scrollIntoView({
-            block: 'nearest',
-            inline: 'center'
-        });
+        //Scroll centre
     }, []);
 
     function Next() {
-        nextElement1.current.scrollIntoView({
-            behavior: "smooth",
-            block: 'nearest',
-            inline: 'center'
-        });
+        //scroll vers next1
 
-        nextElement1.current.classList.remove("noTransition")
-        nextElement1.current.classList.remove("next1")
-        nextElement1.current.classList.add("current")
-        currentElement.current.classList.remove("noTransition")
-        currentElement.current.classList.remove("current")
-        currentElement.current.classList.add("previous1")
+        setIsScrolling(true);
 
-        setTimeout(() => {
-            if (currentCard >= 2) {
-                setCurrentCard(0)
-            } else {
-                setCurrentCard(currentCard + 1);
+        const carrouselListLength = carrouselWrapperElement.current.children.length
+        for (let i = carrouselListLength - 1; i >= 0; i--) {
+            console.log(i)
+            //add 1
+            if (i === 6) {
+                carrouselWrapperElement.current.children[i].classList.remove("next3")
+                carrouselWrapperElement.current.children[i].classList.add("next2")
+            } else if (i === 5) {
+                carrouselWrapperElement.current.children[i].classList.remove("next2")
+                carrouselWrapperElement.current.children[i].classList.add("next1")
+            } else if (i === 4) {
+                carrouselWrapperElement.current.children[i].classList.remove("next1")
+                carrouselWrapperElement.current.children[i].classList.add("current")
+
+            } else if (i === 3) {
+                carrouselWrapperElement.current.children[i].classList.remove("current")
+                carrouselWrapperElement.current.children[i].classList.add("previous1")
+
+            } else if (i === 2) {
+                carrouselWrapperElement.current.children[i].classList.remove("previous1")
+                carrouselWrapperElement.current.children[i].classList.add("previous2")
+
+            } else if (i === 1) {
+                carrouselWrapperElement.current.children[i].classList.remove("previous2")
+                carrouselWrapperElement.current.children[i].classList.add("previous3")
             }
+            else if (i === 0) {
+                carrouselWrapperElement.current.children[i].classList.add("transition")
+                carrouselWrapperElement.current.children[i].classList.add("deleted")
+                carrouselWrapperElement.current.children[i].addEventListener("transitionend", () => (setIsScrolling(false))(carrouselWrapperElement.current.children[i].remove()));
+                
+                
+                carrouselWrapperElement.current.appendChild(carrouselWrapperElement.current.children[1].cloneNode(true))
+                carrouselWrapperElement.current.children[7].classList.remove("previous3")
+                carrouselWrapperElement.current.children[7].classList.add("next3")
+                carrouselWrapperElement.current.children[7].classList.add("deleted")
+                carrouselWrapperElement.current.children[7].classList.add("transition")
 
-            currentElement.current.scrollIntoView({
-                block: 'nearest',
-                inline: 'center'
-            });
+                setTimeout(() => {
+                    carrouselWrapperElement.current.children[7].classList.remove("deleted")
+                    carrouselWrapperElement.current.children[7].classList.remove("transition")
 
-            nextElement1.current.classList.add("noTransition")
-            nextElement1.current.classList.add("next1")
-            nextElement1.current.classList.remove("current")
-            currentElement.current.classList.add("noTransition")
-            currentElement.current.classList.add("current")
-            currentElement.current.classList.remove("previous1")
-            
-        }, timeScroll);
+                }, 0);
+            }
+        }
     }
 
     function Prev() {
-        previousElement1.current.scrollIntoView({
-            behavior: "smooth",
-            block: 'nearest',
-            inline: 'center'
-        });
+        //scroll vers previous1
 
-        previousElement1.current.classList.remove("noTransition")
-        previousElement1.current.classList.remove("previous1")
-        previousElement1.current.classList.add("current")
-        currentElement.current.classList.remove("noTransition")
-        currentElement.current.classList.remove("current")
-        currentElement.current.classList.add("next1")
+        setIsScrolling(true);
 
-        setTimeout(() => {
-            
-            if (currentCard <= 0) {
-                setCurrentCard(2)
-            } else {
-                setCurrentCard(currentCard - 1);
+        const carrouselListLength = carrouselWrapperElement.current.children.length
+        for (let i = 0; i < carrouselListLength; i++) {
+            console.log(i)
+
+            if (i === 0) {
+                carrouselWrapperElement.current.children[i].classList.remove("previous3")
+                carrouselWrapperElement.current.children[i].classList.add("previous2")
+            } else if (i === 1) {
+                carrouselWrapperElement.current.children[i].classList.remove("previous2")
+                carrouselWrapperElement.current.children[i].classList.add("previous1")
+            } else if (i === 2) {
+                carrouselWrapperElement.current.children[i].classList.remove("previous1")
+                carrouselWrapperElement.current.children[i].classList.add("current")
+
+            } else if (i === 3) {
+                carrouselWrapperElement.current.children[i].classList.remove("current")
+                carrouselWrapperElement.current.children[i].classList.add("next1")
+
+            } else if (i === 4) {
+                carrouselWrapperElement.current.children[i].classList.remove("next1")
+                carrouselWrapperElement.current.children[i].classList.add("next2")
+
+            } else if (i === 5) {
+                carrouselWrapperElement.current.children[i].classList.remove("next2")
+                carrouselWrapperElement.current.children[i].classList.add("next3")
             }
+            else if (i === 6) {
+                console.log(carrouselWrapperElement.current.children[i])
 
+                carrouselWrapperElement.current.children[i].classList.add("transition")
+                carrouselWrapperElement.current.children[i].classList.add("deleted")
+                carrouselWrapperElement.current.children[i].addEventListener("transitionend", () => ((setIsScrolling(false)) (carrouselWrapperElement.current.children[i + 1].remove())));
 
+                carrouselWrapperElement.current.insertBefore(carrouselWrapperElement.current.children[5].cloneNode(true), carrouselWrapperElement.current.firstChild)
+                carrouselWrapperElement.current.children[0].classList.remove("previous2")
+                carrouselWrapperElement.current.children[0].classList.add("previous3")
+                carrouselWrapperElement.current.children[0].classList.add("deleted")
+                carrouselWrapperElement.current.children[0].classList.add("transition")
 
-            currentElement.current.scrollIntoView({
-                block: 'nearest',
-                inline: 'center'
-            });
+                setTimeout(() => {
+                    carrouselWrapperElement.current.children[0].classList.remove("deleted")
+                    carrouselWrapperElement.current.children[0].classList.remove("transition")
 
+                }, 0);
 
-            previousElement1.current.classList.add("noTransition")
-            previousElement1.current.classList.add("previous1")
-            previousElement1.current.classList.remove("current")
-            currentElement.current.classList.add("noTransition")
-            currentElement.current.classList.add("current")
-            currentElement.current.classList.remove("next1")
-
-        }, timeScroll);
+            }
+        }
     }
 
     const boutiqueGroomit = <CardHomepage title="LA BOUTIQUE GROOMIT" illustration="svg/CardHomePage/designBoutique.svg"
@@ -126,36 +140,45 @@ function Carrousel() {
             <section className='carrousel'>
                 <section className='carrouselContainer'>
                     <section className='carrouselWrapper' ref={carrouselWrapperElement}>
-                        <div className='carrouselElement previous3' ref={previousElement3}>
-                            {(currentCard === 0 ? boutiqueGroomit : (currentCard === 1 ? groomitFactory : aPropos))}
+                        <div className='carrouselElement previous3'>
+                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            {boutiqueGroomit}
                         </div>
-                        <div className='carrouselElement previous2' ref={previousElement2}>
-                            {(currentCard === 0 ? groomitFactory : (currentCard === 1 ? aPropos : boutiqueGroomit))}
+                        <div className='carrouselElement previous2'>
+                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            {groomitFactory}
                         </div>
-                        <div className='carrouselElement previous1' ref={previousElement1}>
-                            {(currentCard === 0 ? aPropos : (currentCard === 1 ? boutiqueGroomit : groomitFactory))}
+                        <div className='carrouselElement previous1'>
+                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            {aPropos}
                         </div>
-                        <div className='carrouselElement current' ref={currentElement}>
-                            {(currentCard === 0 ? boutiqueGroomit : (currentCard === 1 ? groomitFactory : aPropos))}
+                        <div className='carrouselElement current'>
+                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            {boutiqueGroomit}
                         </div>
-                        <div className='carrouselElement next1' ref={nextElement1}>
-                            {(currentCard === 0 ? groomitFactory : (currentCard === 1 ? aPropos : boutiqueGroomit))}
+                        <div className='carrouselElement next1'>
+                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            {groomitFactory}
                         </div>
-                        <div className='carrouselElement next2' ref={nextElement2}>
-                            {(currentCard === 0 ? aPropos : (currentCard === 1 ? boutiqueGroomit : groomitFactory))}
+                        <div className='carrouselElement next2'>
+                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            {aPropos}
                         </div>
-                        <div className='carrouselElement next3' ref={nextElement3}>
-                            {(currentCard === 0 ? boutiqueGroomit : (currentCard === 1 ? groomitFactory : aPropos))}
+                        <div className='carrouselElement next3'>
+                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            {boutiqueGroomit}
                         </div>
+
+
+
                     </section>
                 </section>
 
 
                 <section className='buttons'>
-                    <button onClick={() => Prev()}>Prev</button>
-                    <button onClick={() => Next()}>Next</button>
+                    <button onClick={() => (!isScrolling ? Prev() : null)}>Prev</button>
+                    <button onClick={() => (!isScrolling ? Next() : null)}>Next</button>
                 </section>
-                <h1>{currentCard}</h1>
             </section>
 
         </>

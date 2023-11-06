@@ -10,32 +10,89 @@
     .carrouselContainer {
         width: 100%;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         .carrouselWrapper {
+            width: 200%;
             display: flex;
-            gap: 3rem;
+            gap: 0;
             margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-            
-            .carrouselElement{
+            margin-bottom: 2.5rem;
+            flex-direction: row;
+            justify-content: center;
+
+            .carrouselElement {
+                position: relative;
                 transition: all 0.5s;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                width: 15rem;
+
+
+                .hanger {
+                    position: relative;
+                    top: 1.5rem;
+                    z-index: 6;
+                }
             }
 
-            .current{
-                margin-top: 2rem;
-            }
-
-            .next1{
+            .next3 {
                 margin-top: 0rem;
+                z-index: 1;
+                transform: rotate3D(0, 1, 0.01, 75deg) scale(0.8);
             }
 
-            .previous1{
+            .next2 {
                 margin-top: 0rem;
+                z-index: 2;
+                transform: rotate3D(0, 1, 0.01, 75deg) scale(0.85);
+            }
+
+            .next1 {
+                margin-top: 0rem;
+                z-index: 3;
+                transform: rotate3D(0, 1, 0.03, 60deg) scale(0.9);
+            }
+
+            .current {
+                margin-top: 0rem;
+                z-index: 4;
+                transform: rotateY(0deg);
+            }
+
+            .previous1 {
+                margin-top: 0rem;
+                z-index: 3;
+                transform: rotate3D(0, 1, 0.03, -60deg) scale(0.9);
+            }
+
+            .previous2 {
+                margin-top: 0rem;
+                z-index: 2;
+                transform: rotate3D(0, 1, 0.02, -75deg) scale(0.85);
+            }
+
+            .previous3 {
+                margin-top: 0rem;
+                z-index: 1;
+                transform: rotate3D(0, 1, 0.02, -75deg) scale(0.8);
             }
         }
     }
 }
 
-.noTransition{
+.transition{
+    transition: all 0.5s !important;
+}
+
+.noTransition {
     transition: none !important;
+}
+
+.deleted{
+    width: 0 !important;
 }
