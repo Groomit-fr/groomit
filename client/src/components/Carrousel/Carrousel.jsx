@@ -4,60 +4,59 @@ import CardHomepage from '../CardHomepage/CardHomepage'
 
 function Carrousel() {
 
-    const carrouselWrapperElement = React.useRef(null);
-    const [isScrolling, setIsScrolling] = useState(false);
+    
+    const carrouselWrapperElement = React.useRef(null); //useRef to access the DOM element
+    const [isScrolling, setIsScrolling] = useState(false); //state to prevent user from scrolling too fast
 
     useEffect(() => {
         // The DOM element is accessible here.
-        //Scroll centre
     }, []);
 
     function Next() {
         //scroll vers next1
 
-        setIsScrolling(true);
+        setIsScrolling(true); //prevent user from scrolling too fast
 
-        const carrouselListLength = carrouselWrapperElement.current.children.length
-        for (let i = carrouselListLength - 1; i >= 0; i--) {
-            console.log(i)
+        const carrouselListLength = carrouselWrapperElement.current.children.length //get the number of children of the carrouselWrapperElement
+        for (let i = carrouselListLength - 1; i >= 0; i--) { //loop through the children of the carrouselWrapperElement
             //add 1
-            if (i === 6) {
-                carrouselWrapperElement.current.children[i].classList.remove("next3")
-                carrouselWrapperElement.current.children[i].classList.add("next2")
-            } else if (i === 5) {
-                carrouselWrapperElement.current.children[i].classList.remove("next2")
-                carrouselWrapperElement.current.children[i].classList.add("next1")
-            } else if (i === 4) {
-                carrouselWrapperElement.current.children[i].classList.remove("next1")
-                carrouselWrapperElement.current.children[i].classList.add("current")
+            if (i === 6) { //if the element is the last one
+                carrouselWrapperElement.current.children[i].classList.remove("next3") //remove the class next3
+                carrouselWrapperElement.current.children[i].classList.add("next2") //add the class next2
+            } else if (i === 5) { //if the element is the 6th one
+                carrouselWrapperElement.current.children[i].classList.remove("next2") //remove the class next2
+                carrouselWrapperElement.current.children[i].classList.add("next1") //add the class next1
+            } else if (i === 4) { //if the element is the 5th one
+                carrouselWrapperElement.current.children[i].classList.remove("next1") //remove the class next1
+                carrouselWrapperElement.current.children[i].classList.add("current") //add the class current
+            } else if (i === 3) { //if the element is the 4th one
+                carrouselWrapperElement.current.children[i].classList.remove("current") //remove the class current
+                carrouselWrapperElement.current.children[i].classList.add("previous1") //add the class previous1
+            } else if (i === 2) { //if the element is the 3rd one
+                carrouselWrapperElement.current.children[i].classList.remove("previous1") //remove the class previous1
+                carrouselWrapperElement.current.children[i].classList.add("previous2") //add the class previous2
 
-            } else if (i === 3) {
-                carrouselWrapperElement.current.children[i].classList.remove("current")
-                carrouselWrapperElement.current.children[i].classList.add("previous1")
-
-            } else if (i === 2) {
-                carrouselWrapperElement.current.children[i].classList.remove("previous1")
-                carrouselWrapperElement.current.children[i].classList.add("previous2")
-
-            } else if (i === 1) {
-                carrouselWrapperElement.current.children[i].classList.remove("previous2")
-                carrouselWrapperElement.current.children[i].classList.add("previous3")
+            } else if (i === 1) { //if the element is the 2nd one
+                carrouselWrapperElement.current.children[i].classList.remove("previous2") //remove the class previous2
+                carrouselWrapperElement.current.children[i].classList.add("previous3") //add the class previous3
             }
-            else if (i === 0) {
-                carrouselWrapperElement.current.children[i].classList.add("transition")
-                carrouselWrapperElement.current.children[i].classList.add("deleted")
-                carrouselWrapperElement.current.children[i].addEventListener("transitionend", () => (setIsScrolling(false))(carrouselWrapperElement.current.children[i].remove()));
+            else if (i === 0) { //if the element is the 1st one
+
+                //remove the element
+                carrouselWrapperElement.current.children[i].classList.add("transition") 
+                carrouselWrapperElement.current.children[i].classList.add("deleted")  //add the class deleted
+                carrouselWrapperElement.current.children[i].addEventListener("transitionend", () => (setIsScrolling(false))(carrouselWrapperElement.current.children[i].remove())); //when the transition is over, remove the element
                 
-                
-                carrouselWrapperElement.current.appendChild(carrouselWrapperElement.current.children[1].cloneNode(true))
-                carrouselWrapperElement.current.children[7].classList.remove("previous3")
-                carrouselWrapperElement.current.children[7].classList.add("next3")
-                carrouselWrapperElement.current.children[7].classList.add("deleted")
-                carrouselWrapperElement.current.children[7].classList.add("transition")
+                //add the element at the end
+                carrouselWrapperElement.current.appendChild(carrouselWrapperElement.current.children[1].cloneNode(true)) //add a clone of the 2nd element at the end
+                carrouselWrapperElement.current.children[7].classList.remove("previous3") //remove the class previous3
+                carrouselWrapperElement.current.children[7].classList.add("next3") //add the class next3
+                carrouselWrapperElement.current.children[7].classList.add("deleted") //add the class deleted
+                carrouselWrapperElement.current.children[7].classList.add("transition") //add the class transition
 
                 setTimeout(() => {
-                    carrouselWrapperElement.current.children[7].classList.remove("deleted")
-                    carrouselWrapperElement.current.children[7].classList.remove("transition")
+                    carrouselWrapperElement.current.children[7].classList.remove("deleted") //remove the class deleted
+                    carrouselWrapperElement.current.children[7].classList.remove("transition") //remove the class transition
 
                 }, 0);
             }
@@ -71,8 +70,6 @@ function Carrousel() {
 
         const carrouselListLength = carrouselWrapperElement.current.children.length
         for (let i = 0; i < carrouselListLength; i++) {
-            console.log(i)
-
             if (i === 0) {
                 carrouselWrapperElement.current.children[i].classList.remove("previous3")
                 carrouselWrapperElement.current.children[i].classList.add("previous2")
@@ -96,14 +93,13 @@ function Carrousel() {
                 carrouselWrapperElement.current.children[i].classList.add("next3")
             }
             else if (i === 6) {
-                console.log(carrouselWrapperElement.current.children[i])
 
                 carrouselWrapperElement.current.children[i].classList.add("transition")
                 carrouselWrapperElement.current.children[i].classList.add("deleted")
                 carrouselWrapperElement.current.children[i].addEventListener("transitionend", () => ((setIsScrolling(false)) (carrouselWrapperElement.current.children[i + 1].remove())));
 
                 carrouselWrapperElement.current.insertBefore(carrouselWrapperElement.current.children[5].cloneNode(true), carrouselWrapperElement.current.firstChild)
-                carrouselWrapperElement.current.children[0].classList.remove("previous2")
+                carrouselWrapperElement.current.children[0].classList.remove("next3")
                 carrouselWrapperElement.current.children[0].classList.add("previous3")
                 carrouselWrapperElement.current.children[0].classList.add("deleted")
                 carrouselWrapperElement.current.children[0].classList.add("transition")
