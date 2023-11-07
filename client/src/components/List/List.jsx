@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import "./List.scss";
+import { useState } from "react";
 
 const List = () => {
     const [windowWidth, setWindowWidth] = React.useState(0);
@@ -9,7 +10,7 @@ const List = () => {
         {
             id: 1,
             name: "T-shirt Groomit 1",
-            image: "/img/placeHolderTshirt.png",
+            image: "/img/tshirt.svg",
             isAvailable: true,
             composition: "100% coton",
             careGuide: "Lavage à 30°",
@@ -18,7 +19,7 @@ const List = () => {
         {
             id: 2,
             name: "T-shirt Groomit 2",
-            image: "/img/placeHolderTshirt.png",
+            image: "/img/tshirt.svg",
             isAvailable: true,
             composition: "100% coton",
             careGuide: "Lavage à 30°",
@@ -27,85 +28,12 @@ const List = () => {
         {
             id: 3,
             name: "Hoodie Groomit 1",
-            image: "/img/placeHolderTshirt.png",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        },
-        {
-            id: 4,
-            name: "Hoodie Groomit 2",
-            image: "/img/placeHolderTshirt.png",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        },
-        {
-            id: 5,
-            name: "Hoodie Groomit 3",
-            image: "/img/placeHolderTshirt.png",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        },
-        {
-            id: 6,
-            name: "Hoodie Groomit 4",
-            image: "/img/placeHolderTshirt.png",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        },
-        {
-            id: 7,
-            name: "Hoodie Groomit 5",
-            image: "/img/placeHolderTshirt.png",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        },
-        {
-            id: 8,
-            name: "Hoodie Groomit 6",
-            image: "/img/placeHolderTshirt.png",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        },
-        {
-            id: 9,
-            name: "Hoodie Groomit 7",
-            image: "/img/placeHolderTshirt.png",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        },
-        {
-            id: 10,
-            name: "Hoodie Groomit 7",
-            image: "/img/placeHolderTshirt.png",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        },
-        {
-            id: 11,
-            name: "Hoodie Groomit 7",
-            image: "/img/placeHolderTshirt.png",
+            image: "/img/hoodie.svg",
             isAvailable: true,
             composition: "100% coton",
             careGuide: "Lavage à 30°",
             price: 20,
         }
-
     ]
 
     useEffect(() => {
@@ -149,6 +77,9 @@ const List = () => {
         domElement.push(flexItem);
     }
 
+
+
+    const [data, setData] = useState([]);
 
 
     return (

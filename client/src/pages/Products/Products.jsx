@@ -1,8 +1,20 @@
 import React from "react";
 import "./Products.scss";
 import List from "../../components/List/List.jsx";
+import useFetch from "../../hooks/useFetch";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";    
 
 const Products = () => {
+
+    const categoryId = parseInt(useParams().id);
+
+    const { data, loading, error } = useFetch(`/products?populate=*`);
+
+    console.log(data);
+
+
     return (
         <div className="products">
             <div className="products__banner">
@@ -22,6 +34,17 @@ const Products = () => {
                         <p>Les hoodies</p>
                     </div>
                 </div>
+                <div className="products__item__row">
+                    {data && data.map(item => (
+                        <div key={item.id} className="products__item">
+                            <p>{item.attributes.title}</p>
+                            
+                            <img src={import.meta.env.VITE_UPLOAD_URL + item.attributes.image.data[0].attributes.url} alt={item.attributes.title} />
+                            <p>{item.attributes.price}€</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
             </div>
             <div className="products__item__row">
