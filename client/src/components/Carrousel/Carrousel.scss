@@ -1,0 +1,169 @@
+@import "../../main.scss";
+@import "../../stylesheet/variables";
+
+.carrousel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    height: 40rem;
+
+    .carrouselContainer {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .carrouselWrapper {
+            width: 200%;
+            display: flex;
+            gap: 0;
+            margin-bottom: 4rem;
+            flex-direction: row;
+            justify-content: center;
+            perspective: 1550px;
+
+            .carrouselElement {
+                position: relative;
+                transition: all 0.5s;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                width: 50rem;
+
+
+                .hanger {
+                    position: relative;
+                    top: 1.5rem;
+                    z-index: 6;
+                }
+            }
+
+            .next4 {
+                margin-top: 0rem;
+                z-index: 0;
+                transform: scale(0.75) translateY(-4.5rem) rotateY(-75deg);
+            }
+
+            .next3 {
+                margin-top: 0rem;
+                z-index: 1;
+                transform: scale(0.75) translateY(-4.5rem) rotateY(-75deg);
+                width: 2rem;
+            }
+
+            .next2 {
+                margin-top: 0rem;
+                z-index: 2;
+                transform: scale(0.8) translateY(-3.5rem) rotateY(-75deg);
+                width: 5rem;
+            }
+
+            .next1 {
+                margin-top: 0rem;
+                z-index: 3;
+                transform: scale(0.85) translateY(-2.5rem) rotateY(-67deg);
+                width: 8rem;
+            }
+
+            .current {
+                margin-top: 0rem;
+                z-index: 5;
+                transform: rotateY(0deg);
+                width: 40rem;
+            }
+
+            .previous1 {
+                margin-top: 0rem;
+                z-index: 3;
+                transform: scale(0.85) translateY(-2.5rem) rotateY(67deg);
+                width: 8rem;
+            }
+
+            .previous2 {
+                margin-top: 0rem;
+                z-index: 2;
+                transform: scale(0.8) translateY(-3.5rem) rotateY(75deg);
+                width: 5rem;
+            }
+
+            .previous3 {
+                margin-top: 0rem;
+                z-index: 1;
+                transform: scale(0.75) translateY(-4.75rem) rotateY(75deg);
+                width: 2rem;
+            }
+
+            .previous4 {
+                margin-top: 0rem;
+                z-index: 0;
+                transform: scale(0.75) translateY(-4.75rem) rotateY(75deg);
+            }
+        }
+    }
+
+    .carrouselPole {
+        position: absolute;
+        top: 2rem;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .buttons {
+        position: absolute;
+        top: 50%;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        section {
+            margin: 0rem 4rem;
+            cursor: pointer;
+            width: 5.7095rem;
+            height: 5.73563rem;
+            flex-shrink: 0;
+        }
+
+        section:first-child {
+            rotate: 180deg;
+        }
+    }
+
+    .indicators {
+        display: flex;
+        max-width: 200px;
+        width: 15%;
+        justify-content: space-evenly;
+
+        img {
+            opacity: 50%;
+            transition: all 0.5s;
+        }
+
+        .focused {
+            opacity: 100%;
+        }
+
+    }
+}
+
+
+
+.transition {
+    transition: all 0.5s !important;
+}
+
+.noTransition {
+    transition: none !important;
+}
+
+.deleted {
+    width: 0 !important;
+}

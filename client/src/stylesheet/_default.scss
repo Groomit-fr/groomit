@@ -7,12 +7,30 @@
 
 body {
     color: $black;
+    background-color: $beige;
 }
 
 a {
     text-decoration: none;
 }
 
-h1{
-    font-family: $font-heading; ;
+h1 {
+    font-family: $font-heading;
+    ;
+}
+
+button {
+    border: none;
+    background-color: $black;
+    color: $beige;
+
+    text-align: center;
+    font-family: Helvetica Neue LT Std;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+
+    cursor: pointer;
 }

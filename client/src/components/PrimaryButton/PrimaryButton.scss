@@ -1,0 +1,90 @@
+@import "../../main.scss";
+
+
+.primaryButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .leftButton{
+        position: relative;
+        left: 3.5%;
+    }
+
+    .rightButton{
+        position: relative;
+        left: -1%;
+    }
+    
+
+    .primaryButtonWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.1rem;
+
+        .topButton {
+            position: relative;
+            width: 11rem;
+            left: 0.5%;
+        }
+
+        .bottomButton {
+            position: relative;
+            width: 11rem;
+            left: 0.5%;
+        }
+
+        .primaryButtonCenter {
+            display: flex;
+
+            .leftButtonCenter {
+                height: 2rem;
+                flex-shrink: 0;
+                position: relative;
+                top: 4.5%;
+                left: 1.2%;
+            }
+
+            .rightButtonCenter {
+                height: 2rem;
+                flex-shrink: 0;
+                position: relative;
+                top: 4.5%;
+                left: 1.2%;
+            }
+
+            .primaryButtonCenterWrapper {
+                width: 10rem;
+                position: relative;
+
+                .topButtonCenter {
+                    width: inherit;
+                    position: absolute;
+                    top: -4%;
+                    left: 1.2%;
+                }
+
+                .bottomButtonCenter {
+                    width: inherit;
+                    position: absolute;
+                    top: 95%;
+                    left: 1.2%;
+                }
+            }
+
+            .primaryButtonMiddle {
+                width: 10.1875rem;
+                height: 2.161rem;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+
+
+
+
+
+
+}
