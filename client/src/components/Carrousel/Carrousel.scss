@@ -2,10 +2,13 @@
 @import "../../stylesheet/variables";
 
 .carrousel {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2rem;
+    height: 40rem;
 
     .carrouselContainer {
         width: 100%;
@@ -18,10 +21,10 @@
             width: 200%;
             display: flex;
             gap: 0;
-            margin-top: 1.5rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 4rem;
             flex-direction: row;
             justify-content: center;
+            perspective: 1550px;
 
             .carrouselElement {
                 position: relative;
@@ -40,62 +43,120 @@
                 }
             }
 
+            .next4 {
+                margin-top: 0rem;
+                z-index: 0;
+                transform: scale(0.75) translateY(-4.5rem) rotateY(-75deg);
+            }
+
             .next3 {
                 margin-top: 0rem;
                 z-index: 1;
-                transform: rotate3D(0, 1, 0.01, 75deg) scale(0.8);
+                transform: scale(0.75) translateY(-4.5rem) rotateY(-75deg);
                 width: 2rem;
-
             }
 
             .next2 {
                 margin-top: 0rem;
                 z-index: 2;
-                transform: rotate3D(0, 1, 0.01, 75deg) scale(0.85);
-                width: 2rem;
-
+                transform: scale(0.8) translateY(-3.5rem) rotateY(-75deg);
+                width: 5rem;
             }
 
             .next1 {
                 margin-top: 0rem;
                 z-index: 3;
-                transform: rotate3D(0, 1, 0.08, 55deg) scale(0.9);
+                transform: scale(0.85) translateY(-2.5rem) rotateY(-67deg);
                 width: 8rem;
             }
 
             .current {
                 margin-top: 0rem;
-                z-index: 4;
+                z-index: 5;
                 transform: rotateY(0deg);
+                width: 40rem;
             }
 
             .previous1 {
                 margin-top: 0rem;
                 z-index: 3;
-                transform: rotate3D(0, 1, 0.03, -60deg) scale(0.9);
+                transform: scale(0.85) translateY(-2.5rem) rotateY(67deg);
                 width: 8rem;
             }
 
             .previous2 {
                 margin-top: 0rem;
                 z-index: 2;
-                transform: rotate3D(0, 1, 0.02, -75deg) scale(0.85);
-                width: 2rem;
-
+                transform: scale(0.8) translateY(-3.5rem) rotateY(75deg);
+                width: 5rem;
             }
 
             .previous3 {
                 margin-top: 0rem;
                 z-index: 1;
-                transform: rotate3D(0, 1, 0.02, -75deg) scale(0.8);
+                transform: scale(0.75) translateY(-4.75rem) rotateY(75deg);
                 width: 2rem;
+            }
 
+            .previous4 {
+                margin-top: 0rem;
+                z-index: 0;
+                transform: scale(0.75) translateY(-4.75rem) rotateY(75deg);
             }
         }
     }
+
+    .carrouselPole {
+        position: absolute;
+        top: 2rem;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .buttons {
+        position: absolute;
+        top: 50%;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        section {
+            margin: 0rem 4rem;
+            cursor: pointer;
+            width: 5.7095rem;
+            height: 5.73563rem;
+            flex-shrink: 0;
+        }
+
+        section:first-child {
+            rotate: 180deg;
+        }
+    }
+
+    .indicators {
+        display: flex;
+        max-width: 200px;
+        width: 15%;
+        justify-content: space-evenly;
+
+        img {
+            opacity: 50%;
+            transition: all 0.5s;
+        }
+
+        .focused {
+            opacity: 100%;
+        }
+
+    }
 }
 
-.transition{
+
+
+.transition {
     transition: all 0.5s !important;
 }
 
@@ -103,6 +164,6 @@
     transition: none !important;
 }
 
-.deleted{
+.deleted {
     width: 0 !important;
 }

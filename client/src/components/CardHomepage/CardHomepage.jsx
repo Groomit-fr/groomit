@@ -1,6 +1,6 @@
 import React from 'react'
 import './CardHomepage.scss'
-import Button from '../Button/Button';
+import PrimaryButton from '../PrimaryButton/PrimaryButton';
 
 function CardHomepage(props) {
 
@@ -8,6 +8,7 @@ function CardHomepage(props) {
     const illustration = (props.illustration != null ? props.illustration : "Illustration");
     const content = (props.content != null ? props.content : "Content");
     const buttonTitle = (props.buttonTitle != null ? props.buttonTitle : "Button");
+    const buttonLink = (props.buttonLink != null ? props.buttonLink : "Link");
 
     return (
 
@@ -17,11 +18,14 @@ function CardHomepage(props) {
                 <img className="top" src="/svg/CardHomePage/cardHomepageTop.svg"></img>
                 <section className='cardContent'>
                     <h2 className='title'>{title}</h2>
-                    <img src={illustration}/>
+                    <img className='cardContentImg' src={illustration} />
                     <h4 className='textContent'>{content}</h4>
-                    <Button title={buttonTitle}/>
+                    <section className='cardButton'>
+                        <PrimaryButton title={buttonTitle} link={buttonLink}/>
+                    </section>
+
                 </section>
-                <img  className="bottom" src="/svg/CardHomePage/cardHomepageBottom.svg"></img>
+                <img className="bottom" src="/svg/CardHomePage/cardHomepageBottom.svg"></img>
             </section>
             <img src="/svg/CardHomePage/cardHomepageRight.svg"></img>
         </section>

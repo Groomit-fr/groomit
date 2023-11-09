@@ -31,7 +31,8 @@
             
         }
 
-        img{
+
+        .cardContentImg{
             margin: 1.26rem 0;
             height: 8.53319rem;
         }
@@ -46,18 +47,22 @@
             font-weight: 400;
             line-height: normal;
         }
+
+        .cardButton {
+            margin-top: 1rem;
+        }
     }
 
     .top {
         position: relative;
         top: -2%;
-        left: -1.5%;
+        left: -1.25%;
         width: 102.5%;
     }
 
     .bottom {
         position: relative;
-        left: -1.5%;
+        left: -1.25%;
         top: 0.9%;
         width: 102.5%;
     }
