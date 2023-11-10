@@ -139,7 +139,7 @@ function Carrousel() {
 
     const boutiqueGroomit = <CardHomepage title="LA BOUTIQUE GROOMIT" illustration="svg/CardHomePage/designBoutique.svg"
         content={<>Retrouvez les T-shirts et hoodies Groomit. <br /> Ils sont beaux, ils sont doux et ils n’attendent que vous...</>}
-        buttonTitle="VOIR LA BOUTIQUE" buttonLink="/products/1" />;
+        buttonTitle="VOIR LA BOUTIQUE" buttonLink="/products" />;
 
     const groomitFactory = <CardHomepage title="GROOMIT FACTORY" illustration="svg/CardHomePage/designFactory.svg"
         content={<>Il a pas l’air content Gaétan avec son T-shirt personnalisé ? <br /> Qui vous empêche de faire de même ?</>}
