@@ -3,8 +3,6 @@ import ProductItem from "../ProductItem/ProductItem";
 import "./List.scss";
 
 const List = () => {
-
-
     const [windowWidth, setWindowWidth] = React.useState(0);
 
     const data = [
@@ -116,7 +114,6 @@ const List = () => {
         }
 
         handleWindowResize();
-
         window.addEventListener('resize', handleWindowResize);
 
         return () => {
@@ -124,24 +121,16 @@ const List = () => {
         };
     }, []);
 
-
-
     let productItemWidth = convertRemToPixels(32);
     const domElement = [];
 
-
     while (data.length > 0) {
-
         const items = [];
 
         for (let i = data.length; i >= 0; i--) {
-
             if (data[i] != null) {
-
                 if ((items.length * productItemWidth) > (windowWidth)) {
-
                     break;
-
                 } else {
                     const item = <ProductItem key={data.length} title={data[i].name} image={data[i].image} price={data[i].price} id={data[i].id}/>;
                     items.push(item);
@@ -158,7 +147,6 @@ const List = () => {
         </div>;
 
         domElement.push(flexItem);
-
     }
 
 

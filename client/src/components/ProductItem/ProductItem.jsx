@@ -9,7 +9,6 @@ function ProductItem(props) {
     const price = props.price;
     const id = props.id;
 
-
     return (
         <Link to={`/product/${id}`} className='productItem__link'>
             <div className="productItem">
