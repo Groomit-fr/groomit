@@ -10,11 +10,6 @@ const Products = () => {
 
     const categoryId = parseInt(useParams().id);
 
-    const { data, loading, error } = useFetch(`/products?populate=*`);
-
-    console.log(data);
-
-
     return (
         <div className="products">
             <div className="products__banner">
@@ -35,14 +30,7 @@ const Products = () => {
                     </div>
                 </div>
                 <div className="products__item__row">
-                    {data && data.map(item => (
-                        <div key={item.id} className="products__item">
-                            <p>{item.attributes.title}</p>
-                            
-                            <img src={import.meta.env.VITE_UPLOAD_URL + item.attributes.image.data[0].attributes.url} alt={item.attributes.title} />
-                            <p>{item.attributes.price}€</p>
-                        </div>
-                    ))}
+                    <List categoryId={categoryId}/>
                 </div>
             </div>
 

@@ -2,39 +2,13 @@ import React, { useEffect, useRef } from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import "./List.scss";
 import { useState } from "react";
+import useFetch from "../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
-const List = () => {
+const List = ({categoryId}) => {
     const [windowWidth, setWindowWidth] = React.useState(0);
 
-    const data = [
-        {
-            id: 1,
-            name: "T-shirt Groomit 1",
-            image: "/img/tshirt.svg",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        },
-        {
-            id: 2,
-            name: "T-shirt Groomit 2",
-            image: "/img/tshirt.svg",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        },
-        {
-            id: 3,
-            name: "Hoodie Groomit 1",
-            image: "/img/hoodie.svg",
-            isAvailable: true,
-            composition: "100% coton",
-            careGuide: "Lavage à 30°",
-            price: 20,
-        }
-    ]
+const { data, loading, error } = useFetch(`/products?populate=*[filters][categories][id]=${categoryId}`);
 
     useEffect(() => {
         function handleWindowResize() {
