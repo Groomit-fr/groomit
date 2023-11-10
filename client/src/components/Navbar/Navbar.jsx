@@ -12,20 +12,23 @@ const Navbar = () => {
             <div className="wrapper">
                 <div className="left">
                     <div className="item">
-                        <img src="/img/logo.svg" alt=""/>
+                        <Link to="/">
+                            <img src="/img/logo.svg" alt="" />
+                        </Link>
+
                     </div>
                 </div>
                 <div className="right">
-                    <Link to="/" className="item">PRODUITS</Link>
+                    <Link to="/products" className="item">PRODUITS</Link>
                     <Link to="/products/1" className="item">GROOMIT FACTORY</Link>
                     <Link to="/products/2" className="item">À PROPOS</Link>
-                    <div className="item item-cart" onClick={()=>setOpen(!open)}>
-                        <img src="/img/cart.svg" alt=""/>
+                    <div className="item item-cart" onClick={() => setOpen(!open)}>
+                        <img src="/img/cart.svg" alt="" />
                         <span className="item-count">0</span>
                     </div>
                 </div>
             </div>
-            {open && <Cart/>}
+            {open && <Cart />}
         </div>
     )
 }

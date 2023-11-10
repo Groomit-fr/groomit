@@ -7,7 +7,7 @@ const Products = () => {
         <div className="products">
             <div className="products__banner">
                 <h1>Les produits Groomit</h1>
-                <h2>Pour toi + moi + tous ceux qui le veulent</h2>
+                <h2>Pour toi + moi + tous ceux qui en veulent</h2>
                 <div className="products__banner__filter">
                     <div className="products__banner__filter__item">
                         <img src="/img/show_all.svg" />
@@ -22,11 +22,11 @@ const Products = () => {
                         <p>Les hoodies</p>
                     </div>
                 </div>
-                <div className="products__item__row">
-                    <List/>
-                </div>
-            </div>
 
+            </div>
+            <div className="products__item__row">
+                <List />
+            </div>
         </div>
     )
 }
