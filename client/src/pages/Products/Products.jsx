@@ -4,7 +4,7 @@ import List from "../../components/List/List.jsx";
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useState } from "react";    
+import { useEffect, useState } from "react";
 
 const Products = () => {
 
@@ -29,15 +29,12 @@ const Products = () => {
                         <p>Les hoodies</p>
                     </div>
                 </div>
-                <div className="products__item__row">
-                    <List categoryId={categoryId}/>
-                </div>
-            </div>
 
             </div>
             <div className="products__item__row">
-                <List />
+                <List categoryId={categoryId} />
             </div>
+
         </div>
     )
 }

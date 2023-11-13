@@ -1,74 +1,71 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import "./List.scss";
-import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 
-const List = ({categoryId}) => {
-    const [windowWidth, setWindowWidth] = React.useState(0);
+const List = ({ categoryId }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { data, loading, error } = useFetch(`/products?populate=*`);
+  const [itemsPerRow, setItemsPerRow] = useState(Math.floor(window.innerWidth / convertRemToPixels(20)));
+  
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+      setItemsPerRow(Math.floor(window.innerWidth / convertRemToPixels(20)))
+    };
+    
+    window.addEventListener('resize', handleWindowResize);
+    
+    return () => {
+        window.removeEventListener('resize', handleWindowResize);
+    };
+}, []);
 
-const { data, loading, error } = useFetch(`/products?populate=*[filters][categories][id]=${categoryId}`);
-
-    useEffect(() => {
-        function handleWindowResize() {
-            setWindowWidth(getWindowWidth);
-        }
-
-        handleWindowResize();
-        window.addEventListener('resize', handleWindowResize);
-
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
-
-    let productItemWidth = convertRemToPixels(32);
-    const domElement = [];
-
-    while (data.length > 0) {
-        const items = [];
-
-        for (let i = data.length; i >= 0; i--) {
-            if (data[i] != null) {
-                if ((items.length * productItemWidth) > (windowWidth)) {
-                    break;
-                } else {
-                    const item = <ProductItem key={data.length} title={data[i].name} image={data[i].image} price={data[i].price} id={data[i].id}/>;
-                    items.push(item);
-                    data.splice(i, 1);
-                }
-            }
-        }
-
-        const flexItem = <div className="list__flexItem" key={data.length}>
-            <img className="list__flexItem__rope" src="/svg/List/rope.svg" alt="" />
-            {items.map((item) => {
-                return item;
-            })}
-        </div>;
-
-        domElement.push(flexItem);
-    }
-
-
-
-    const [data, setData] = useState([]);
-
-
-    return (
-        <div className="list" >
-            {domElement}
-        </div>
-    )
-}
-
-function convertRemToPixels(rem) {
+function convertRemToPixels (rem) {
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+};
+
+const renderProducts = () => {
+    if (loading) {
+        return <div></div>;
+    }
+    
+    if (error) {
+        return <div>Oops il y a une erreur</div>;
+    }
+    
+    if (data) {
+        const productItems = data.map((product, index) => (
+            <ProductItem
+            key={product.id}
+            title={product.attributes.title}
+            image={import.meta.env.VITE_UPLOAD_URL + product.attributes.image.data[0].attributes.url}
+            price={product.attributes.price}
+            id={product.id}
+            />
+            ));
+            
+            const rows = [];
+            for (let i = 0; i < productItems.length; i += itemsPerRow) {
+                const rowItems = productItems.slice(i, i + itemsPerRow);
+                const row = (
+                    <div className="list__flexItem" key={i}>
+            <img className="list__flexItem__rope" src="/svg/List/rope.svg" alt="" />
+            {rowItems}
+          </div>
+        );
+        console.log(itemsPerRow);
+        rows.push(row);
+    }
+    
+    return rows;
 }
 
-function getWindowWidth() {
-    return window.innerWidth
-}
+    return null;
+  };
+
+  return <div className="list">{renderProducts()}</div>;
+};
 
 export default List;
