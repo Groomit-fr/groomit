@@ -1,8 +1,15 @@
 import React from "react";
 import "./Products.scss";
 import List from "../../components/List/List.jsx";
+import useFetch from "../../hooks/useFetch";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Products = () => {
+
+    const categoryId = parseInt(useParams().id);
+
     return (
         <div className="products">
             <div className="products__banner">
@@ -25,8 +32,9 @@ const Products = () => {
 
             </div>
             <div className="products__item__row">
-                <List />
+                <List categoryId={categoryId} />
             </div>
+
         </div>
     )
 }

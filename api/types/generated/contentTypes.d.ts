@@ -683,6 +683,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -694,6 +695,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'oneToMany',
       'api::product.product'
     >;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -730,7 +732,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     isAvailaible: Attribute.Boolean & Attribute.DefaultTo<true>;
     composition: Attribute.Text;
     careGuide: Attribute.Text;
-    price: Attribute.Integer;
+    price: Attribute.Float;
     category: Attribute.Relation<
       'api::product.product',
       'manyToOne',

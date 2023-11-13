@@ -40,7 +40,7 @@
       "type": "text"
     },
     "price": {
-      "type": "integer"
+      "type": "float"
     },
     "category": {
       "type": "relation",
