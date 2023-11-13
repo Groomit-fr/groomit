@@ -40,8 +40,7 @@ const Product = () => {
                     image: data?.attributes.image.data[0].attributes.url,
                     quantity: quantity,
                 }));
-                // Mettre à jour la quantité
-                setQuantity(prev => prev + 1);
+                setQuantity(prev => prev);
             }}>Ajouter au panier</button>
         </div>
     )
