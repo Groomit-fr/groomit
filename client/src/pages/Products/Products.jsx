@@ -12,6 +12,8 @@ const Products = () => {
 
     const { data, loading, error } = useFetch(`/categories?populate=*`);
 
+    const [clickedCategory, setClickedCategory] = useState("All");
+
     const renderCategories = () => {
         if (loading) {
             return <div></div>;
@@ -24,7 +26,7 @@ const Products = () => {
         if (data) {
             return data.map((category, index) => {
                 return (
-                    <div className="products__banner__filter__item" key={index} onClick={() => setCategoryTitle(category.attributes.title)}>
+                    <div className="products__banner__filter__item" key={index} onClick={() => setCategoryTitle(category.attributes.title) + setClickedCategory(category.attributes.title)}>
                         <img src={import.meta.env.VITE_UPLOAD_URL + category.attributes.image.data.attributes.url} alt="Dessin t-shirt" />
                         <p>{category.attributes.title}</p>
                     </div>
@@ -41,7 +43,7 @@ const Products = () => {
                 <h1>Les produits Groomit</h1>
                 <h2>Pour toi + moi + tous ceux qui en veulent</h2>
                 <div className="products__banner__filter">
-                    <div className="products__banner__filter__item"  onClick={() => setCategoryTitle("All")}>
+                    <div className="products__banner__filter__item"  onClick={() => setCategoryTitle("All") + setClickedCategory("All")}>
                         <img src="/img/show_all.svg" />
                         <p>Afficher tout</p>
                     </div>

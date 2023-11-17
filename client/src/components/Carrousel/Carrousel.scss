@@ -26,14 +26,15 @@
             justify-content: center;
             perspective: 1550px;
 
+
             .carrouselElement {
                 position: relative;
                 transition: all 0.5s;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-
-                width: 50rem;
+                transform-origin: top center;
+                width: 25rem;
 
 
                 .hanger {
@@ -53,49 +54,44 @@
                 margin-top: 0rem;
                 z-index: 1;
                 transform: scale(0.75) translateY(-4.5rem) rotateY(-75deg);
-                width: 2rem;
             }
 
             .next2 {
                 margin-top: 0rem;
                 z-index: 2;
                 transform: scale(0.8) translateY(-3.5rem) rotateY(-75deg);
-                width: 5rem;
+                width: 1rem;
             }
 
             .next1 {
                 margin-top: 0rem;
                 z-index: 3;
                 transform: scale(0.85) translateY(-2.5rem) rotateY(-67deg);
-                width: 8rem;
             }
 
             .current {
                 margin-top: 0rem;
                 z-index: 5;
                 transform: rotateY(0deg);
-                width: 40rem;
             }
 
             .previous1 {
                 margin-top: 0rem;
                 z-index: 3;
                 transform: scale(0.85) translateY(-2.5rem) rotateY(67deg);
-                width: 8rem;
             }
 
             .previous2 {
                 margin-top: 0rem;
                 z-index: 2;
                 transform: scale(0.8) translateY(-3.5rem) rotateY(75deg);
-                width: 5rem;
+                width: 1rem;
             }
 
             .previous3 {
                 margin-top: 0rem;
                 z-index: 1;
                 transform: scale(0.75) translateY(-4.75rem) rotateY(75deg);
-                width: 2rem;
             }
 
             .previous4 {
@@ -153,6 +149,7 @@
 
     }
 }
+
 
 
 
