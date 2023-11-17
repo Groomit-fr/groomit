@@ -1,7 +1,7 @@
 import React from "react";
 import "./Cart.scss";
 import { useSelector } from "react-redux";
-import { removeItem, resetCart } from "../../redux/cartReducer";
+import { removeItem, resetCart, addQuantity, removeQuantity } from "../../redux/cartReducer";
 import { useDispatch } from "react-redux";
 
 const Cart = () => {
@@ -12,7 +12,6 @@ const Cart = () => {
 
     const totalPrice = products.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
 
-    console.log(products[0]?.quantity)
 
     return (
         <div className="cart">
@@ -22,8 +21,8 @@ const Cart = () => {
                     <img src={import.meta.env.VITE_UPLOAD_URL + item.image} alt={item.name} />
                     <div className="cart__item__details">
                         <p>{item.title} x {item.quantity}</p>
-                        {/* <button onClick={()=>dispach(addQuantity(item.id))} >+</button> */}
-                        <button>-</button>
+                        <button onClick={()=>dispach(addQuantity({ id: item.id }))}>+</button>
+                        <button onClick={item.quantity > 1 ? ()=>dispach(removeQuantity({id: item.id})) : ()=>dispach(removeItem(item.id))}>-</button>
                         <p>{item.price}€</p>
                     </div>
                     <button onClick={()=>dispach(removeItem(item.id))}>Supprimer l'article</button>
