@@ -49,8 +49,9 @@
         display: flex;
         width: 100%;
         padding: 0rem 4rem;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
+        
 
         &__placeHolder {
             opacity: 0;
@@ -73,7 +74,9 @@
                 width: 2.3885rem;
                 height: 2.1875rem;
 
-                &__icon {
+                p {
+                    font-family: 'Gloria';
+                    font-size: 1.5rem;
                     position: absolute;
                     left: 50%;
                     top: 50%;

@@ -3,6 +3,8 @@ import "./Cart.scss";
 import { useSelector } from "react-redux";
 import { removeItem, resetCart, addQuantity, removeQuantity } from "../../redux/cartReducer";
 import { useDispatch } from "react-redux";
+import { loadStripe } from "@stripe/stripe-js";
+import {makeRequest} from "../../makeRequest";
 
 const Cart = () => {
 
@@ -12,6 +14,23 @@ const Cart = () => {
 
     const totalPrice = products.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
 
+    const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+
+    const handlePayment = async () => {
+        try {
+            const stripe = await stripePromise;
+            const res = await makeRequest.post('/orders',
+            {
+                cart,
+            });
+            await stripe.redirectToCheckout({
+                sessionId: res.data.stripeSession.id,
+            });
+        }catch (error) {
+            console.log(error);
+        }
+
+    };
 
     return (
         <div className="cart">
@@ -21,6 +40,7 @@ const Cart = () => {
                     <img src={import.meta.env.VITE_UPLOAD_URL + item.image} alt={item.name} />
                     <div className="cart__item__details">
                         <p>{item.title} x {item.quantity}</p>
+                        <p>{item.size}</p>
                         <button onClick={()=>dispach(addQuantity({ id: item.id }))}>+</button>
                         <button onClick={item.quantity > 1 ? ()=>dispach(removeQuantity({id: item.id})) : ()=>dispach(removeItem(item.id))}>-</button>
                         <p>{item.price}€</p>
@@ -33,6 +53,7 @@ const Cart = () => {
                     <p>{totalPrice}€</p>
                 </div>
             <button onClick={()=>dispach(resetCart())}>Vider le panier</button>
+            <button onClick={handlePayment}>Payer</button>
         </div>
     )
 }

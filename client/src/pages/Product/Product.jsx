@@ -12,14 +12,18 @@ const Product = () => {
 
     const dispach = useDispatch();
     const [quantity, setQuantity] = useState(1);
+    const [size, setSize] = useState("M");
 
     const id = parseInt(useParams().id);
 
     const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
 
-    // console.log(data);
-    // console.log(data?.attributes.image.data.length);
-
+    // add class to 
+    function isCircled() {
+        circle.classList.add("circle");
+    }
+    
+    console
 
     return (
         <div className="product">
@@ -36,25 +40,18 @@ const Product = () => {
 
             <div className="product__selectionBar">
 
-                <section className="product__selectionBar__placeHolder">
-                    <img src="/svg/Product/Size/small.svg" alt="small" />
-                    <img src="/svg/Product/Size/medium.svg" alt="medium" />
-                    <img src="/svg/Product/Size/large.svg" alt="large" />
-                    <img src="/svg/Product/Size/extraLarge.svg" alt="extraLarge" />
-                </section>
-
                 <section className="product__selectionBar__size">
-                    <section className="product__selectionBar__size__item" >
-                        <img className="product__selectionBar__size__item__icon" src="/svg/Product/Size/small.svg" alt="small" />
+                    <section className="product__selectionBar__size__item" onClick={()=> setSize("S")}>
+                        <p>S</p>
                     </section>
-                    <section className="product__selectionBar__size__item" >
-                        <img className="product__selectionBar__size__item__icon" src="/svg/Product/Size/medium.svg" alt="small" />
+                    <section className="product__selectionBar__size__item" onClick={()=> setSize("M")} >
+                        <p>M</p>
                     </section>
-                    <section className="product__selectionBar__size__item" >
-                        <img className="product__selectionBar__size__item__icon" src="/svg/Product/Size/large.svg" alt="small" />
+                    <section className="product__selectionBar__size__item" onClick={()=> setSize("L")}>
+                        <p>L</p>
                     </section>
-                    <section className="product__selectionBar__size__item" >
-                        <img className="product__selectionBar__size__item__icon" src="/svg/Product/Size/extraLarge.svg" alt="small" />
+                    <section className="product__selectionBar__size__item" onClick={()=> setSize("XL")}>
+                    <p>XL</p>
                     </section>
                 </section>
 
@@ -67,6 +64,7 @@ const Product = () => {
                             price: data?.attributes.price,
                             image: data?.attributes.image.data[0].attributes.url,
                             quantity: quantity,
+                            size: size
                         }));
                         setQuantity(prev => prev);
                     }}>
