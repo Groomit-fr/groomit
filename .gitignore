@@ -16,3 +16,10 @@ Icon
 .Spotlight-V100
 .Trashes
 ._*
+api/package-lock.json
+
+api/yarn.lock
+
+client/yarn.lock
+
+client/package-lock.json
