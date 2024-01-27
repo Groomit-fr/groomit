@@ -3,13 +3,30 @@ import ProductItem from "../ProductItem/ProductItem";
 import "./List.scss";
 import useFetch from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
+import { makeRequest } from "../../makeRequest";
 
 const List = ({ categoryTitle }) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const { data, loading, error } = useFetch((categoryTitle != "All") ? `/products?filters[category][title][$eq]=${categoryTitle}&populate=*` : `/products?populate=*`);
     const [itemsPerRow, setItemsPerRow] = useState(Math.floor(window.innerWidth / convertRemToPixels(20)));
 
+    const addProduct = () => {
+        makeRequest.post('/products', 
+        {
+            "data": {
+                "type": "orders",
+                "attributes": {
+                    "email": "hello",           
+                    
+                }  
 
+            }
+        }
+        ).then(res => {
+            console.log(res);
+        });
+    }
+    
     useEffect(() => {
         const handleWindowResize = () => {
             setWindowWidth(window.innerWidth);
@@ -65,7 +82,9 @@ const List = ({ categoryTitle }) => {
         return null;
     };
 
-    return <div className="list">{renderProducts()}</div>;
+    return <div className="list">{renderProducts()}
+    <button className="list__button" onClick={addProduct}>Ajouter un produit</button>
+    </div>;
 };
 
 export default List;

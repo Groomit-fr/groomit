@@ -1,3 +1,6 @@
+console.log("order controller");
+
+
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 ("use strict");
@@ -13,6 +16,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     const { cart } = ctx.request.body;
     if (!cart) {
       ctx.throw(400, "La commande doit contenir un panier");
+      console.log("3");
     }
     const lineItems = await Promise.all(
       cart.map(async (product) => {
