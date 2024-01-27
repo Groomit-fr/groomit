@@ -10,23 +10,6 @@ const List = ({ categoryTitle }) => {
     const { data, loading, error } = useFetch((categoryTitle != "All") ? `/products?filters[category][title][$eq]=${categoryTitle}&populate=*` : `/products?populate=*`);
     const [itemsPerRow, setItemsPerRow] = useState(Math.floor(window.innerWidth / convertRemToPixels(20)));
 
-    const addProduct = () => {
-        makeRequest.post('/products', 
-        {
-            "data": {
-                "type": "orders",
-                "attributes": {
-                    "email": "hello",           
-                    
-                }  
-
-            }
-        }
-        ).then(res => {
-            console.log(res);
-        });
-    }
-    
     useEffect(() => {
         const handleWindowResize = () => {
             setWindowWidth(window.innerWidth);
@@ -83,7 +66,6 @@ const List = ({ categoryTitle }) => {
     };
 
     return <div className="list">{renderProducts()}
-    <button className="list__button" onClick={addProduct}>Ajouter un produit</button>
     </div>;
 };
 
