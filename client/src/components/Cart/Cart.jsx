@@ -19,14 +19,21 @@ const Cart = () => {
     const stripePromise = loadStripe("pk_test_51OC0WbDKjeptmAsJhwQoIjyrHCkGyojtJCptfifphvDKxRUESqQB1KutMu3DgCCtxs38MeaRnCK2apt3Jon5kI9O00D538zjbH");
 
     const handlePayment = () => {
-        makeRequest.post('/orders',{})
+        makeRequest.post('/orders', {
+            cart: products.map(item => ({
+                id: item.id,
+                quantity: item.quantity,
+                size: item.size,
+            })),
+
+        })
             .then(res => {
                 console.log(res);
             });
 
     };
 
-    
+
     return (
         <div className="cart">
             <h1>Dans le panier</h1>
