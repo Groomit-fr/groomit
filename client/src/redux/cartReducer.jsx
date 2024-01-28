@@ -24,14 +24,14 @@ export const cartSlice = createSlice({
             }
         },
         removeItem: (state, action) => {
-            state.products = state.products.filter((item) => item.id !== action.payload);
-        },
+            const { id, size } = action.payload;
+            state.products = state.products.filter((item) => !(item.id === id && item.size === size));
+        },        
         removeQuantity: (state, action) => {
             const { id } = action.payload;
             const item = state.products.find((item)=> item.id === id);
             if (item){
                 item.quantity -= 1;
-                console.log(item.quantity)
             }
             if (item.quantity === 0){
                 removeItem

@@ -35,18 +35,6 @@ const Cart = () => {
         catch (error) {
             console.log(error);
         }
-
-        // const stripe =  stripePromise;
-        // makeRequest.post('/orders', {
-        //     cart: products.map(item => ({
-        //         id: item.id,
-        //         quantity: item.quantity,
-        //         size: item.size,
-        //     }))
-        // });
-        //  stripe.redirectToCheckout({
-        //     sessionId: res.data.stripeSession.id,
-        // });
     };
 
 
@@ -63,7 +51,7 @@ const Cart = () => {
                         <button onClick={item.quantity > 1 ? () => dispach(removeQuantity({ id: item.id })) : () => dispach(removeItem(item.id))}>-</button>
                         <p>{item.price}€</p>
                     </div>
-                    <button onClick={() => dispach(removeItem(item.id))}>Supprimer l'article</button>
+                    <button onClick={() => dispach(removeItem({ id: item.id, size: item.size }))}>Supprimer l'article</button>
                 </div>
             ))}
             <div className="cart__total">
