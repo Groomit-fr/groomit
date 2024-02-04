@@ -20,13 +20,12 @@ const Navbar = () => {
                         <Link to="/">
                             <img src="/img/logo.svg" alt="" />
                         </Link>
-
                     </div>
                 </div>
                 <div className="right">
                     <Link to="/products" className="item">PRODUITS</Link>
-                    <Link to="/products" className="item">GROOMIT FACTORY</Link>
-                    <Link to="/products" className="item">À PROPOS</Link>
+                    <Link to="/factory" className="item">GROOMIT FACTORY</Link>
+                    <Link to="/apropos" className="item">À PROPOS</Link>
                     <div className="item item-cart" onClick={()=>setOpen(!open)}>
                         <img src="/img/cart.svg" alt=""/>
                         <span className="item-count">{quantity}</span>

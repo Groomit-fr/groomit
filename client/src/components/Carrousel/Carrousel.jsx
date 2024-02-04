@@ -120,11 +120,11 @@ function Carrousel() {
 
     const groomitFactory = <CardHomepage title="GROOMIT FACTORY" illustration="svg/CardHomePage/designFactory.svg"
         content={<>Il a pas l’air content Gaétan avec son T-shirt personnalisé ? <br /> Qui vous empêche de faire de même ?</>}
-        buttonTitle="PERSONNALISER" buttonLink="/products/1" />;
+        buttonTitle="PERSONNALISER" buttonLink="/factory" />;
 
     const aPropos = <CardHomepage title="C'est qui GROOMIT ?" illustration="svg/CardHomePage/designApropos.svg"
         content={<>Il vient d’où Groomit ? Il fait quoi Groomit ? <br /> Trouvez les réponses à vos questions...</>}
-        buttonTitle="EN SAVOIR PLUS" buttonLink="/products/1" />;
+        buttonTitle="EN SAVOIR PLUS" buttonLink="/apropos" />;
 
 
     return (

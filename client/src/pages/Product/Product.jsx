@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./Product.scss";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer";
@@ -17,8 +17,12 @@ const Product = () => {
 
     const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
 
-    // console.log(data);
-    // console.log(data?.attributes.image.data.length);
+    const sizeS = useRef(null);
+    const sizeM = useRef(null);
+    const sizeL = useRef(null);
+    const sizeXL = useRef(null);
+
+    
 
 
     return (
@@ -36,25 +40,18 @@ const Product = () => {
 
             <div className="product__selectionBar">
 
-                <section className="product__selectionBar__placeHolder">
-                    <img src="/svg/Product/Size/small.svg" alt="small" />
-                    <img src="/svg/Product/Size/medium.svg" alt="medium" />
-                    <img src="/svg/Product/Size/large.svg" alt="large" />
-                    <img src="/svg/Product/Size/extraLarge.svg" alt="extraLarge" />
-                </section>
-
                 <section className="product__selectionBar__size">
-                    <section className="product__selectionBar__size__item" >
-                        <img className="product__selectionBar__size__item__icon" src="/svg/Product/Size/small.svg" alt="small" />
+                    <section ref={sizeS}className="product__selectionBar__size__item" >
+                        <p>S</p>
                     </section>
-                    <section className="product__selectionBar__size__item" >
-                        <img className="product__selectionBar__size__item__icon" src="/svg/Product/Size/medium.svg" alt="small" />
+                    <section ref={sizeM} className="product__selectionBar__size__item" >
+                        <p>M</p>
                     </section>
-                    <section className="product__selectionBar__size__item" >
-                        <img className="product__selectionBar__size__item__icon" src="/svg/Product/Size/large.svg" alt="small" />
+                    <section ref={sizeL} className="product__selectionBar__size__item" >
+                        <p>L</p>
                     </section>
-                    <section className="product__selectionBar__size__item" >
-                        <img className="product__selectionBar__size__item__icon" src="/svg/Product/Size/extraLarge.svg" alt="small" />
+                    <section ref={sizeXL} className="product__selectionBar__size__item" >
+                        <p>XL</p>
                     </section>
                 </section>
 

@@ -10,6 +10,8 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Products from "./pages/Products/Products";
+import Apropos from "./pages/Apropos/Apropos";
+import Factory from "./pages/Factory/factory";
 
 const Layout = () => {
     return (
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
     {
       path:"/products",
       element: <Products/>
+    },
+    {
+      path:"/apropos",
+      element: <Apropos/>
+    },
+    {
+      path:"/factory",
+      element: <Factory/>
     },
   ]
   },
