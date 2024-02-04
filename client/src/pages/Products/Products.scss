@@ -38,6 +38,8 @@
                 cursor: pointer;
                 height: 10rem;
                 width: 8rem;
+
+                
             }
 
             &__item:hover{
@@ -48,4 +50,11 @@
             }
         }
     }
+}
+
+.active {
+    background-image: url("/svg/List/categoryBackground.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
