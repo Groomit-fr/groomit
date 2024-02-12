@@ -47,26 +47,26 @@
             .next4 {
                 margin-top: 0rem;
                 z-index: 0;
-                transform: scale(0.75) translateY(-4.5rem) rotateY(-75deg);
+                transform: scale(0.75) translateY(-0.5rem) rotateY(-75deg);
             }
 
             .next3 {
                 margin-top: 0rem;
                 z-index: 1;
-                transform: scale(0.75) translateY(-4.5rem) rotateY(-75deg);
+                transform: scale(0.75) translateY(-0.5rem) rotateY(-75deg);
             }
 
             .next2 {
                 margin-top: 0rem;
                 z-index: 2;
-                transform: scale(0.8) translateY(-3.5rem) rotateY(-75deg);
+                transform: scale(0.8) translateY(-0rem) rotateY(-75deg);
                 width: 1rem;
             }
 
             .next1 {
                 margin-top: 0rem;
                 z-index: 3;
-                transform: scale(0.85) translateY(-2.5rem) rotateY(-67deg);
+                transform: scale(0.85) translateY(-0rem) rotateY(-67deg);
             }
 
             .current {
@@ -78,26 +78,26 @@
             .previous1 {
                 margin-top: 0rem;
                 z-index: 3;
-                transform: scale(0.85) translateY(-2.5rem) rotateY(67deg);
+                transform: scale(0.85) translateY(-0rem) rotateY(67deg);
             }
 
             .previous2 {
                 margin-top: 0rem;
                 z-index: 2;
-                transform: scale(0.8) translateY(-3.5rem) rotateY(75deg);
+                transform: scale(0.8) translateY(-0rem) rotateY(75deg);
                 width: 1rem;
             }
 
             .previous3 {
                 margin-top: 0rem;
                 z-index: 1;
-                transform: scale(0.75) translateY(-4.75rem) rotateY(75deg);
+                transform: scale(0.75) translateY(-0.5rem) rotateY(75deg);
             }
 
             .previous4 {
                 margin-top: 0rem;
                 z-index: 0;
-                transform: scale(0.75) translateY(-4.75rem) rotateY(75deg);
+                transform: scale(0.75) translateY(-0.5rem) rotateY(75deg);
             }
         }
     }

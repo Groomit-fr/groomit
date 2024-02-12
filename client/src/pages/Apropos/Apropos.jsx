@@ -13,7 +13,7 @@ function Apropos() {
             <p>C'est qui <br /> Groomit ?</p>
           </div>
           <div className="apropos__banner__filter__item" onClick={() => console.log("anvhor")}>
-            <img src="/svg/apropos/quoi.svg" />
+            <img src="/img/show_all.svg" />
             <p>C'est quoi Groomit ?</p>
           </div>
           <div className="apropos__banner__filter__item" onClick={() => console.log("anvhor")}>
@@ -58,7 +58,6 @@ function Apropos() {
             </p>
           </section>
           <section className='apropos__body__item__illu'>
-            <img src="/svg/apropos/quoi.svg" alt="" />
 
           </section>
         </section>

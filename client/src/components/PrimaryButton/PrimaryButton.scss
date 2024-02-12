@@ -39,6 +39,8 @@
 
         .primaryButtonCenter {
             display: flex;
+            transform: scale(1);
+            transition: transform 0.15s;
 
             .leftButtonCenter {
                 height: 2rem;
@@ -80,6 +82,10 @@
                 height: 2.161rem;
                 flex-shrink: 0;
             }
+        }
+
+        .primaryButtonCenter:hover{
+            transform: scale(1.2);
         }
     }
 
