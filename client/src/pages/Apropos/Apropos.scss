@@ -1,0 +1,140 @@
+@import '../../main.scss';
+
+.apropos {
+    &__banner {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 6rem;
+
+        h1 {
+            font-size: 2.5rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        h2 {
+            font-family: Helvetica Neue LT Std;
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        &__filter {
+            display: flex;
+
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+
+            &__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: pointer;
+                height: 12rem;
+                width: 10rem;
+                text-align: center;
+                justify-content: space-between;
+
+                img{
+                    width: 80%;
+                    height: 80%;
+                }
+
+            }
+
+            &__item:hover {
+                background-image: url("/svg/List/categoryBackground.svg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+        overflow-x: hidden;
+
+        &__rope {
+            width: 110%;
+        }
+
+        &__item {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+
+
+
+            &__text {
+
+                display: inline-flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+                width: 40%;
+                min-width: 450px;
+
+                h4 {
+                    font-family: "Gloria";
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+                    position: relative;
+                    top: 2.5rem;
+                }
+
+                h3 {
+                    color: var(--Noir, #242424);
+                    font-size: 2.5rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    font-family: "Gloria";
+                }
+
+                p {
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+            }
+
+            &__illu {
+                width: 28.3555rem;
+                height: 34.87338rem;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+
+                &__first {
+                    position: relative;
+                    top: -4rem;
+                }
+            }
+        }
+    }
+
+    .left {
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+    }
+
+    .right {
+        flex-direction: row-reverse;
+    }
+
+}
