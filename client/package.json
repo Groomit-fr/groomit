@@ -2,7 +2,6 @@
   "name": "vite",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +10,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
+    "@stripe/stripe-js": "^2.2.2",
     "axios": "^1.6.0",
     "gsap": "^3.12.2",
     "react": "^18.2.0",
@@ -19,7 +19,9 @@
     "react-router-dom": "^6.16.0",
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "stripe": "^14.10.0",
+    "vite-plugin-require": "^1.1.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
