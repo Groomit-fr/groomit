@@ -26,8 +26,6 @@ const Cart = () => {
                     size: item.size,
                 }))
             });
-            
-            console.log(res.data.stripeSession.id);
             await stripe.redirectToCheckout({
                 sessionId: res.data.stripeSession.id             ,
             });
