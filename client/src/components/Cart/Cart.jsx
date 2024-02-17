@@ -38,6 +38,7 @@ const Cart = () => {
     };
 
 
+
     return (
         <div className="cart">
             <h1>Dans le panier</h1>

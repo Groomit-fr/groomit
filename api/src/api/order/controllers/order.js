@@ -12,25 +12,6 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
   
   async create(ctx) {
-    //TOUT ÇA TU PEUX SUPPRIMER (CODE QUI MARCHE MAIS ENVOIE EN DUR)
-    // try {
-      
-    //   await strapi.service("api::order.order").create({
-    //     data: {
-    //       email: "bliblux",
-    //     },
-    //   });
-    //   return { stripeSession: "session" };
-    // } catch (err) {
-    //   ctx.throw(500, err);
-    // }
-    //JUSQU'ICI
-
-
-
-    
-    //LÀ C'EST TON CODE À TOI, A CORRIGER
-
     const { cart } = ctx.request.body;
     if (!cart) {
       ctx.throw(400, "La commande doit contenir un panier");
