@@ -12,6 +12,8 @@ import Product from "./pages/Product/Product";
 import Products from "./pages/Products/Products";
 import Apropos from "./pages/Apropos/Apropos";
 import Factory from "./pages/Factory/factory";
+import SuccessOrder from "./pages/SuccessOrder/SuccessOrder";
+import CancelOrder from "./pages/CancelOrder/CancelOrder";
 
 const Layout = () => {
     return (
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
       path:"/factory",
       element: <Factory/>
     },
+    {
+      path:"/successOrder",
+      element:  <SuccessOrder/>
+    },
+    {
+      path:"/cancelOrder",
+      element:  <CancelOrder/>
+    }
   ]
   },
 ]);
