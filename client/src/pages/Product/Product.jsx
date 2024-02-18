@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./Product.scss";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer";
@@ -22,12 +22,34 @@ const Product = () => {
     const sizeM = useRef(null);
     const sizeL = useRef(null);
     const sizeXL = useRef(null);
-    // add class to 
-    function isCircled() {
-        circle.classList.add("circle");
-    }
-    
-    console
+
+    useEffect(() => {
+        if(data){
+            if (size === "S") {
+                sizeS.current.classList.add("active");
+                sizeM.current.classList.remove("active");
+                sizeL.current.classList.remove("active");
+                sizeXL.current.classList.remove("active");
+            } else if (size === "M") {
+                sizeS.current.classList.remove("active");
+                sizeM.current.classList.add("active");
+                sizeL.current.classList.remove("active");
+                sizeXL.current.classList.remove("active");
+            } else if (size === "L") {
+                sizeS.current.classList.remove("active");
+                sizeM.current.classList.remove("active");
+                sizeL.current.classList.add("active");
+                sizeXL.current.classList.remove("active");
+            } else if (size === "XL") {
+                sizeS.current.classList.remove("active");
+                sizeM.current.classList.remove("active");
+                sizeL.current.classList.remove("active");
+                sizeXL.current.classList.add("active");
+            }
+        }
+        
+    }, [size]);
+
 
 
     return (
@@ -46,17 +68,17 @@ const Product = () => {
             <div className="product__selectionBar">
 
                 <section className="product__selectionBar__size">
-                    <section ref={sizeS} className="product__selectionBar__size__item" onClick={()=> setSize("S")}>
+                    <section ref={sizeS} className="product__selectionBar__size__item" onClick={() => setSize("S")}>
                         <p>S</p>
                     </section>
-                    <section ref={sizeM} className="product__selectionBar__size__item" onClick={()=> setSize("M")} >
+                    <section ref={sizeM} className="product__selectionBar__size__item" onClick={() => setSize("M")} >
                         <p>M</p>
                     </section>
-                    <section ref={sizeL} className="product__selectionBar__size__item" onClick={()=> setSize("L")}>
+                    <section ref={sizeL} className="product__selectionBar__size__item" onClick={() => setSize("L")}>
                         <p>L</p>
                     </section>
-                    <section ref={sizeXL} className="product__selectionBar__size__item" onClick={()=> setSize("XL")}>
-                    <p>XL</p>
+                    <section ref={sizeXL} className="product__selectionBar__size__item" onClick={() => setSize("XL")}>
+                        <p>XL</p>
                     </section>
                 </section>
 

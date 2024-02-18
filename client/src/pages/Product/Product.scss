@@ -68,6 +68,24 @@
                 width: 2.3885rem;
                 height: 2.1875rem;
 
+                :before {
+                    content: ' ';
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%) scale(0);
+                    opacity: 0;
+                    width: 2.3885rem;
+                    height: 2.1875rem;
+                    background-image: url("/svg/Product/Size/selection.svg");
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    transition: transform 0.25s cubic-bezier(0.15, -0.56, 0.35, 2.41), opacity 0.15s;
+                }
+
+
                 p {
                     font-family: "Gloria";
                     font-size: 1.5rem;
@@ -80,7 +98,10 @@
             }
 
             &__item:hover {
-                background-image: url("/svg/Product/Size/selection.svg");
+                :before {
+                    opacity: 0.75;
+                    transform: translateX(-50%) translateY(-50%) scale(1);
+                }
             }
         }
 
@@ -176,6 +197,13 @@
                 margin-top: 3rem;
 
             }
+        }
+    }
+
+    .active {
+        :before {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-50%) scale(1);
         }
     }
 }
