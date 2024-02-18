@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import Cart from "../Cart/Cart";
@@ -11,6 +11,23 @@ const Navbar = () => {
     const products = useSelector(state => state.cart.products);
 
     const quantity = products.reduce((acc, item) => acc + item.quantity, 0);
+
+    const ref = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event) {            
+            if(!event.target.parentNode.className.includes("cart")) {
+                setOpen(false);
+            }
+        }
+
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [ref]);
 
     return (
         <div className="navbar">
@@ -26,8 +43,8 @@ const Navbar = () => {
                     <Link to="/products" className="item">PRODUITS</Link>
                     <Link to="/factory" className="item">GROOMIT FACTORY</Link>
                     <Link to="/apropos" className="item">À PROPOS</Link>
-                    <div className="item item-cart" onClick={()=>setOpen(!open)}>
-                        <img src="/img/cart.svg" alt=""/>
+                    <div ref={ref} className="item item-cart" onClick={() => setOpen(!open)}>
+                        <img src="/img/cart.svg" alt="" />
                         <span className="item-count">{quantity}</span>
                     </div>
                 </div>
