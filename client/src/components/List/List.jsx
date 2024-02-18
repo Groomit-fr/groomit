@@ -28,14 +28,6 @@ const List = ({ categoryTitle }) => {
     };
 
     const renderProducts = () => {
-        if (loading) {
-            return <div></div>;
-        }
-
-        if (error) {
-            return <div>Oops il y a une erreur</div>;
-        }
-
         if (data) {
             const productItems = data.map((product, index) => (
                 <ProductItem

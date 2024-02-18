@@ -125,10 +125,16 @@
             width: 5.7095rem;
             height: 5.73563rem;
             flex-shrink: 0;
+            transform: scale(1) rotate(0deg);
+            transition: transform  0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
         }
 
         section:first-child {
             rotate: 180deg;
+        }
+
+        section:hover{
+            transform: scale(1.2) rotate(5deg);
         }
     }
 
@@ -140,11 +146,13 @@
 
         img {
             opacity: 50%;
-            transition: all 0.5s;
+            transition: all 0.25s;
+            transform: scale(1);
         }
 
         .focused {
             opacity: 100%;
+            transform: scale(1.2);
         }
 
     }

@@ -11,6 +11,19 @@
         height: 100%;
         padding: 0 20px;
 
+        .left{
+            .item{
+                transform: rotate(0deg) scale(1);
+
+                transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+            }
+
+            .item:hover{
+                transform: rotate(-3deg) scale(1.2);
+
+            }
+        }
+
         .right {
             display: flex;
             gap: 30px;
@@ -20,17 +33,20 @@
                 text-decoration: none;
                 font-size: 18px;
                 font-weight: 500;
-                transition: all 0.3s ease-in-out;
+                transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
 
                 &:hover {
-                    color: $beige;
-                    transform: rotate(5deg) scale(1.1);
+                    transform: rotate(1deg) scale(1.1);
                 }
             }
 
             .item-cart {
                 position: relative;
                 cursor: pointer;
+                transform: scale(1) rotate(0);
+
+                transition: transform 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+
                 .item-count {
                     font-size: 10px;
                     font-family: 'Gloria';
@@ -46,6 +62,17 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+
+                    transform: scale(1);
+
+                    transition: transform 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+                }
+            }
+
+            .item-cart:hover {
+                transform: rotate(1deg) scale(1.1);
+                .item-count{
+                    transform: scale(1.2);
                 }
             }
         }
