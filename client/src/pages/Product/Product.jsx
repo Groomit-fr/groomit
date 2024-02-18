@@ -12,6 +12,7 @@ const Product = () => {
 
     const dispach = useDispatch();
     const [quantity, setQuantity] = useState(1);
+    const [size, setSize] = useState("M");
 
     const id = parseInt(useParams().id);
 
@@ -21,8 +22,12 @@ const Product = () => {
     const sizeM = useRef(null);
     const sizeL = useRef(null);
     const sizeXL = useRef(null);
-
+    // add class to 
+    function isCircled() {
+        circle.classList.add("circle");
+    }
     
+    console
 
 
     return (
@@ -41,17 +46,17 @@ const Product = () => {
             <div className="product__selectionBar">
 
                 <section className="product__selectionBar__size">
-                    <section ref={sizeS}className="product__selectionBar__size__item" >
+                    <section ref={sizeS} className="product__selectionBar__size__item" onClick={()=> setSize("S")}>
                         <p>S</p>
                     </section>
-                    <section ref={sizeM} className="product__selectionBar__size__item" >
+                    <section ref={sizeM} className="product__selectionBar__size__item" onClick={()=> setSize("M")} >
                         <p>M</p>
                     </section>
-                    <section ref={sizeL} className="product__selectionBar__size__item" >
+                    <section ref={sizeL} className="product__selectionBar__size__item" onClick={()=> setSize("L")}>
                         <p>L</p>
                     </section>
-                    <section ref={sizeXL} className="product__selectionBar__size__item" >
-                        <p>XL</p>
+                    <section ref={sizeXL} className="product__selectionBar__size__item" onClick={()=> setSize("XL")}>
+                    <p>XL</p>
                     </section>
                 </section>
 
@@ -64,6 +69,7 @@ const Product = () => {
                             price: data?.attributes.price,
                             image: data?.attributes.image.data[0].attributes.url,
                             quantity: quantity,
+                            size: size
                         }));
                         setQuantity(prev => prev);
                     }}>
