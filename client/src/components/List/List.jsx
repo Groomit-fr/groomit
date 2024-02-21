@@ -27,6 +27,7 @@ const List = ({ categoryTitle }) => {
         return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
     };
 
+
     const renderProducts = () => {
         if (data) {
             const productItems = data.map((product, index) => (
@@ -37,7 +38,9 @@ const List = ({ categoryTitle }) => {
                     price={product.attributes.price}
                     id={product.id}
                 />
+                
             ));
+
 
             const rows = [];
             for (let i = 0; i < productItems.length; i += itemsPerRow) {

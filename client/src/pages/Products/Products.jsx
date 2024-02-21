@@ -13,16 +13,15 @@ const Products = () => {
 
     const [clickedCategory, setClickedCategory] = useState("All");
 
-    console.log(clickedCategory);
 
     const All = useRef(null);
     const Tshirt = useRef(null);
     const Hoodies = useRef(null);
 
     useEffect(() => {
-        All.current.classList.add("active");
         if(data){
             if (clickedCategory === "All") {
+                All.current.classList.add("active");
                 Hoodies.current.classList.remove("active");
                 Tshirt.current.classList.remove("active");
             } else if (clickedCategory === "T-shirts") {

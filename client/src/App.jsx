@@ -11,7 +11,7 @@ import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Products from "./pages/Products/Products";
 import Apropos from "./pages/Apropos/Apropos";
-import Factory from "./pages/Factory/factory";
+import Factory from "./pages/Factory/Factory";
 import SuccessOrder from "./pages/SuccessOrder/SuccessOrder";
 import CancelOrder from "./pages/CancelOrder/CancelOrder";
 

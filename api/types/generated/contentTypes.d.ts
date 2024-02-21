@@ -788,6 +788,40 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiQuoteRequestQuoteRequest extends Schema.CollectionType {
+  collectionName: 'quote_requests';
+  info: {
+    singularName: 'quote-request';
+    pluralName: 'quote-requests';
+    displayName: 'Quote Request';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    message: Attribute.RichText;
+    email: Attribute.Email;
+    phone: Attribute.BigInteger;
+    name: Attribute.String;
+    file: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::quote-request.quote-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::quote-request.quote-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -807,6 +841,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
+      'api::quote-request.quote-request': ApiQuoteRequestQuoteRequest;
     }
   }
 }
