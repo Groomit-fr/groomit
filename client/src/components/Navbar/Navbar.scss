@@ -3,6 +3,7 @@
 .navbar {
     height: 80px;
     background-color: $black;
+    z-index: 6;
 
     .wrapper {
         display: flex;

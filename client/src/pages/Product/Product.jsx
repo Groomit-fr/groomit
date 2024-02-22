@@ -14,6 +14,7 @@ const Product = () => {
     const [quantity, setQuantity] = useState(1);
     const [size, setSize] = useState("M");
 
+
     const id = parseInt(useParams().id);
 
     const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
@@ -23,7 +24,10 @@ const Product = () => {
     const sizeL = useRef(null);
     const sizeXL = useRef(null);
 
+
+
     useEffect(() => {
+        sizeM.current.classList.add("active");
         if(data){
             if (size === "S") {
                 sizeS.current.classList.add("active");

@@ -5,6 +5,7 @@ import { removeItem, resetCart, addQuantity, removeQuantity } from "../../redux/
 import { useDispatch } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
 import { makeRequest } from "../../makeRequest";
+import PrimaryButton from "../PrimaryButton/PrimaryButton";
 
 const Cart = () => {
 
@@ -27,7 +28,7 @@ const Cart = () => {
                 }))
             });
             await stripe.redirectToCheckout({
-                sessionId: res.data.stripeSession.id             ,
+                sessionId: res.data.stripeSession.id,
             });
         }
         catch (error) {
@@ -36,29 +37,41 @@ const Cart = () => {
     };
 
 
-
     return (
         <div className="cart">
-            <h1>Dans le panier</h1>
-            {products.map(item => (
-                <div key={item.id} className="cart__item">
-                    <img src={import.meta.env.VITE_UPLOAD_URL + item.image} alt={item.name} />
-                    <div className="cart__item__details">
-                        <p>{item.title} x {item.quantity}</p>
-                        <p>{item.size}</p>
-                        <button onClick={() => dispach(addQuantity({ id: item.id }))}>+</button>
-                        <button onClick={item.quantity > 1 ? () => dispach(removeQuantity({ id: item.id })) : () => dispach(removeItem(item.id))}>-</button>
-                        <p>{item.price}€</p>
+            <div className="cart__center">
+                <h1>Dans le panier</h1>
+                {products.map(item => (
+                    <div key={item.id} className="cart__center__item">
+                        <img src={import.meta.env.VITE_UPLOAD_URL + item.image} alt={item.name} />
+                        <div className="cart__center__item__details">
+                            <p>{item.title} x {item.quantity}</p>
+                            <p>{item.size}</p>
+                            <button onClick={() => dispach(addQuantity({ id: item.id }))}>+</button>
+                            <button onClick={item.quantity > 1 ? () => dispach(removeQuantity({ id: item.id })) : () => dispach(removeItem(item.id))}>-</button>
+                            <p>{item.price}€</p>
+                        </div>
+                        <button onClick={() => dispach(removeItem({ id: item.id, size: item.size }))}>Supprimer l'article</button>
                     </div>
-                    <button onClick={() => dispach(removeItem({ id: item.id, size: item.size }))}>Supprimer l'article</button>
-                </div>
-            ))}
-            <div className="cart__total">
-                <p>Total</p>
-                <p>{totalPrice}€</p>
+                ))}
+
+                {(products.length === 0) && <p>Votre panier est vide</p>}
+
+                {(products.length > 0) &&
+                    <div className="cart__center__total">
+                        <p>Total</p>
+                        <p>{totalPrice}€</p>
+                    </div>}
+                {(products.length > 0) &&
+                    <div onClick={() => dispach(resetCart())}>
+                        <PrimaryButton title="Vider le panier" type="function" />
+                    </div>}
+                {(products.length > 0) &&
+                    <div onClick={handlePayment}>
+                        <PrimaryButton title="Payer" type="function" />
+                    </div>}
+
             </div>
-            <button onClick={() => dispach(resetCart())}>Vider le panier</button>
-            <button onClick={handlePayment}>Payer</button>
         </div>
     )
 }
