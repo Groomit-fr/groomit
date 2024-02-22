@@ -47,8 +47,8 @@ const Cart = () => {
                         <div className="cart__center__item__details">
                             <p>{item.title} x {item.quantity}</p>
                             <p>{item.size}</p>
-                            <button onClick={() => dispach(addQuantity({ id: item.id }))}>+</button>
-                            <button onClick={item.quantity > 1 ? () => dispach(removeQuantity({ id: item.id })) : () => dispach(removeItem(item.id))}>-</button>
+                            <button onClick={() => dispach(addQuantity({ id: item.id, size: item.size }))}>+</button>
+                            <button onClick={item.quantity > 1 ? () => dispach(removeQuantity({ id: item.id, size: item.size})) : () => dispach(removeItem({id: item.id, size: item.size}))}>-</button>
                             <p>{item.price}€</p>
                         </div>
                         <button onClick={() => dispach(removeItem({ id: item.id, size: item.size }))}>Supprimer l'article</button>

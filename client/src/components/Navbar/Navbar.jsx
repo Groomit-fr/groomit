@@ -16,7 +16,6 @@ const Navbar = () => {
 
     useEffect(() => {
         function handleClickOutside(event) {       
-            console.log(event.target.parentNode.className);
             if(!event.target.parentNode.className.includes("cart") && !event.target.parentNode.className.includes("primary")) {
                 setOpen(false);
             }
