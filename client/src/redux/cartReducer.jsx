@@ -30,7 +30,6 @@ export const cartSlice = createSlice({
             const item = state.products.find((item) => item.id === action.payload.id && item.size === action.payload.size);
             if (item) {
                 item.quantity += 1;
-                console.log(item.size," et ", action.payload.size)
             }
         },
         removeItem: (state, action) => {

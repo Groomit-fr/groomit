@@ -54,10 +54,8 @@
                     background-position: center;
                     background-repeat: no-repeat;
 
-                    transition: opacity 0.25s;
+                    transition: opacity 0.25s; 
                 }
-
-
             }
 
             &__item:hover {
@@ -73,5 +71,4 @@
     :before{
         opacity: 1;
     }
-    
 }

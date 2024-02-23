@@ -14,15 +14,26 @@
 
         border: solid 5px $black;
         border-top: 0;
-        border-radius: 0 0 1rem 1rem;
+        border-right: 0;
+        border-radius: 0 0 0 1rem;
 
         filter: drop-shadow(0px 0px 10px $black);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            margin-bottom: 1.5rem;
+        }
 
         &__item {
             display: flex;
             justify-content: space-between;
             align-content: center;
             align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
 
             &__illu {
                 width: 100px;
@@ -31,19 +42,103 @@
                 mix-blend-mode: darken;
             }
 
-            &__details{
+            &__details {
 
-                &__quantity{
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+                margin-left: 1rem;
+                margin-right: 4rem;
+
+                &__title {
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+
+                &__price {
+                    font-weight: bold;
+                }
+
+                &__quantity {
                     display: flex;
+                    gap: 0.5rem;
+                    font-family: 'Gloria';
+                    font-size: 1.2rem;
+
+                    &__remove {
+                        cursor: pointer;
+                        background-color: transparent;
+                        color: $black;
+                        font-family: 'Gloria';
+
+                        transform: scale(1) rotate(0);
+                        transition: all 0.3s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+
+                        &:hover {
+                            transform: scale(1.2) rotate(10deg);
+                        }
+
+                    }
+
+                    &__number {
+                        font-family: 'Gloria';
+                    }
+
+                    &__add {
+                        cursor: pointer;
+                        background-color: transparent;
+                        color: $black;
+                        font-family: 'Gloria';
+
+                        transform: scale(1) rotate(0);
+                        transition: all 0.3s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+
+                        &:hover {
+                            transform: scale(1.2) rotate(10deg);
+                        }
+
+                    }
                 }
             }
+
+
 
             &__delete {
                 width: 30px;
                 height: 30px;
                 cursor: pointer;
+                transform: scale(1) rotate(0);
+                transition: all 0.3s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+
+                &:hover {
+                    transform: scale(1.2) rotate(10deg);
+                }
             }
         }
+
+        &__emptyCart {
+            margin-bottom: 1rem;
+        }
+
+        &__total {
+            font-weight: bold;
+            text-align: right;
+            align-self: normal;
+            margin-bottom: 1rem;
+        }
+
+        &__buttons {
+
+            &__empty {
+                scale: 0.8;
+                margin-bottom: 0.5rem;
+            }
+
+            &__pay {
+                scale: 1.2;
+            }
+        }
+
     }
 
 }

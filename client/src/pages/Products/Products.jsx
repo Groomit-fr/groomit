@@ -20,6 +20,7 @@ const Products = () => {
 
     useEffect(() => {
         if(data){
+            All.current.classList.add("active");
             if (clickedCategory === "All") {
                 All.current.classList.add("active");
                 Hoodies.current.classList.remove("active");
