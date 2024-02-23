@@ -15,13 +15,11 @@
         .left{
             .item{
                 transform: rotate(0deg) scale(1);
-
                 transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
             }
 
             .item:hover{
                 transform: rotate(-3deg) scale(1.2);
-
             }
         }
 

@@ -43,15 +43,18 @@ const Cart = () => {
                 <h1>Dans le panier</h1>
                 {products.map(item => (
                     <div key={item.id} className="cart__center__item">
-                        <img src={import.meta.env.VITE_UPLOAD_URL + item.image} alt={item.name} />
+                        <img className="cart__center__item__illu" src={import.meta.env.VITE_UPLOAD_URL + item.image} alt={item.name} />
                         <div className="cart__center__item__details">
-                            <p>{item.title} x {item.quantity}</p>
-                            <p>{item.size}</p>
-                            <button onClick={() => dispach(addQuantity({ id: item.id, size: item.size }))}>+</button>
-                            <button onClick={item.quantity > 1 ? () => dispach(removeQuantity({ id: item.id, size: item.size})) : () => dispach(removeItem({id: item.id, size: item.size}))}>-</button>
-                            <p>{item.price}€</p>
+                            <p className="cart__center__item__details__title">{item.title}</p>
+                            <p className="cart__center__item__details__size">{item.size}</p>
+                            <div className="cart__center__item__details__quantity">
+                                <button className="cart__center__item__details__quantity__remove" onClick={item.quantity > 1 ? () => dispach(removeQuantity({ id: item.id, size: item.size })) : () => dispach(removeItem(item.id))}>-</button>
+                                <p className="cart__center__item__details__quantity__number">{item.quantity}</p>
+                                <button className="cart__center__item__details__quantity__add" onClick={() => dispach(addQuantity({ id: item.id, size: item.size }))}>+</button>
+                            </div>
+                            <p className="cart__center__item__details__price">{item.price}€</p>
                         </div>
-                        <button onClick={() => dispach(removeItem({ id: item.id, size: item.size }))}>Supprimer l'article</button>
+                        <img className="cart__center__item__delete" src='/svg/Cart/bin.svg' onClick={() => dispach(removeItem({ id: item.id, size: item.size }))} />
                     </div>
                 ))}
 
@@ -63,11 +66,11 @@ const Cart = () => {
                         <p>{totalPrice}€</p>
                     </div>}
                 {(products.length > 0) &&
-                    <div onClick={() => dispach(resetCart())}>
+                    <div className='cart__center__empty' onClick={() => dispach(resetCart())}>
                         <PrimaryButton title="Vider le panier" type="function" />
                     </div>}
                 {(products.length > 0) &&
-                    <div onClick={handlePayment}>
+                    <div className='cart__center__pay' onClick={handlePayment}>
                         <PrimaryButton title="Payer" type="function" />
                     </div>}
 
