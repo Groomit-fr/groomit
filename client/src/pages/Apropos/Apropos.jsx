@@ -79,7 +79,7 @@ function Apropos() {
             </p>
           </section>
           <section className='apropos__body__item__illu'>
-
+            <img src="/svg/apropos/flex.svg" alt="" />
           </section>
         </section>
         <section className='apropos__body__item right'>

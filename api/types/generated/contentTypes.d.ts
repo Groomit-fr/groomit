@@ -794,6 +794,7 @@ export interface ApiQuoteRequestQuoteRequest extends Schema.CollectionType {
     singularName: 'quote-request';
     pluralName: 'quote-requests';
     displayName: 'Quote Request';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -801,9 +802,13 @@ export interface ApiQuoteRequestQuoteRequest extends Schema.CollectionType {
   attributes: {
     message: Attribute.RichText;
     email: Attribute.Email;
-    phone: Attribute.BigInteger;
     name: Attribute.String;
     file: Attribute.Media;
+    phone: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        minLength: 9;
+        maxLength: 10;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
