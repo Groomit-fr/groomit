@@ -82,9 +82,14 @@
                     border-image: url('/svg/Factory/inputSmall.svg') 35 / 30px;
                     outline: none;
                 }
+            }
 
-
-
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active {
+                -webkit-box-shadow: 0 0 0 500px #F9F7F2 inset !important;
+                border-image: url('/svg/Factory/inputSmall.svg') 30 / 20px !important;
             }
 
             textarea {
@@ -136,10 +141,10 @@
                         font-family: "Gloria";
                     }
 
-                    img{
+                    img {
                         transform: rotate(0deg);
                     }
-                    
+
 
                 }
 
@@ -147,9 +152,9 @@
                     transform: scale(1.05) rotate(-1deg);
                     border-image: url('/svg/Factory/inputXSmall.svg') 19 / 20px;
 
-                    img{
+                    img {
                         transform: rotate(18deg);
-                    
+
                     }
 
                 }
@@ -166,6 +171,10 @@
         }
 
         &__input.button {
+            p {
+                margin-top: 1rem;
+            }
+
             margin-bottom: 8rem;
         }
     }

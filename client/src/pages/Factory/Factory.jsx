@@ -8,6 +8,7 @@ import axios from 'axios'
 function factory() {
 
   const form = useRef();
+  const message = useRef();
 
 
   const sendEmail = async (e) => {
@@ -45,8 +46,10 @@ function factory() {
 
         }).then(response => {
           console.log(response);
+          message.current.innerHTML = 'Email envoyé, Groomit reviendra bientôt vers vous !';
         }).catch(error => {
           console.log(error.message);
+          message.current.innerHTML = 'Erreur lors de l\'envoi de l\'email, veuillez réessayer plus tard.';
         });
 
       }).catch(error => {
@@ -63,8 +66,10 @@ function factory() {
 
       }).then(response => {
         console.log(response);
+        message.current.innerHTML = 'Email envoyé, Groomit reviendra bientôt vers vous !';
       }).catch(error => {
         console.log(error.message);
+        message.current.innerHTML = 'Erreur lors de l\'envoi de l\'email, veuillez réessayer plus tard.';
       });
     }
   };
@@ -115,6 +120,7 @@ function factory() {
         </section>
         <section className='factory__form__input button'>
           <PrimaryButton type="submit" title="Envoyer" />
+          <p ref={message}></p>
         </section>
 
       </form>
