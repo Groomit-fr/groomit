@@ -68,41 +68,58 @@ function factory() {
       });
     }
   };
-  
+
   return (
     <section className='factory'>
       <section className='factory__top'>
-
+        <section className='factory__top__text'>
+          <h1>Groomit Factory</h1>
+          <p>
+            Imaginez un t-shirt.... Il est doux... Il est confortable, il est fait avec les matières premières Groomit,
+            la qualité Groomit, et tout le savoir faire de Groomit. Il ne manque plus qu’un détail pour qu’il soit parfait : un peu de vous... <br />
+            Personnalisez vos t-shirts et hoodies en envoyant votre idée à Groomit à l’aide du formulaire ci-dessous.
+          </p>
+        </section>
+        <section className='factory__top__illu'>
+          <img className='factory__top__illu__shirt' src="/svg/Factory/factoryShirt.svg" alt="" />
+          <img className='factory__top__illu__rope' src="/svg/List/rope.svg" alt="" />
+        </section>
       </section>
-      <form ref={form} onSubmit={sendEmail}>
+      <form className='factory__form' ref={form} onSubmit={sendEmail}>
         <section className='factory__form__input'>
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" required/>
+          <label htmlFor="name">Nom - Prénom</label>
+          <input type="text" name="name" id="name" required />
         </section>
         <section className='factory__form__input'>
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" required/>
+          <label htmlFor="email">E-mail</label>
+          <input type="email" name="email" id="email" required />
         </section>
         <section className='factory__form__input'>
-          <label htmlFor="phone">Numéro</label>
+          <label htmlFor="phone">Numéro de téléphone</label>
           <input type="tel" name="phone" id="phone" pattern='[0-9]{9,10}' />
         </section>
         <section className='factory__form__input'>
           <label htmlFor="message">Message</label>
           <textarea name="message" id="message" cols="80" rows="10" required />
         </section>
-        <section className='factory__form__input'>
-          <label htmlFor="file">file</label>
-          <input type="file" name="file" id="file" />
+        <section className='factory__form__input__file'>
+          <label htmlFor="file">Designs & Références</label>
+          <div>
+            <label htmlFor="file" className='factory__form__input__file__selector'>
+              <img src="/svg/Factory/upload.svg" alt="" />
+              <p>Joindre un fichier</p>
+            </label>
+            <input type="file" name="file" id="file" />
+          </div>
+
         </section>
-        <section className='factory__form__input'>
-          {/* <PrimaryButton type="submit" title="Envoyer" /> */}
-          <input type='submit' value="send" />
+        <section className='factory__form__input button'>
+          <PrimaryButton type="submit" title="Envoyer" />
         </section>
 
       </form>
     </section>
-  
+
   )
 }
 

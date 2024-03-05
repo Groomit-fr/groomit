@@ -1,0 +1,172 @@
+.factory {
+    &__top {
+
+        margin-top: 3rem;
+        position: relative;
+
+        &__text {
+
+            display: inline-flex;
+            flex-direction: column;
+            gap: 2.25rem;
+            margin-left: 10%;
+
+            h1 {
+                font-size: 2.5rem;
+                font-style: normal;
+                font-weight: 400;
+            }
+
+            p {
+                width: 65%;
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 400;
+            }
+        }
+
+        &__illu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+
+            &__rope {
+                position: absolute;
+                top: 4rem;
+                left: 0;
+                z-index: 0;
+                width: 100%;
+            }
+
+            &__shirt {
+                position: absolute;
+                right: 10%;
+                mix-blend-mode: darken;
+                z-index: 1;
+            }
+
+        }
+    }
+
+    &__form {
+        margin-top: 11rem;
+        margin-left: 5%;
+        gap: 2rem;
+
+        &__input {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                margin-bottom: 0.5rem;
+            }
+
+
+            input {
+                position: relative;
+                width: 80%;
+                height: 4rem;
+                max-width: 720px;
+
+                padding: 1rem;
+
+                margin-bottom: 2rem;
+
+                background-color: transparent;
+
+                border-image: url('/svg/Factory/inputSmall.svg') 30 / 20px;
+                transition: all 1s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+
+                &:focus {
+                    border-image: url('/svg/Factory/inputSmall.svg') 35 / 30px;
+                    outline: none;
+                }
+
+
+
+            }
+
+            textarea {
+                background-color: transparent;
+
+                padding: 1rem;
+
+                width: 90%;
+                max-width: none;
+                resize: none;
+                margin-bottom: 2rem;
+
+                border-image: url('/svg/Factory/inputBig.svg') 30 / 20px;
+                transition: all 1s cubic-bezier(0.38, -1.55, 0.59, 3.29);
+
+                &:focus {
+                    border-image: url('/svg/Factory/inputBig.svg') 35 / 30px;
+                    outline: none;
+                }
+
+            }
+
+            &__file {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    margin-bottom: 0.5rem;
+                }
+
+                input[type="file"]::file-selector-button {
+                    display: none;
+                }
+
+                &__selector {
+                    padding: 0.5rem 0.75rem;
+                    width: fit-content;
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    border-image: url('/svg/Factory/inputXSmall.svg') 20 / 20px;
+                    margin-bottom: 0 !important;
+                    transform: scale(1) rotate(-0deg);
+                    transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+
+                    cursor: pointer;
+
+                    p {
+                        font-family: "Gloria";
+                    }
+
+                    img{
+                        transform: rotate(0deg);
+                    }
+                    
+
+                }
+
+                &__selector:hover {
+                    transform: scale(1.05) rotate(-1deg);
+                    border-image: url('/svg/Factory/inputXSmall.svg') 19 / 20px;
+
+                    img{
+                        transform: rotate(18deg);
+                    
+                    }
+
+                }
+
+                div {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    margin-bottom: 2rem;
+                }
+
+
+            }
+        }
+
+        &__input.button {
+            margin-bottom: 8rem;
+        }
+    }
+}
