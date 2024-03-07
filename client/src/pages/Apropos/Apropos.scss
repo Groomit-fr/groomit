@@ -1,6 +1,8 @@
 @import '../../main.scss';
 
 .apropos {
+
+
     &__banner {
         width: 100%;
 
@@ -149,4 +151,21 @@
         flex-direction: row-reverse;
     }
 
+    .technique {
+        .apropos__body__item__illu {
+            width: 13.43119rem;
+            height: 18.11694rem;
+
+            img {
+                width: 13.43119rem;
+                height: 18.11694rem;
+            }
+        }
+
+
+    }
+
+    .apropos__body__item {
+        align-items: flex-end;
+    }
 }

@@ -128,15 +128,15 @@
         }
 
         &__buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             &__empty {
-                scale: 0.8;
                 margin-bottom: 0.5rem;
             }
 
-            &__pay {
-                scale: 1.2;
-            }
+            
         }
 
     }

@@ -33,7 +33,6 @@ function factory() {
       formData.append('files', imgfile, imgfile.name);
 
       axios.post(`http://localhost:1337/api/upload`, formData).then(res => {
-        console.log(res);
         imgId = res.data[0].id;
 
         const resForm = makeRequest.post('/quote-requests', {
@@ -54,6 +53,8 @@ function factory() {
 
       }).catch(error => {
         console.log(error.message);
+        message.current.innerHTML = 'Erreur lors de l\'envoi de l\'email, veuillez réessayer plus tard.';
+
       });
     } else {
       const resForm = makeRequest.post('/quote-requests', {

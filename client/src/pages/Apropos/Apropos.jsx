@@ -4,29 +4,29 @@ import "./Apropos.scss"
 function Apropos() {
   return (
     <section className='apropos'>
-      <div className="apropos__banner">
+      <div className="apropos__banner" >
         <h1>À propos de Groomit</h1>
         <h2>Pour toi + moi + tous ceux qui le veulent</h2>
         <div className="apropos__banner__filter">
-          <div className="apropos__banner__filter__item" onClick={() => console.log("anvhor")}>
+          <a className="apropos__banner__filter__item" href='#Qui'>
             <img src="/img/show_all.svg" />
             <p>C'est qui <br /> Groomit ?</p>
-          </div>
-          <div className="apropos__banner__filter__item" onClick={() => console.log("anvhor")}>
+          </a>
+          <a className="apropos__banner__filter__item" href='#Quoi'>
             <img src="/img/show_all.svg" />
             <p>C'est quoi Groomit ?</p>
-          </div>
-          <div className="apropos__banner__filter__item" onClick={() => console.log("anvhor")}>
+          </a>
+          <a className="apropos__banner__filter__item" href='#Tech'>
             <img src="/img/show_all.svg" />
             <p>Les techniques de Groomit.</p>
-          </div>
+          </a>
         </div>
       </div>
 
       <section className='apropos__body'>
         <img className="apropos__body__rope" src="/svg/List/rope.svg" alt="" />
         <section className='apropos__body__item left'>
-          <section className='apropos__body__item__text'>
+          <section className='apropos__body__item__text' id='Qui'>
             <h3>
               C’est qui Groomit ?
             </h3>
@@ -44,7 +44,7 @@ function Apropos() {
           </section>
         </section>
         <section className='apropos__body__item right'>
-          <section className='apropos__body__item__text'>
+          <section className='apropos__body__item__text' id='Quoi'>
             <h3>
               C’est quoi Groomit ?
             </h3>
@@ -61,7 +61,7 @@ function Apropos() {
 
           </section>
         </section>
-        <section className='apropos__body__item left' id='Technique'>
+        <section className='apropos__body__item right technique' id='Tech'>
           <section className='apropos__body__item__text'>
             <h4>
               Technique n°1
@@ -82,7 +82,7 @@ function Apropos() {
             <img src="/svg/apropos/flex.svg" alt="" />
           </section>
         </section>
-        <section className='apropos__body__item right'>
+        <section className='apropos__body__item right technique' id="Groom">
           <section className='apropos__body__item__text'>
             <h4>
               Technique n°2

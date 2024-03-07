@@ -2,97 +2,35 @@
 
 
 .primaryButton {
-    position: relative;
+    width: fit-content;
+    height: fit-content;
+
+    padding: 0.25rem;
+
+    border-image: url('/svg/PrimaryButton/outside.svg') 20 / 40px;
+
     display: flex;
-    justify-content: center;
-    width: 12.375rem;
+    transform: scale(1) rotate(0deg);
+    transition: all 0.25s cubic-bezier(0.15, -0.56, 0.35, 2.41);
 
+    .insideWrapper{
+        border-image: url('/svg/PrimaryButton/inside.svg') 20 / 40px;
+        padding: 0.05rem;
+        width: fit-content;
+        transform: scale(1) rotate(0deg);
+        transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
 
-    .leftButton{
-        position: relative;
-        left: 3.5%;
+        button {
+            padding: 0.6rem 0.7rem;
+            min-width: 100px;
+        }   
     }
+}
 
-    .rightButton{
-        position: relative;
-        left: -1%;
+.primaryButton:hover{
+    transform:  rotate(-1.3deg);
+
+    .insideWrapper{
+        transform: scale(1.1) rotate(0.5deg);
     }
-    
-
-    .primaryButtonWrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.1rem;
-
-        .topButton {
-            position: relative;
-            width: 11rem;
-            left: 0.5%;
-        }
-
-        .bottomButton {
-            position: relative;
-            width: 11rem;
-            left: 0.5%;
-        }
-
-        .primaryButtonCenter {
-            display: flex;
-            transform: scale(1);
-            transition: transform 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
-
-            .leftButtonCenter {
-                height: 2rem;
-                flex-shrink: 0;
-                position: relative;
-                top: 4.5%;
-                left: 1.2%;
-            }
-
-            .rightButtonCenter {
-                height: 2rem;
-                flex-shrink: 0;
-                position: relative;
-                top: 4.5%;
-                left: 1.2%;
-            }
-
-            .primaryButtonCenterWrapper {
-                width: 10rem;
-                position: relative;
-
-                .topButtonCenter {
-                    width: inherit;
-                    position: absolute;
-                    top: -4%;
-                    left: 1.2%;
-                }
-
-                .bottomButtonCenter {
-                    width: inherit;
-                    position: absolute;
-                    top: 95%;
-                    left: 1.2%;
-                }
-            }
-
-            .primaryButtonMiddle {
-                width: 10.1875rem;
-                height: 2.161rem;
-                flex-shrink: 0;
-            }
-        }
-
-        .primaryButtonCenter:hover{
-            transform: scale(1.2);
-        }
-    }
-
-
-
-
-
-
-
 }

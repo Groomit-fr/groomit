@@ -8,71 +8,34 @@ function PrimaryButton(props) {
     const link = props.link;
     const type = props.type;
 
-    if(type === 'submit') return (
+    if (type === 'submit') return (
         <section className='primaryButton'>
-            <img className='leftButton' src="/svg/PrimaryButton/left.svg" alt="" />
-            <section className='primaryButtonWrapper'>
-                <img className='topButton' src="/svg/PrimaryButton/top.svg" alt="" />
-                <section className='primaryButtonCenter'>
-                    <img className='leftButtonCenter' src="/svg/PrimaryButton/Center/left.svg" alt="" />
-                    <section className='primaryButtonCenterWrapper'>
-                        <img className='topButtonCenter' src="/svg/PrimaryButton/Center/top.svg" alt="" />
-                        <button type='submit' className='primaryButtonMiddle'>
-                            {title}{props.children}
-                        </button>
-                        <img className='bottomButtonCenter' src="/svg/PrimaryButton/Center/bottom.svg" alt="" />
-                    </section>
-                    <img className='rightButtonCenter' src="/svg/PrimaryButton/Center/right.svg" alt="" />
-                </section>
-                <img className='bottomButton' src="/svg/PrimaryButton/bottom.svg" alt="" />
+            <section className='insideWrapper'>
+                <button type='submit'>
+                    {title}{props.children}
+                </button>
             </section>
-            <img className='rightButton' src="/svg/PrimaryButton/right.svg" alt="" />
         </section>
-    ) 
-    if(type === 'function') return (
+    )
+    if (type === 'function') return (
         <section className='primaryButton'>
-            <img className='leftButton' src="/svg/PrimaryButton/left.svg" alt="" />
-            <section className='primaryButtonWrapper'>
-                <img className='topButton' src="/svg/PrimaryButton/top.svg" alt="" />
-                <section className='primaryButtonCenter'>
-                    <img className='leftButtonCenter' src="/svg/PrimaryButton/Center/left.svg" alt="" />
-                    <section className='primaryButtonCenterWrapper'>
-                        <img className='topButtonCenter' src="/svg/PrimaryButton/Center/top.svg" alt="" />
-                        <button className='primaryButtonMiddle'>
-                            {title}{props.children}
-                        </button>
-                        <img className='bottomButtonCenter' src="/svg/PrimaryButton/Center/bottom.svg" alt="" />
-                    </section>
-                    <img className='rightButtonCenter' src="/svg/PrimaryButton/Center/right.svg" alt="" />
-                </section>
-                <img className='bottomButton' src="/svg/PrimaryButton/bottom.svg" alt="" />
+            <section className='insideWrapper'>
+                <button>
+                    {title}{props.children}
+                </button>
             </section>
-            <img className='rightButton' src="/svg/PrimaryButton/right.svg" alt="" />
         </section>
     )
 
     return (
         <Link to={link}>
             <section className='primaryButton'>
-                <img className='leftButton' src="/svg/PrimaryButton/left.svg" alt="" />
-                <section className='primaryButtonWrapper'>
-                    <img className='topButton' src="/svg/PrimaryButton/top.svg" alt="" />
-                    <section className='primaryButtonCenter'>
-                        <img className='leftButtonCenter' src="/svg/PrimaryButton/Center/left.svg" alt="" />
-                        <section className='primaryButtonCenterWrapper'>
-                            <img className='topButtonCenter' src="/svg/PrimaryButton/Center/top.svg" alt="" />
-                            <button className='primaryButtonMiddle'>
-                                {title}{props.children}
-                            </button>
-                            <img className='bottomButtonCenter' src="/svg/PrimaryButton/Center/bottom.svg" alt="" />
-                        </section>
-                        <img className='rightButtonCenter' src="/svg/PrimaryButton/Center/right.svg" alt="" />
-                    </section>
-                    <img className='bottomButton' src="/svg/PrimaryButton/bottom.svg" alt="" />
+                <section className='insideWrapper'>
+                    <button>
+                        {title}{props.children}
+                    </button>
                 </section>
-                <img className='rightButton' src="/svg/PrimaryButton/right.svg" alt="" />
             </section>
-
         </Link>
     )
 }
