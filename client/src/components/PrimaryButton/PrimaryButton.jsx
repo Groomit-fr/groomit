@@ -10,7 +10,7 @@ function PrimaryButton(props) {
 
     if (type === 'submit') return (
         <section className='primaryButton'>
-            <section className='insideWrapper'>
+            <section className='buttonInsideWrapper'>
                 <button type='submit'>
                     {title}{props.children}
                 </button>
@@ -19,7 +19,7 @@ function PrimaryButton(props) {
     )
     if (type === 'function') return (
         <section className='primaryButton'>
-            <section className='insideWrapper'>
+            <section className='buttonInsideWrapper'>
                 <button>
                     {title}{props.children}
                 </button>
@@ -30,7 +30,7 @@ function PrimaryButton(props) {
     return (
         <Link to={link}>
             <section className='primaryButton'>
-                <section className='insideWrapper'>
+                <section className='buttonInsideWrapper'>
                     <button>
                         {title}{props.children}
                     </button>

@@ -19,8 +19,8 @@ const Products = () => {
     const Hoodies = useRef(null);
 
     useEffect(() => {
+        All.current.classList.add("active");
         if(data){
-            All.current.classList.add("active");
             if (clickedCategory === "All") {
                 All.current.classList.add("active");
                 Hoodies.current.classList.remove("active");

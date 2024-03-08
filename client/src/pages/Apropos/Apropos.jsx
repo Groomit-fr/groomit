@@ -17,7 +17,7 @@ function Apropos() {
             <p>C'est quoi Groomit ?</p>
           </a>
           <a className="apropos__banner__filter__item" href='#Tech'>
-            <img src="/img/show_all.svg" />
+            <img src="/svg/apropos/techs.svg" />
             <p>Les techniques de Groomit.</p>
           </a>
         </div>
