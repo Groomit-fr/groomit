@@ -67,11 +67,11 @@
                 border-image: url("/svg/List/categoryBackground.svg") 30 / 30px;
 
                 img {
-                    transform: scale(1.2) rotate(2deg) ;
+                    transform: scale(1.2) rotate(2deg);
                 }
 
                 p {
-                    transform: scale(1.2) rotate(-2deg) ;
+                    transform: scale(1.2) rotate(-2deg);
                 }
             }
         }
@@ -135,7 +135,6 @@
 
             &__illu {
                 width: 28.3555rem;
-                height: 34.87338rem;
                 flex-shrink: 0;
                 display: flex;
                 align-items: center;
@@ -143,6 +142,80 @@
                 &__first {
                     position: relative;
                     top: -4rem;
+                }
+            }
+        }
+
+        &__techs {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h3 {
+                font-family: "Gloria";
+                font-size: 2.5rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+
+                margin-bottom: 2rem;
+
+                align-self: flex-start;
+                margin-left: 4rem;
+            }
+
+            &__item {
+
+                display: flex;
+                width: 75%;
+                align-items: center;
+                justify-content: space-between;
+
+                max-width: 64.37494rem;
+
+                &__text {
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+
+                    h4 {
+                        position: relative;
+
+                        font-family: "Helvetica";
+                        font-size: 1.5rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+
+                        img{
+                            position: absolute;
+                            top: 50%;
+                            left: -1rem;
+                            transform: translate(-100%, -50%);
+                        }
+                    }
+
+                    p {
+                        max-width: 700px;
+
+                        font-family: "Helvetica";
+                        font-size: 1.25rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+
+                }
+
+                &__illu {
+
+                    img {
+                        width: 14.31244rem;
+                        height: 19.39rem;
+                    }
+
                 }
             }
         }
@@ -157,19 +230,7 @@
         flex-direction: row-reverse;
     }
 
-    .technique {
-        .apropos__body__item__illu {
-            width: 13.43119rem;
-            height: 18.11694rem;
 
-            img {
-                width: 13.43119rem;
-                height: 18.11694rem;
-            }
-        }
-
-
-    }
 
     .apropos__body__item {
         align-items: flex-end;

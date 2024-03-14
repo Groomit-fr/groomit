@@ -61,45 +61,43 @@ function Apropos() {
 
           </section>
         </section>
-        <section className='apropos__body__item right technique' id='Tech'>
-          <section className='apropos__body__item__text'>
-            <h4>
-              Technique n°1
-            </h4>
-            <h3>
-              Le Flex
-            </h3>
-            <p>
-              Le flockage est une technique qui consiste à découper une matière appelée le flex (aspect lisse)  ou flock (aspect velours) , à l'aide d'un plotter de découpe.
-              Le flex est une matière thermocollante qui se présente sous forme de rouleaux.
-              Une fois découpé, à l'aide du plotter de découpe, le flex est ensuite thermocollé sur le support textile (tee-shirt) à l'aide d'une Presse à Textile (presse à chaud).
-              <br />
-              <br />
-              Parfait pour les petites quantités.
-            </p>
+        <section className='apropos__body__techs' id='Tech'>
+          <h3>
+            Les techniques
+          </h3>
+          <section className='apropos__body__techs__item'>
+            <section className='apropos__body__techs__item__text'>
+              <h4>Le Flex
+                <img src="svg/apropos/dot.svg" alt="" />
+              </h4>
+              <p>
+                Le flockage est une technique qui consiste à découper une matière appelée le flex (aspect lisse)  ou flock (aspect velours) , à l'aide d'un plotter de découpe.
+                Le flex est une matière thermocollante qui se présente sous forme de rouleaux. <br />
+                Une fois découpé, à l'aide du plotter de découpe, le flex est ensuite thermocollé sur le support textile (tee-shirt) à l'aide d'une Presse à Textile (presse à chaud). <br />
+                <br />
+                Parfait pour les petites quantités.
+              </p>
+            </section>
+            <section className='apropos__body__techs__item__illu'>
+              <img src="/svg/apropos/flex.svg" alt="" />
+            </section>
           </section>
-          <section className='apropos__body__item__illu'>
-            <img src="/svg/apropos/flex.svg" alt="" />
+          <section className='apropos__body__techs__item'>
+            <section className='apropos__body__techs__item__text'>
+              <h4>La sérigraphie
+                <img src="svg/apropos/dot.svg" alt="" />
+              </h4>
+              <p>
+                La sérigraphie textile est une technique d'impression directe, reconnue pour sa capacité à transférer de l'encre directement sur le textile via un écran ou pochoir. Cette méthode unique permet à l'encre, une fois chauffée, de se fondre avec la fibre textile sans la détériorer.
+                <br /> <br />
+                Parfaite pour les grandes séries.
+              </p>
+            </section>
+            <section className='apropos__body__techs__item__illu'>
+              <img src="/svg/apropos/serigraphie.svg" alt="" />
+            </section>
           </section>
-        </section>
-        <section className='apropos__body__item right technique' id="Groom">
-          <section className='apropos__body__item__text'>
-            <h4>
-              Technique n°2
-            </h4>
-            <h3>
-              La sérigraphie
-            </h3>
-            <p>
-              La sérigraphie textile est une technique d'impression directe, reconnue pour sa capacité à transférer de l'encre directement sur le textile via un écran ou pochoir. Cette méthode unique permet à l'encre, une fois chauffée, de se fondre avec la fibre textile sans la détériorer.
-              <br />
-              <br />
-              Parfaite pour les grandes séries.
-            </p>
-          </section>
-          <section className='apropos__body__item__illu'>
-            <img src="/svg/apropos/serigraphie.svg" alt="" />
-          </section>
+
         </section>
       </section>
     </section>
