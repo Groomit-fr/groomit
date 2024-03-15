@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
-import Menu from "../Menu/Menu";
 
 const Navbar = () => {
 
@@ -59,7 +58,12 @@ const Navbar = () => {
                 </div>
             </div>
             {openCart && <Cart />}
-            {openMenu && <Menu />}
+            <section className={(openMenu ? "menu open" : "menu")}>
+                <section className="filler"></section>
+                <Link to="/products" className="item">PRODUITS</Link>
+                <Link to="/factory" className="item">GROOMIT FACTORY</Link>
+                <Link to="/apropos" className="item">À PROPOS</Link>
+            </section>
         </div>
     )
 }

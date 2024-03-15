@@ -3,22 +3,24 @@
 .navbar {
     height: 80px;
     background-color: $black;
-    z-index: 6;
 
     .wrapper {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 100%;
         padding: 0 20px;
+        z-index: 7;
+        background-color: $black;
 
-        .left{
-            .item{
+        .left {
+            .item {
                 transform: rotate(0deg) scale(1);
                 transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
             }
 
-            .item:hover{
+            .item:hover {
                 transform: rotate(-3deg) scale(1.2);
             }
         }
@@ -77,21 +79,22 @@
 
             .item-cart:hover {
                 transform: rotate(1deg) scale(1.1);
-                .item-count{
+
+                .item-count {
                     transform: scale(1.2);
                 }
             }
 
-            .menuButton{
+            .menuButton {
                 display: none;
                 flex-direction: column-reverse;
                 gap: 0.2rem;
 
-                :nth-child(1){
+                :nth-child(1) {
                     transform: rotate(180deg);
                 }
 
-                img{
+                img {
                     height: 8px;
                 }
 
@@ -103,5 +106,50 @@
 
 
     }
-}
 
+    .menu {
+        position: relative;
+        z-index: 6;
+        transform: translateY(-100%);
+
+        display: flex;
+        gap: 30px;
+
+        align-items: center;
+        background-color: $black;
+
+        transition: all 0.25s cubic-bezier(0.28, -0.45, 0.76, 1.42);
+
+        .filler {
+            position: absolute;
+            background-color: $black;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transform: translateY(-100%);
+        }
+
+
+        a {
+            color: $beige;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+
+            &:hover {
+                transform: rotate(1deg) scale(1.1);
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    .open {
+        opacity: 1;
+        transform: translate(0%);
+    }
+}

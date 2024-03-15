@@ -112,9 +112,11 @@
         position: absolute;
         top: 2rem;
         width: 100%;
-
-        img {
+        overflow: hidden;    
+        
+        img{
             width: 100%;
+            min-width: 1100px;
         }
     }
 
@@ -124,9 +126,11 @@
         display: flex;
         width: 100%;
         justify-content: space-between;
+        padding: 0 10%;
+
+        
 
         section {
-            margin: 0rem 4rem;
             cursor: pointer;
             width: 5.7095rem;
             height: 5.73563rem;
@@ -141,6 +145,18 @@
 
         section:hover {
             transform: scale(1.2) rotate(5deg);
+        }
+
+        @media screen and (max-width: 768px){
+            top: 100%;
+            transform: translateY(-110%);
+
+            padding: 0 2%;
+
+            section:hover{
+                transform: scale(1) rotate(5deg);
+            }
+            
         }
     }
 
@@ -158,6 +174,19 @@
         .focused {
             opacity: 100%;
             transform: scale(1.2);
+        }
+
+        @media screen and (max-width: 768px){
+            width: 100px;
+
+            img{
+                transform: scaleX(0.8);
+            }
+
+            .focused {
+                transform: scale(1);
+            }
+            
         }
 
     }
