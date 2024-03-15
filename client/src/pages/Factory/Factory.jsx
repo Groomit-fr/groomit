@@ -29,7 +29,7 @@ function factory() {
     const imgfile = data.file;
     const formData = new FormData();
 
-    if (imgfile) {
+    if (imgfile.size != 0) {
       formData.append('files', imgfile, imgfile.name);
 
       axios.post(`http://localhost:1337/api/upload`, formData).then(res => {
