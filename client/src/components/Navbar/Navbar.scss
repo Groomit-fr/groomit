@@ -33,9 +33,12 @@
 
             a {
                 color: $beige;
-                text-decoration: none;
-                font-size: 18px;
-                font-weight: 500;
+                font-family: "Helvetica";
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
                 transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
 
                 @media screen and (max-width: 768px) {
@@ -133,9 +136,12 @@
 
         a {
             color: $beige;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
+            font-family: "Helvetica";
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
             transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
 
             &:hover {

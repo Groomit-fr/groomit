@@ -47,6 +47,7 @@
                     position: relative;
                     top: 1.5rem;
                     z-index: 6;
+                    width: 150%;
                 }
             }
 
@@ -66,7 +67,6 @@
                 margin-top: 0rem;
                 z-index: 2;
                 transform: scale(0.8) translateY(-0rem) rotateY(-75deg);
-                width: 1rem;
             }
 
             .next1 {
@@ -91,7 +91,6 @@
                 margin-top: 0rem;
                 z-index: 2;
                 transform: scale(0.8) translateY(-0rem) rotateY(75deg);
-                width: 1rem;
             }
 
             .previous3 {
