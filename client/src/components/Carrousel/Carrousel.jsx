@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Carrousel.scss'
 import CardHomepage from '../CardHomepage/CardHomepage'
 
@@ -7,6 +7,78 @@ function Carrousel() {
     const carrouselWrapperElement = React.useRef(null);
     const [isScrolling, setIsScrolling] = useState(false);
     const [carrouselState, setCarrouselState] = useState(0);
+
+    let mousedown = false;
+
+    let as = false;
+
+    useEffect(() => {
+        document.getElementById('carrousel').addEventListener('mousedown', (e) => {
+            mousedown = true;
+        })
+        document.getElementById('carrousel').addEventListener('mouseup', (e) => {
+            mousedown = false;
+        })
+
+
+        document.getElementById('carrousel').addEventListener('touchmove', (e) => {
+            mousedown = true;
+            if (!as) {
+                touchStart(e);
+            }
+        })
+        document.getElementById('carrousel').addEventListener('touchend', (e) => {
+            mousedown = false;
+        })
+
+
+
+        document.getElementById('carrousel').addEventListener('mousemove', (e) => {
+            if (!as) {
+                touchStart(e);
+            }
+        })
+    })
+
+
+    let pos;
+    let mov;
+
+    function touchStart(e) {
+
+        if (mousedown) {
+
+            if (!e.clientX) {
+                mov = e.touches[0].clientX - pos;
+            } else {
+                mov = (e.clientX) - pos;
+            }
+
+
+            if (mov > 0) {
+                console.log('prev')
+                if (!isScrolling) {
+                    setIsScrolling(true);
+                    Prev();
+                    as = true;
+                }
+            } else if (mov < 0) {
+                console.log('Next')
+                if (!isScrolling) {
+                    setIsScrolling(true);
+                    Next();
+                    as = true;
+                }
+            }
+
+            if (!e.clientX) {
+                pos = e.touches[0].clientX;
+            } else {
+                pos = e.clientX;
+            }
+
+        }
+    }
 
     function updateClasses(index, removeClass, addClass) {
         carrouselWrapperElement.current.children[index].classList.remove(removeClass)
@@ -17,7 +89,12 @@ function Carrousel() {
         setIsScrolling(false)
     }
 
+
+
+
     function Next() {
+        as = true;
+
 
         if (carrouselState < 2) {
             setCarrouselState(carrouselState + 1)
@@ -67,6 +144,7 @@ function Carrousel() {
     }
 
     function Prev() {
+        as = true;
 
         if (carrouselState > 0) {
             setCarrouselState(carrouselState - 1)
@@ -126,49 +204,48 @@ function Carrousel() {
         content={<>Il vient d’où Groomit ? Il fait quoi Groomit ? <br /> Trouvez les réponses à vos questions...</>}
         buttonTitle="EN SAVOIR PLUS" buttonLink="/apropos" />;
 
-
     return (
         <>
-            <section className='carrousel'>
+            <section className='carrousel' id='carrousel'>
                 <section className='carrouselPole'>
-                    <img src="/svg/Carrousel/pole.svg" alt="" />
+                    <img src="/svg/Carrousel/pole.svg" draggable="false" alt="" />
                 </section>
                 <section className='carrouselContainer'>
                     <section className='carrouselWrapper' ref={carrouselWrapperElement}>
                         <div className='carrouselElement previous4'>
-                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            <img className="hanger" draggable="false" src="/svg/Carrousel/hanger.svg" />
                             {aPropos}
                         </div>
                         <div className='carrouselElement previous3'>
-                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            <img className="hanger" draggable="false" src="/svg/Carrousel/hanger.svg" />
                             {boutiqueGroomit}
                         </div>
                         <div className='carrouselElement previous2'>
-                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            <img className="hanger" draggable="false" src="/svg/Carrousel/hanger.svg" />
                             {groomitFactory}
                         </div>
                         <div className='carrouselElement previous1'>
-                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            <img className="hanger" draggable="false" src="/svg/Carrousel/hanger.svg" />
                             {aPropos}
                         </div>
                         <div className='carrouselElement current'>
-                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            <img className="hanger" draggable="false" src="/svg/Carrousel/hanger.svg" />
                             {boutiqueGroomit}
                         </div>
                         <div className='carrouselElement next1'>
-                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            <img className="hanger" draggable="false" src="/svg/Carrousel/hanger.svg" />
                             {groomitFactory}
                         </div>
                         <div className='carrouselElement next2'>
-                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            <img className="hanger" draggable="false" src="/svg/Carrousel/hanger.svg" />
                             {aPropos}
                         </div>
                         <div className='carrouselElement next3'>
-                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            <img className="hanger" draggable="false" src="/svg/Carrousel/hanger.svg" />
                             {boutiqueGroomit}
                         </div>
                         <div className='carrouselElement next4'>
-                            <img className="hanger" src="/svg/Carrousel/hanger.svg" />
+                            <img className="hanger" draggable="false" src="/svg/Carrousel/hanger.svg" />
                             {groomitFactory}
                         </div>
                     </section>

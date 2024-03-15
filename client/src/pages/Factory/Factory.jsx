@@ -48,12 +48,12 @@ function factory() {
           message.current.innerHTML = 'Email envoyé, Groomit reviendra bientôt vers vous !';
         }).catch(error => {
           console.log(error.message);
-          message.current.innerHTML = 'Erreur lors de l\'envoi de l\'email, veuillez réessayer plus tard.';
+          message.current.innerHTML = 'Erreur lors de l\'envoi de l\'email, veuillez réessayer plus tard. 1';
         });
 
       }).catch(error => {
         console.log(error.message);
-        message.current.innerHTML = 'Erreur lors de l\'envoi de l\'email, veuillez réessayer plus tard.';
+        message.current.innerHTML = 'Erreur lors de l\'envoi de l\'email, veuillez réessayer plus tard. 2';
 
       });
     } else {
@@ -70,7 +70,7 @@ function factory() {
         message.current.innerHTML = 'Email envoyé, Groomit reviendra bientôt vers vous !';
       }).catch(error => {
         console.log(error.message);
-        message.current.innerHTML = 'Erreur lors de l\'envoi de l\'email, veuillez réessayer plus tard.';
+        message.current.innerHTML = 'Erreur lors de l\'envoi de l\'email, veuillez réessayer plus tard. 3';
       });
     }
   };

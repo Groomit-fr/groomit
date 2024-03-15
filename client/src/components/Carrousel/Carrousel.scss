@@ -2,6 +2,12 @@
 @import "../../stylesheet/variables";
 
 .carrousel {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+
     position: relative;
     width: 100%;
     display: flex;
@@ -126,22 +132,21 @@
             height: 5.73563rem;
             flex-shrink: 0;
             transform: scale(1) rotate(0deg);
-            transition: transform  0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+            transition: transform 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
         }
 
         section:first-child {
             rotate: 180deg;
         }
 
-        section:hover{
+        section:hover {
             transform: scale(1.2) rotate(5deg);
         }
     }
 
     .indicators {
         display: flex;
-        max-width: 200px;
-        width: 15%;
+        width: 200px;
         justify-content: space-evenly;
 
         img {

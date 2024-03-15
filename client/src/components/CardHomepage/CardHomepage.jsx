@@ -13,21 +13,21 @@ function CardHomepage(props) {
     return (
 
         <section className='cardHomepage'>
-            <img src="/svg/CardHomePage/cardHomepageLeft.svg"></img>
+            <img src="/svg/CardHomePage/cardHomepageLeft.svg" draggable="false"></img>
             <section className='cardWrapper'>
-                <img className="top" src="/svg/CardHomePage/cardHomepageTop.svg"></img>
+                <img className="top" src="/svg/CardHomePage/cardHomepageTop.svg" draggable="false"></img>
                 <section className='cardContent'>
                     <h2 className='title'>{title}</h2>
-                    <img className='cardContentImg' src={illustration} />
+                    <img className='cardContentImg' draggable="false" src={illustration} />
                     <h4 className='textContent'>{content}</h4>
                     <section className='cardButton'>
                         <PrimaryButton title={buttonTitle} link={buttonLink}/>
                     </section>
 
                 </section>
-                <img className="bottom" src="/svg/CardHomePage/cardHomepageBottom.svg"></img>
+                <img className="bottom" src="/svg/CardHomePage/cardHomepageBottom.svg" draggable="false"></img>
             </section>
-            <img src="/svg/CardHomePage/cardHomepageRight.svg"></img>
+            <img src="/svg/CardHomePage/cardHomepageRight.svg" draggable="false"></img>
         </section>
 
 
