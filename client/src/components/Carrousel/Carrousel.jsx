@@ -56,14 +56,12 @@ function Carrousel() {
 
 
             if (mov > 0) {
-                console.log('prev')
                 if (!isScrolling) {
                     setIsScrolling(true);
                     Prev();
                     as = true;
                 }
             } else if (mov < 0) {
-                console.log('Next')
                 if (!isScrolling) {
                     setIsScrolling(true);
                     Next();
