@@ -27,6 +27,8 @@
             display: flex;
             gap: 30px;
 
+            align-items: center;
+
             a {
                 color: $beige;
                 text-decoration: none;
@@ -34,12 +36,17 @@
                 font-weight: 500;
                 transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
 
+                @media screen and (max-width: 768px) {
+                    display: none;
+                }
+
                 &:hover {
                     transform: rotate(1deg) scale(1.1);
                 }
             }
 
             .item-cart {
+                display: block;
                 position: relative;
                 cursor: pointer;
                 transform: scale(1) rotate(0);
@@ -72,6 +79,24 @@
                 transform: rotate(1deg) scale(1.1);
                 .item-count{
                     transform: scale(1.2);
+                }
+            }
+
+            .menuButton{
+                display: none;
+                flex-direction: column-reverse;
+                gap: 0.2rem;
+
+                :nth-child(1){
+                    transform: rotate(180deg);
+                }
+
+                img{
+                    height: 8px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    display: flex;
                 }
             }
         }

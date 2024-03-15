@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
+import Menu from "../Menu/Menu";
 
 const Navbar = () => {
 
-    const [open, setOpen] = useState(false);
+    const [openCart, setOpenCart] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false)
 
     const products = useSelector(state => state.cart.products);
 
@@ -15,10 +17,9 @@ const Navbar = () => {
     const ref = useRef(null);
 
     useEffect(() => {
-        function handleClickOutside(event) {    
-            console.log(event.target.parentNode.className);   
-            if(!event.target.parentNode.className.includes("cart") && !event.target.parentNode.className.includes("button")) {
-                setOpen(false);
+        function handleClickOutside(event) {
+            if (!event.target.parentNode.className.includes("cart") && !event.target.parentNode.className.includes("button")) {
+                setOpenCart(false);
             }
         }
 
@@ -41,16 +42,24 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="right">
+
                     <Link to="/products" className="item">PRODUITS</Link>
                     <Link to="/factory" className="item">GROOMIT FACTORY</Link>
                     <Link to="/apropos" className="item">À PROPOS</Link>
-                    <div ref={ref} className="item item-cart" onClick={() => setOpen(!open)}>
+
+                    <div ref={ref} className="item item-cart" onClick={() => setOpenCart(!openCart)}>
                         <img src="/img/cart.svg" alt="" />
                         <span className="item-count">{quantity}</span>
                     </div>
+                    <section className="menuButton" onClick={() => setOpenMenu(!openMenu)}>
+                        <img src="/svg/Navbar/indicator.svg" alt="" />
+                        <img src="/svg/Navbar/indicator.svg" alt="" />
+                        <img src="/svg/Navbar/indicator.svg" alt="" />
+                    </section>
                 </div>
             </div>
-            {open && <Cart />}
+            {openCart && <Cart />}
+            {openMenu && <Menu />}
         </div>
     )
 }
