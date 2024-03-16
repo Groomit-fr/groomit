@@ -18,6 +18,11 @@
         .top_items{
             display: flex;
             justify-content: space-between;
+
+            @media screen and (max-width: 768px) {
+                gap: 1rem;
+                flex-direction: column;            
+}
             
             .link_items{
                 
@@ -45,6 +50,10 @@
             display: flex;
             justify-content: space-between;
             
+            @media screen and (max-width: 768px) {
+                gap: 2rem;
+                flex-direction: column;    
+            }
             a{
                 transition: all 0.2s ease-in;
                 text-decoration: transparent;
