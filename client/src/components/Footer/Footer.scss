@@ -5,5 +5,53 @@
     height: 34rem;
     background-color: $black;
 
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+
+    color: white;
+    .wrapper{
+        padding: 2.5rem 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        .top_items{
+            display: flex;
+            justify-content: space-between;
+            
+            .link_items{
+                
+                display: flex;
+                justify-content: space-between;
+                gap: 3rem;
+
+                .homepage{
+                    font-family: 'Gloria', 'Arial Narrow', Arial, sans-serif;
+                    font-size: 24px;
+   
+                    background: bottom left no-repeat url("/svg/Footer/underline.svg");
+                    }
+
+                .link_items_right, .link_items_left{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                }
+            }
+
+        }
+
+        .bottom_items{
+            display: flex;
+            justify-content: space-between;
+            
+            a{
+                transition: all 0.2s ease-in;
+                text-decoration: transparent;
+            }
+            a:hover{ 
+                text-decoration: underline;
+            }
+        }
+    }
 }
