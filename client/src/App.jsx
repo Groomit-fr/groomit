@@ -14,6 +14,9 @@ import Apropos from "./pages/Apropos/Apropos";
 import Factory from "./pages/Factory/Factory";
 import SuccessOrder from "./pages/SuccessOrder/SuccessOrder";
 import CancelOrder from "./pages/CancelOrder/CancelOrder";
+import LegalNotice from "./pages/LegalNotice/LegalNotice";
+import CGV from "./pages/CGV/CGV";
+
 
 const Layout = () => {
     return (
@@ -56,6 +59,14 @@ const router = createBrowserRouter([
     {
       path:"/cancelOrder",
       element:  <CancelOrder/>
+    },
+    {
+      path:"/cgv",
+      element:  <CGV/>
+    },
+    {
+      path:"/legalNotice",
+      element:  <LegalNotice/>
     }
   ]
   },
