@@ -4,13 +4,36 @@ import './Factory.scss'
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton'
 import { makeRequest } from '../../makeRequest'
 import axios from 'axios'
+import emailjs from '@emailjs/browser';
+
 
 function factory() {
+
 
   const form = useRef();
   const message = useRef();
 
+  const sendEmailGrommit = () => {
 
+    var templateParams = {
+      name: 'James',
+      notes: 'Check this out!',
+    };
+
+    emailjs
+    .send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, templateParams, {
+      publicKey: import.meta.env.VITE_PUBLIC_KEY,
+    })
+    .then(
+      () => {
+        console.log('SUCCESS!');
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+      },
+    );
+
+}
   const sendEmail = async (e) => {
 
     e.preventDefault();
@@ -45,6 +68,7 @@ function factory() {
 
         }).then(response => {
           console.log(response);
+          // sendEmailGrommit();
           message.current.innerHTML = 'Email envoyé, Groomit reviendra bientôt vers vous !';
         }).catch(error => {
           console.log(error.message);
@@ -68,6 +92,7 @@ function factory() {
       }).then(response => {
         console.log(response);
         message.current.innerHTML = 'Email envoyé, Groomit reviendra bientôt vers vous !';
+        sendEmailGrommit();
       }).catch(error => {
         console.log(error.message);
         message.current.innerHTML = 'Erreur lors de l\'envoi de l\'email, veuillez réessayer plus tard. 3';
