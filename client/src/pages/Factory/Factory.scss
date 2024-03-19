@@ -9,7 +9,7 @@
             display: inline-flex;
             flex-direction: column;
             gap: 2.25rem;
-            margin-left: 10%;
+            margin: 0 5%;
 
             h1 {
                 font-size: 2.5rem;
@@ -46,6 +46,39 @@
                 z-index: 1;
             }
 
+        }
+
+        @media screen and (max-width: 768px) {
+            
+            display: flex;
+            flex-direction: column-reverse;
+            margin-top: 0rem;
+
+            &__text{
+                gap: 1rem;
+                margin: 0 5%;
+                align-items: center;
+
+                h1{
+                    font-size: 2rem;
+                    text-align: center;
+                }
+
+                p{
+                    width: 90%;
+                }
+            }
+
+            &__illu{
+                position: relative;
+                height: 315px;
+
+                &__shirt{
+                    right: 50%;
+                    transform: translateX(50%);
+                }
+            }
+            
         }
     }
 
@@ -177,5 +210,18 @@
 
             margin-bottom: 8rem;
         }
+
+        @media screen and (max-width: 768px) {
+            margin-top: 5rem;
+
+            &__input{
+                &__file{
+                    input{
+                        width: 100px;
+                    }
+                }
+            }
+        }
+
     }
 }

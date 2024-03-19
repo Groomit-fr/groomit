@@ -84,6 +84,9 @@ function factory() {
             Imaginez un t-shirt.... Il est doux... Il est confortable, il est fait avec les matières premières Groomit,
             la qualité Groomit, et tout le savoir faire de Groomit. Il ne manque plus qu’un détail pour qu’il soit parfait : un peu de vous... <br />
             Personnalisez vos t-shirts et hoodies en envoyant votre idée à Groomit à l’aide du formulaire ci-dessous.
+            <br />
+            <br />
+            Vous pouvez aussi contacter groomit au 00.00.00.00.00
           </p>
         </section>
         <section className='factory__top__illu'>
