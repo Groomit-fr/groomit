@@ -121,6 +121,15 @@
                     transform: scale(1.2) rotate(10deg);
                 }
             }
+
+            @media screen and (max-width: 768px) {
+                gap: unset;
+
+                &__details {
+                    margin-right: 0;
+
+                }
+            }
         }
 
         &__emptyCart {
