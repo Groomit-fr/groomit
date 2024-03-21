@@ -22,6 +22,7 @@
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
     "stripe": "^14.10.0",
+    "swiper": "^11.0.7",
     "vite-plugin-require": "^1.1.11"
   },
   "devDependencies": {

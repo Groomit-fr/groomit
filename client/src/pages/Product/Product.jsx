@@ -6,6 +6,11 @@ import { addToCart } from "../../redux/cartReducer";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 
 const Product = () => {
@@ -28,7 +33,7 @@ const Product = () => {
 
     useEffect(() => {
         sizeM.current.classList.add("active");
-        if(data){
+        if (data) {
             if (size === "S") {
                 sizeS.current.classList.add("active");
                 sizeM.current.classList.remove("active");
@@ -51,24 +56,53 @@ const Product = () => {
                 sizeXL.current.classList.add("active");
             }
         }
-        
+
     }, [size]);
 
 
 
     return (
         <div className="product">
+
             <h1 className="product__title">{data?.attributes.title}</h1>
-            <div className="product__image">
+            <Swiper slidesPerView={"auto"} spaceBetween={0} slidesPerGroupAuto={true}
+
+                breakpoints={{
+                    // when window width is >= 480px
+                    375: {
+                        slidesPerView: 1,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    // when window width is >= 640px
+                    864: {
+                        slidesPerView: 3,
+                    },
+
+                    1250: {
+                        slidesPerView: 4,
+                    }
+                }}
+
+                pagination={{
+                    clickable: true,
+                    type: "progressbar"
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+            >
                 {data?.attributes.image.data.map((image, index) => {
                     return (
-                        <section key={index} className="product__image__wrapper">
-                            <img key={index} src={import.meta.env.VITE_UPLOAD_URL + image.attributes.url} alt="T-Shirt Blanc" />
-                        </section>
+                        <SwiperSlide key={index} >
+                            <section key={index} className="product__image__wrapper">
+                                <img key={index} src={import.meta.env.VITE_UPLOAD_URL + image.attributes.url} alt="T-Shirt Blanc" />
+                            </section>
+                        </SwiperSlide>
                     )
                 })}
-            </div>
 
+            </Swiper>
             <div className="product__selectionBar">
 
                 <section className="product__selectionBar__size">

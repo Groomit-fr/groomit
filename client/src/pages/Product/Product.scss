@@ -10,6 +10,10 @@
         font-weight: 400;
         line-height: normal;
         margin: 1rem 0rem;
+
+        @media screen and (max-width: 768px) {
+            font-size: 2rem;
+        }
     }
 
     &__image {
@@ -24,6 +28,7 @@
             width: 18.125rem;
             height: 24.375rem;
             flex-shrink: 0;
+            margin: 1rem 0;
 
             background-image: url("/svg/Product/photoBackground.svg");
             background-repeat: no-repeat;
@@ -41,6 +46,7 @@
                 transform: translateX(-50%) translateY(-50%);
             }
         }
+
 
     }
 
@@ -116,18 +122,33 @@
                 font-family: "Gloria";
             }
         }
+
+        @media screen and (max-width: 768px) {
+            padding: 0 1rem;
+            flex-direction: column;
+
+            &__size {
+                transform: unset;
+                position: unset;
+                justify-content: center;
+            }
+
+            &__right {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
     }
 
     &__description {
         position: relative;
         display: flex;
-        padding: 0rem 4rem;
+        padding: 0rem 5%;
         align-items: center;
         margin: 5rem 0rem;
-        justify-content: center;
-        gap: 6rem;
+        justify-content: space-around;
+        gap: 10%;
         row-gap: 2rem;
-        flex-wrap: wrap;
 
         &__rope {
             position: absolute;
@@ -186,6 +207,10 @@
         }
 
         &__text {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+
             p {
                 max-width: 39rem;
             }
@@ -194,16 +219,59 @@
                 display: flex;
                 align-items: center;
                 gap: 1.3rem;
-                margin-top: 3rem;
+            }
+        }
 
+        @media screen and (max-width: 650px) {
+            flex-direction: column;
+            align-items: unset;
+        }
+
+        @media screen and (max-width: 768px) {
+
+
+            &__rope {
+                display: none;
+            }
+
+
+            
+            &__tshirt {
+                &__arrows {
+                    display: none;
+                }
+
+                &__illustration {
+                    display: none;
+                }
+
+                &__infos {
+                    list-style: auto;
+                    margin-left: 1.5rem;
+                }
             }
         }
     }
+
+
+
+
+
 
     .active {
         :before {
             opacity: 1;
             transform: translateX(-50%) translateY(-50%) scale(1);
         }
+    }
+
+    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        background-color: $black;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
