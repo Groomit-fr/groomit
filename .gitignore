@@ -16,3 +16,5 @@ Icon
 .Spotlight-V100
 .Trashes
 ._*
+# Local Netlify folder
+.netlify
