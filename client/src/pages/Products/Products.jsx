@@ -56,7 +56,7 @@ const Products = () => {
 
                 return (
                     <div ref={ref} className="products__banner__filter__item" key={index} onClick={() => setClickedCategory(category.attributes.title)}>
-                        <img src={import.meta.env.VITE_UPLOAD_URL + category.attributes.image.data.attributes.url} alt="Dessin t-shirt" />
+                        <img src={category.attributes.image.data.attributes.url} alt="Dessin t-shirt" />
                         <p>{category.attributes.title}</p>
                     </div>
                 )

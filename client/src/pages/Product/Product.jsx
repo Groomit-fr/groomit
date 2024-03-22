@@ -96,7 +96,7 @@ const Product = () => {
                     return (
                         <SwiperSlide key={index} >
                             <section key={index} className="product__image__wrapper">
-                                <img key={index} src={import.meta.env.VITE_UPLOAD_URL + image.attributes.url} alt="T-Shirt Blanc" />
+                                <img key={index} src={image.attributes.url} alt="T-Shirt Blanc" />
                             </section>
                         </SwiperSlide>
                     )
