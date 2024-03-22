@@ -32,7 +32,7 @@ function factory() {
     if (imgfile.size != 0) {
       formData.append('files', imgfile, imgfile.name);
 
-      axios.post(`http://localhost:1337/api/upload`, formData).then(res => {
+      axios.post(import.meta.env.VITE_API_URL + "/upload", formData).then(res => {
         imgId = res.data[0].id;
 
         const resForm = makeRequest.post('/quote-requests', {
