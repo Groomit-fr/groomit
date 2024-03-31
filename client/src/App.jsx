@@ -2,7 +2,8 @@ import {
   createBrowserRouter,
   RouterProvider,
   Route,
-  Outlet
+  Outlet,
+  Navigate
 } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
@@ -19,61 +20,67 @@ import CGV from "./pages/CGV/CGV";
 
 
 const Layout = () => {
-    return (
-        <div className="app">
-            <Navbar/>
-            <Outlet/>
-            <Footer/>
-        </div>
-    )
+  return (
+    <div className="app">
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </div>
+  )
 }
 
 const router = createBrowserRouter([
-  { path: "/",
-  element: <Layout/>,
-  children: [
-    {
-      path:"/",
-      element: <Home/>
-    },
-    {
-      path:"/product/:id",
-      element: <Product/>
-    },
-    {
-      path:"/products",
-      element: <Products/>
-    },
-    {
-      path:"/apropos",
-      element: <Apropos/>
-    },
-    {
-      path:"/factory",
-      element: <Factory/>
-    },
-    {
-      path:"/successOrder",
-      element:  <SuccessOrder/>
-    },
-    {
-      path:"/cancelOrder",
-      element:  <CancelOrder/>
-    },
-    {
-      path:"/cgv",
-      element:  <CGV/>
-    },
-    {
-      path:"/legalNotice",
-      element:  <LegalNotice/>
-    }
-  ]
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/product/:id",
+        element: <Product />
+      },
+      {
+        path: "/products",
+        element: <Products />
+      },
+      {
+        path: "/apropos",
+        element: <Apropos />
+      },
+      {
+        path: "/factory",
+        element: <Factory />
+      },
+      {
+        path: "/successOrder",
+        element: <SuccessOrder />
+      },
+      {
+        path: "/cancelOrder",
+        element: <CancelOrder />
+      },
+      {
+        path: "/cgv",
+        element: <CGV />
+      },
+      {
+        path: "/legalNotice",
+        element: <LegalNotice />
+      },
+
+      {
+        path: "*",
+        element: <Navigate to="/" />
+      }
+    ]
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router}/>
+  return <RouterProvider router={router} />
 }
 
 export default App;
