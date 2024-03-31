@@ -16,6 +16,7 @@ const Cart = () => {
     const totalPrice = products.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
 
     const stripePromise = loadStripe("pk_test_51OC0WbDKjeptmAsJhwQoIjyrHCkGyojtJCptfifphvDKxRUESqQB1KutMu3DgCCtxs38MeaRnCK2apt3Jon5kI9O00D538zjbH");
+    console.log(stripePromise);
 
     const handlePayment = async () => {
         try {
