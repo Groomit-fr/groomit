@@ -8,7 +8,6 @@ import useFetch from "../../hooks/useFetch";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-
 import 'swiper/css'
 import 'swiper/css/pagination'
 
@@ -31,9 +30,12 @@ const Product = () => {
 
 
 
+
     useEffect(() => {
-        sizeM.current.classList.add("active");
+
+
         if (data) {
+
             if (size === "S") {
                 sizeS.current.classList.add("active");
                 sizeM.current.classList.remove("active");
@@ -61,8 +63,19 @@ const Product = () => {
 
 
 
+    if (!data) return (
+        <>
+            <div className="error">
+                <h1> Oops, il semblerait que ce produit n'existe pas... </h1>
+                <h3> Si cette erreur persite, veuillez contacter Groomit. </h3>
+                <PrimaryButton title="Retourner à la page d'accueil" link="/" />
+            </div>
+
+        </>
+    );
     return (
         <div className="product">
+
 
             <h1 className="product__title">{data?.attributes.title}</h1>
             <Swiper slidesPerView={"auto"} spaceBetween={0} slidesPerGroupAuto={true}
@@ -109,7 +122,7 @@ const Product = () => {
                     <section ref={sizeS} className="product__selectionBar__size__item" onClick={() => setSize("S")}>
                         <p>S</p>
                     </section>
-                    <section ref={sizeM} className="product__selectionBar__size__item" onClick={() => setSize("M")} >
+                    <section ref={sizeM} className="product__selectionBar__size__item active" onClick={() => setSize("M")} >
                         <p>M</p>
                     </section>
                     <section ref={sizeL} className="product__selectionBar__size__item" onClick={() => setSize("L")}>
@@ -174,9 +187,9 @@ const Product = () => {
                 </section>
             </section>
 
-
         </div>
     )
+
 }
 
 export default Product;
