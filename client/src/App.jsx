@@ -17,6 +17,7 @@ import SuccessOrder from "./pages/SuccessOrder/SuccessOrder";
 import CancelOrder from "./pages/CancelOrder/CancelOrder";
 import LegalNotice from "./pages/LegalNotice/LegalNotice";
 import CGV from "./pages/CGV/CGV";
+import NotFound from "./pages/NotFound/NotFound";
 
 
 const Layout = () => {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "/legalNotice",
         element: <LegalNotice />
+      },
+      {
+        path: "*",
+        element: <NotFound />
       }
     ]
   },

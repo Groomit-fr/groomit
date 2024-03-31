@@ -3,6 +3,9 @@
 .navbar {
     height: 80px;
     background-color: $black;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 
     .wrapper {
         position: relative;
@@ -111,6 +114,9 @@
     }
 
     .menu {
+        text-align: center;
+        padding: 0.8rem 1rem;
+        
         position: relative;
         z-index: 6;
         transform: translateY(-100%);

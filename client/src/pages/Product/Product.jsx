@@ -67,7 +67,7 @@ const Product = () => {
         <>
             <div className="error">
                 <h1> Oops, il semblerait que ce produit n'existe pas... </h1>
-                <h3> Si cette erreur persite, veuillez contacter Groomit. </h3>
+                <p> Si cette erreur persite, veuillez contacter Groomit. </p>
                 <PrimaryButton title="Retourner à la page d'accueil" link="/" />
             </div>
 
