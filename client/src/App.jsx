@@ -69,11 +69,6 @@ const router = createBrowserRouter([
       {
         path: "/legalNotice",
         element: <LegalNotice />
-      },
-
-      {
-        path: "*",
-        element: <Navigate to="/" />
       }
     ]
   },
