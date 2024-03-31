@@ -60,9 +60,9 @@ const Navbar = () => {
             {openCart && <Cart />}
             <section className={(openMenu ? "menu open" : "menu")}>
                 <section className="filler"></section>
-                <Link to="/products" className="item">PRODUITS</Link>
-                <Link to="/factory" className="item">GROOMIT FACTORY</Link>
-                <Link to="/apropos" className="item">À PROPOS</Link>
+                <Link href="/products" as="/products" className="item">PRODUITS</Link>
+                <Link href="/factory" className="item">GROOMIT FACTORY</Link>
+                <Link href="/apropos" className="item">À PROPOS</Link>
             </section>
         </div>
     )
