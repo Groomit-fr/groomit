@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css'
 import 'swiper/css/pagination'
+import Error from "../../components/Error/Error";
 
 
 const Product = () => {
@@ -62,14 +63,7 @@ const Product = () => {
     }, [size]);
 
     if (!data) return (
-        <>
-            <div className="error">
-                <h1> Oops, il semblerait que ce produit n'existe pas... </h1>
-                <p> Si cette erreur persite, veuillez contacter Groomit. </p>
-                <PrimaryButton title="Retourner à la page d'accueil" link="/" />
-            </div>
-
-        </>
+        <Error title="Oops, il semblerait que cette page n'existe pas..." content="Si cette erreur persite, veuillez contacter Groomit." button="Retourner à la page d'accueil" link="/" />
     );
     return (
         <div className="product">

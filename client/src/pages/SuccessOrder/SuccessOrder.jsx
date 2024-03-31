@@ -5,6 +5,7 @@ import { resetCart } from "../../redux/cartReducer";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import Error from "../../components/Error/Error";
 
 
 const SuccessOrder = () => {
@@ -14,12 +15,7 @@ const SuccessOrder = () => {
     dispach(resetCart())
 
     return (
-        <div>
-            
-            <p>Commande validée</p>
-
-            <PrimaryButton link={`/`} title="Retour à l'accueil" />
-        </div>
+        <Error title="Votre commande a bien été enregistrée !" content="Vous recevrez un email de confirmation dans quelques instants." button="Retourner à la page d'accueil" link="/" />
     )
 }
 

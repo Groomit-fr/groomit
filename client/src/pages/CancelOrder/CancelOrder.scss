@@ -1,0 +1,24 @@
+@import "../../main.scss";
+
+.cancelOrder {
+    .error {
+        margin-bottom: 1rem;
+    }
+
+    .retry {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .back {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25vh;
+    }
+
+}

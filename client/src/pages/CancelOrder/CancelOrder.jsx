@@ -5,9 +5,11 @@ import { resetCart } from "../../redux/cartReducer";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import Error from "../../components/Error/Error";
 import { loadStripe } from "@stripe/stripe-js";
 import { makeRequest } from "../../makeRequest";
 import { useSelector } from "react-redux";
+import './CancelOrder.scss';
 
 
 
@@ -32,7 +34,7 @@ const CancelOrder = () => {
                 }))
             });
             await stripe.redirectToCheckout({
-                sessionId: res.data.stripeSession.id             ,
+                sessionId: res.data.stripeSession.id,
             });
         }
         catch (error) {
@@ -42,13 +44,16 @@ const CancelOrder = () => {
 
 
     return (
-        <div>
-            
-            <p>Commande annulée</p>
-
-            <button onClick={handlePayment}>Ressayer</button>
-            
+        <div className="cancelOrder">
+            <Error title="Votre commande a été annulée." content="Êtes vous sûr de vouloir annuler votre commande ?" />
+            <div onClick={handlePayment} className="retry">
+                <PrimaryButton title="Réessayer" type="function" />
+            </div>
+            <div className="back">
+                <PrimaryButton title="Retourner à la boutique" link="/products" />
+            </div>
         </div>
+
     )
 }
 
