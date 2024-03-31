@@ -20,7 +20,6 @@ const Navbar = () => {
             if (!event.target.parentNode.className.includes("cart") && !event.target.parentNode.className.includes("button")) {
                 setOpenCart(false);
             }
-            console.log(event.target.parentNode.className);
             if (event.target.parentNode.className.includes("open")) {
                 setTimeout(() => {
                 setOpenMenu(false);

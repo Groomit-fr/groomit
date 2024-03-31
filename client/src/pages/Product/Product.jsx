@@ -61,8 +61,6 @@ const Product = () => {
 
     }, [size]);
 
-
-
     if (!data) return (
         <>
             <div className="error">
@@ -78,7 +76,7 @@ const Product = () => {
 
 
             <h1 className="product__title">{data?.attributes.title}</h1>
-            <Swiper slidesPerView={"auto"} spaceBetween={0} slidesPerGroupAuto={true}
+            <Swiper  spaceBetween={0} centerInsufficientSlides={true}
 
                 breakpoints={{
                     // when window width is >= 480px
@@ -92,9 +90,8 @@ const Product = () => {
                     864: {
                         slidesPerView: 3,
                     },
-
                     1250: {
-                        slidesPerView: 4,
+                        slidesPerView: 4
                     }
                 }}
 
