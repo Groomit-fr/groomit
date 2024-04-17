@@ -17,6 +17,11 @@
     width: 165%;
     justify-content: center;
 
+    @media screen and (max-width: 700px){
+        width: 20rem;
+        
+    }
+
 
     .cardContent {
 
@@ -59,6 +64,25 @@
 
         .cardButton {
             margin-top: 1rem;
+        }
+
+        @media screen and (max-width: 700px){
+            height: 25rem;
+            justify-content: space-around;
+
+            .title {
+                font-size: 1.25rem;
+            }
+
+            .cardContentImg {
+                width: 19rem;
+            }
+
+            .textContent {
+                width: 85%;
+                font-size: 1rem;
+            }
+            
         }
     }
 

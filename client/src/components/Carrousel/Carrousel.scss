@@ -16,6 +16,10 @@
     margin-top: 2rem;
     height: 40rem;
 
+    @media screen and (max-width: 700px){
+        margin-top: 0;        
+    }
+
     .carrouselContainer {
         width: 100%;
         overflow: hidden;
@@ -42,12 +46,27 @@
                 transform-origin: top center;
                 width: 25rem;
 
+                @media screen and (max-width: 700px){
+                    top: 0.75rem;
+                    width: 10rem;
+                    
+                }
+                
+
 
                 .hanger {
                     position: relative;
                     top: 1.5rem;
                     z-index: 6;
                     width: 150%;
+                }
+
+                @media screen and (max-width: 700px){
+                    .hanger{
+                        top: 1rem;
+                        width: 20rem;
+                    }
+                    
                 }
             }
 
