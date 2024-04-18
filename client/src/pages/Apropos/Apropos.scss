@@ -314,11 +314,14 @@
 
     .right {
         flex-direction: row-reverse;
+
+        @media screen and (max-width: 768px){
+            flex-direction: column-reverse;
+            
+        }
     }
 
 
 
-    .apropos__body__item {
-        align-items: flex-end;
-    }
+    
 }

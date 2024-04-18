@@ -81,12 +81,12 @@ function factory() {
         <section className='factory__top__text'>
           <h1>Groomit Factory</h1>
           <p>
-            Imaginez un t-shirt.... Il est doux... Il est confortable, il est fait avec les matières premières Groomit,
+            Imaginez un t-shirt.... Il est doux... Il est confortable, il est fait avec
             la qualité Groomit, et tout le savoir faire de Groomit. Il ne manque plus qu’un détail pour qu’il soit parfait : un peu de vous... <br />
             Personnalisez vos t-shirts et hoodies en envoyant votre idée à Groomit à l’aide du formulaire ci-dessous.
             <br />
             <br />
-            Vous pouvez aussi contacter groomit au 00.00.00.00.00
+            Vous pouvez aussi contacter groomit au 06.26.66.30.73
           </p>
         </section>
         <section className='factory__top__illu'>
@@ -94,6 +94,8 @@ function factory() {
           <img className='factory__top__illu__rope' src="/svg/List/rope.svg" alt="" />
         </section>
       </section>
+      
+
       <form className='factory__form' ref={form} onSubmit={sendEmail}>
         <section className='factory__form__input'>
           <label htmlFor="name">Nom - Prénom</label>

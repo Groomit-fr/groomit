@@ -43,22 +43,23 @@ function Apropos() {
             <img src="/img/apropos/groomitPic.png" alt="" className='apropos__body__item__illu__first' />
           </section>
         </section>
+        <img className="apropos__body__rope" src="/svg/List/rope.svg" alt="" />
         <section className='apropos__body__item right'>
           <section className='apropos__body__item__text' id='Quoi'>
             <h3>
               C’est quoi Groomit ?
             </h3>
             <p>
-              Groomit, c’est une marque de vêtements faits à la main, à deux mains même.
+              Groomit, c’est une marque de vêtements fait à la main, à deux mains même.
               C’est des t-shirts et hoodies créés avec passion dans un atelier à taille humaine où règne la bonne humeur, et aussi les petites blagues qui font sourire.
               Tout ça dans le respect de l’environnement, des petits chemins qui sentent la noisette et des petits oiseaux qui font toujours du bruit quand il ne faut pas... en tout cas il fait tout pour.
               <br />
               <br />
-              Finalement, Groomit c’est un peu tout ça, et un peu tout le reste, c’est mettre les deux mains à la pâte pour faire des vêtements de qualité, ne mettre qu’un seul pied dans le système, et retourner à l’essentiel.
+              Finalement, Groomit c’est un peu tout ça, et un peu tout le reste, c’est mettre les deux mains à la pâte pour faire des vêtements de qualité, ne mettre qu’un seul pied dans le système, et retrouver l’essentiel.
             </p>
           </section>
           <section className='apropos__body__item__illu'>
-
+            <img src="/img/apropos/groomitPic2.png" alt="" className='apropos__body__item__illu__first' />
           </section>
         </section>
         <section className='apropos__body__techs' id='Tech'>
@@ -71,9 +72,9 @@ function Apropos() {
                 <img src="svg/apropos/dot.svg" alt="" />
               </h4>
               <p>
-                Le flockage est une technique qui consiste à découper une matière appelée le flex (aspect lisse)  ou flock (aspect velours) , à l'aide d'un plotter de découpe.
-                Le flex est une matière thermocollante qui se présente sous forme de rouleaux. <br />
-                Une fois découpé, à l'aide du plotter de découpe, le flex est ensuite thermocollé sur le support textile (tee-shirt) à l'aide d'une Presse à Textile (presse à chaud). <br />
+                Le flocage est une technique de marquage par transfert thermique. Le visuel découpé est
+                thermocollé à haute température sur le textile. <br /> Le Flex peut avoir différents aspects : velours, lisse,
+                fluo, pailleté, phospho, etc… Tout type de textile peut être floqué.<br />
                 <br />
                 Parfait pour les petites quantités.
               </p>
@@ -91,6 +92,22 @@ function Apropos() {
                 La sérigraphie textile est une technique d'impression directe, reconnue pour sa capacité à transférer de l'encre directement sur le textile via un écran ou pochoir. Cette méthode unique permet à l'encre, une fois chauffée, de se fondre avec la fibre textile sans la détériorer.
                 <br /> <br />
                 Parfaite pour les grandes séries.
+              </p>
+            </section>
+            <section className='apropos__body__techs__item__illu'>
+              <img src="/svg/apropos/serigraphie.svg" alt="" />
+            </section>
+          </section>
+          <section className='apropos__body__techs__item'>
+            <section className='apropos__body__techs__item__text'>
+              <h4> L'impréssion numérique
+                <img src="svg/apropos/dot.svg" alt="" />
+              </h4>
+              <p>
+                L’impression est faite par une imprimante sur un film de transfert qui sera ensuite thermocollé sur le
+                textile. Cette technique permet de réaliser tout type de visuel sans limite de couleur en respectant
+                les contrastes et les dégradés.                <br /> <br />
+                Parfait pour les petites à moyennes séries.
               </p>
             </section>
             <section className='apropos__body__techs__item__illu'>

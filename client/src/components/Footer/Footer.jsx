@@ -39,9 +39,12 @@ const Footer = () => {
 
                 </div>
                 <div className="bottom_items">
-                    <a href="groomit.factory@example.fr">groomit.factory@example.fr</a>
-                    <p>13 rue de l’exemple
-                        <br /> 33000 - Bordeaux</p>
+                    <div>
+                        <a href="groomit.factory@example.fr">groomit.factory@gmail.com</a>
+                        <p>06.26.66.30.73</p>
+                    </div>
+                    <p>268 Route de Laval
+                        <br /> 12270 - St André de Najac</p>
                 </div>
             </div>
 
