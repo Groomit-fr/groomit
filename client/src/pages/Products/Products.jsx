@@ -87,7 +87,7 @@ const Products = () => {
 
             </div>
             <div className="products__item__row">
-                {data ? <List categoryTitle={clickedCategory} /> : <Error title="Oops, il semblerait que Groomit n'ai rien à vendre en ce moment..." content="Si vous pensez que c'est une erreur, veuillez contacter Groomit." />}
+                <List categoryTitle={clickedCategory} />
             </div>
 
         </div>

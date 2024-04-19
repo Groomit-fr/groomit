@@ -4,6 +4,7 @@ import "./List.scss";
 import useFetch from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 import { makeRequest } from "../../makeRequest";
+import Error from "../Error/Error";
 
 const List = ({ categoryTitle }) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -38,7 +39,7 @@ const List = ({ categoryTitle }) => {
                     price={product.attributes.price}
                     id={product.id}
                 />
-                
+
             ));
 
 
@@ -60,8 +61,11 @@ const List = ({ categoryTitle }) => {
         return null;
     };
 
-    return <div className="list">{renderProducts()}
-    </div>;
+    return (
+        <div className="list">
+            {data ? renderProducts() : <Error title="Oops, c'est vide ici..." content="Si vous pensez que c'est une erreur, veuillez contacter Groomit." />}
+        </div>
+    )
 };
 
 export default List;
