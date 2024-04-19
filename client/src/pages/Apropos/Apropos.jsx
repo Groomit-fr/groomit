@@ -111,7 +111,7 @@ function Apropos() {
               </p>
             </section>
             <section className='apropos__body__techs__item__illu'>
-              <img src="/svg/apropos/serigraphie.svg" alt="" />
+              <img src="/svg/apropos/print.svg" alt="" />
             </section>
           </section>
 

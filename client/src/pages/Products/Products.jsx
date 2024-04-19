@@ -5,6 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
+import Error from "../../components/Error/Error.jsx";
 
 const Products = () => {
 
@@ -20,7 +21,8 @@ const Products = () => {
 
     useEffect(() => {
         All.current.classList.add("active");
-        if(data){
+        if (data) {
+
             if (clickedCategory === "All") {
                 All.current.classList.add("active");
                 Hoodies.current.classList.remove("active");
@@ -35,11 +37,11 @@ const Products = () => {
                 All.current.classList.remove("active");
             }
         }
-        
-    }, [clickedCategory]);
-    
 
-   
+    }, [clickedCategory]);
+
+
+
 
     const renderCategories = () => {
 
@@ -49,7 +51,7 @@ const Products = () => {
             return data.map((category, index) => {
                 let ref;
                 if (category.attributes.title === "T-shirts") {
-                   ref = Tshirt;
+                    ref = Tshirt;
                 } else if (category.attributes.title === "Hoodies") {
                     ref = Hoodies;
                 }
@@ -67,14 +69,14 @@ const Products = () => {
     }
 
 
-    
+
     return (
         <div className="products">
             <div className="products__banner">
                 <h1>Les produits Groomit</h1>
                 <h2>Pour toi + moi + tous ceux qui en veulent</h2>
                 <div className="products__banner__filter">
-                    <div ref={All} className="products__banner__filter__item"  onClick={() => setClickedCategory("All")}>
+                    <div ref={All} className="products__banner__filter__item" onClick={() => setClickedCategory("All")}>
                         <img src="/img/show_all.svg" />
                         <p>Afficher tout</p>
                     </div>
@@ -85,7 +87,7 @@ const Products = () => {
 
             </div>
             <div className="products__item__row">
-                <List categoryTitle={clickedCategory} />
+                {data ? <List categoryTitle={clickedCategory} /> : <Error title="Oops, il semblerait que Groomit n'ai rien à vendre en ce moment..." content="Si vous pensez que c'est une erreur, veuillez contacter Groomit." />}
             </div>
 
         </div>
