@@ -10,9 +10,10 @@ const stripe = require("stripe")(process.env.STRIPE_KEY);
 const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
-  
+
   async create(ctx) {
     const { cart } = ctx.request.body;
+    console.log(cart);
     if (!cart) {
       ctx.throw(400, "La commande doit contenir un panier");
     }
@@ -26,6 +27,8 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
             currency: "eur",
             product_data: {
               name: item.title,
+              description: "Taille : " + product.size,
+              images: product.image
             },
             unit_amount: item.price * 100,
           },
@@ -43,6 +46,18 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         shipping_address_collection: {
           allowed_countries: ["FR"],
         },
+        shipping_options: [
+          {
+            shipping_rate_data: {
+              type: 'fixed_amount',
+              fixed_amount: {
+                amount: 700,
+                currency: 'eur',
+              },
+              display_name: 'Livraison à domicile',
+            },
+          },
+        ]
       });
       await strapi.service("api::order.order").create({
         data: {

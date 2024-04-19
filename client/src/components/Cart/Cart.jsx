@@ -24,8 +24,10 @@ const Cart = () => {
             const res = await makeRequest.post('/orders', {
                 cart: products.map(item => ({
                     id: item.id,
+                    title: item.title,
                     quantity: item.quantity,
                     size: item.size,
+                    image: [import.meta.env.VITE_UPLOAD_URL + item.image]
                 }))
             });
             await stripe.redirectToCheckout({
