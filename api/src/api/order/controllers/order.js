@@ -13,7 +13,6 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
 
   async create(ctx) {
     const { cart } = ctx.request.body;
-    console.log(cart);
     if (!cart) {
       ctx.throw(400, "La commande doit contenir un panier");
     }
@@ -27,7 +26,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
             currency: "eur",
             product_data: {
               name: item.title,
-              description: "Taille : " + product.size,
+              description: "Un " + product.category + " en taille : " + product.size,
               images: product.image
             },
             unit_amount: item.price * 100,

@@ -28,7 +28,6 @@ const List = ({ categoryTitle }) => {
         return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
     };
 
-
     const renderProducts = () => {
         if (data) {
             const productItems = data.map((product, index) => (

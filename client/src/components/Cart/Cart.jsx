@@ -27,7 +27,8 @@ const Cart = () => {
                     title: item.title,
                     quantity: item.quantity,
                     size: item.size,
-                    image: [import.meta.env.VITE_UPLOAD_URL + item.image]
+                    image: [import.meta.env.VITE_UPLOAD_URL + item.image],
+                    category: item.category
                 }))
             });
             await stripe.redirectToCheckout({
@@ -38,7 +39,6 @@ const Cart = () => {
             console.log(error);
         }
     };
-
 
     return (
         <div className="cart">

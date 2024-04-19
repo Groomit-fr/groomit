@@ -6,9 +6,6 @@ import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 
 const Home = () => {
     
-
-    // si dans l'url il y a success=true en console.log("success")
-
     return (
         <div>
             <Carrousel/>

@@ -132,6 +132,7 @@ const Product = () => {
                             title: data?.attributes.title,
                             price: data?.attributes.price,
                             image: data?.attributes.image.data[0].attributes.url,
+                            category: data?.attributes.category.data.attributes.title,
                             quantity: quantity,
                             size: size
                         }));
