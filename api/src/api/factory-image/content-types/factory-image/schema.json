@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "factory_images",
+  "info": {
+    "singularName": "factory-image",
+    "pluralName": "factory-images",
+    "displayName": "FactoryImages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

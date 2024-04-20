@@ -8,59 +8,71 @@
     font-family: Helvetica, sans-serif;
     font-size: 20px;
 
-    color: white;
-    .wrapper{
+    color: $beige;
+    overflow: hidden;
+
+    .wrapper {
         padding: 2.5rem 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        .top_items{
+
+        .top_items {
             display: flex;
             justify-content: space-between;
 
             @media screen and (max-width: 768px) {
                 gap: 1rem;
-                flex-direction: column;            
-}
-            
-            .link_items{
-                
+                flex-direction: column;
+            }
+
+            .link_items {
+
                 display: flex;
                 justify-content: space-between;
                 gap: 3rem;
 
-                .homepage{
-                    font-family: 'Gloria', 'Arial Narrow', Arial, sans-serif;
-                    font-size: 24px;
-   
+                .link {
+                    transition: all 0.2s ease-in;
                     background: bottom left no-repeat url("/svg/Footer/underline.svg");
-                    }
-
-                .link_items_right, .link_items_left{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.5rem;
+                    background-size: 0%;
                 }
+
+                .link:hover {
+
+                    background: bottom left no-repeat url("/svg/Footer/underline.svg");
+                    background-size: initial;
+                }
+
             }
 
+            .link_items_right,
+            .link_items_left {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
         }
 
-        .bottom_items{
-            display: flex;
-            justify-content: space-between;
-            
-            @media screen and (max-width: 768px) {
-                gap: 2rem;
-                flex-direction: column;    
-            }
-            a{
-                transition: all 0.2s ease-in;
-                text-decoration: transparent;
-            }
-            a:hover{ 
-                text-decoration: underline;
-            }
+    }
+
+    .bottom_items {
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 768px) {
+            gap: 2rem;
+            flex-direction: column;
+        }
+
+        a {
+            transition: all 0.2s ease-in;
+            text-decoration: transparent;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     }
 }

@@ -1,3 +1,5 @@
+@import "../../main.scss";
+
 .factory {
     &__top {
 
@@ -83,7 +85,7 @@
     }
 
     &__form {
-        margin-top: 11rem;
+        margin-top: 5rem;
         margin-left: 5%;
         gap: 2rem;
 
@@ -223,5 +225,36 @@
             }
         }
 
+    }
+
+    .mySwiperFactory{
+        margin-top: 5rem;
+    }
+
+    .swiperContent{
+        width: 20vw;
+
+        img{
+            width: 100%;
+        }
+
+        @media screen and (max-width: 768px){
+            width: 50vw;
+            
+        }
+    }
+
+    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        background-color: $black;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        color: $black;
     }
 }

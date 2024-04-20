@@ -714,6 +714,36 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiFactoryImageFactoryImage extends Schema.SingleType {
+  collectionName: 'factory_images';
+  info: {
+    singularName: 'factory-image';
+    pluralName: 'factory-images';
+    displayName: 'FactoryImages';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::factory-image.factory-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::factory-image.factory-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOrderOrder extends Schema.CollectionType {
   collectionName: 'orders';
   info: {
@@ -758,19 +788,38 @@ export interface ApiProductProduct extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 25;
+      }>;
     description: Attribute.Text;
-    image: Attribute.Media;
+    image: Attribute.Media & Attribute.Required;
     isAvailaible: Attribute.Boolean & Attribute.DefaultTo<true>;
-    price: Attribute.Float;
+    price: Attribute.Float & Attribute.Required;
     category: Attribute.Relation<
       'api::product.product',
       'manyToOne',
       'api::category.category'
     >;
-    line1: Attribute.String;
-    line2: Attribute.String;
-    line3: Attribute.String;
+    line1: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 20;
+      }> &
+      Attribute.DefaultTo<'Imprim\u00E9 en France'>;
+    line2: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 20;
+      }> &
+      Attribute.DefaultTo<'Coton Bio - EcoTech'>;
+    line3: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 20;
+      }> &
+      Attribute.DefaultTo<'Coupe Unisex'>;
     line4: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -846,6 +895,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::category.category': ApiCategoryCategory;
+      'api::factory-image.factory-image': ApiFactoryImageFactoryImage;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
       'api::quote-request.quote-request': ApiQuoteRequestQuoteRequest;

@@ -13,25 +13,24 @@ const Footer = () => {
                     </Link>
                     <div className="link_items">
                         <div className="link_items_left">
-                            <Link to="/" className="homepage">
+                            <Link to="/" className="link">
                                 Accueil
                             </Link>
-                            <Link to="/factory">
+                            <Link to="/factory" className="link">
                                 Groomit factory
                             </Link>
-                            <Link to="/products">
+                            <Link to="/products" className="link">
                                 Produits groomit
                             </Link>
-                            <Link to="/apropos">
+                            <Link to="/apropos" className="link">
                                 À propos
                             </Link>
-
                         </div>
                         <div className="link_items_right">
-                            <Link to="/legalNotice">
+                            <Link to="/legalNotice" className="link">
                                 Mentions légales
                             </Link>
-                            <Link to="/CGV">
+                            <Link to="/CGV" className="link">
                                 CGV
                             </Link>
                         </div>

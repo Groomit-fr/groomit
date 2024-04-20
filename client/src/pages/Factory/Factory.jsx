@@ -4,11 +4,21 @@ import './Factory.scss'
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton'
 import { makeRequest } from '../../makeRequest'
 import axios from 'axios'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import useFetch from "../../hooks/useFetch";
 
 function factory() {
 
   const form = useRef();
   const message = useRef();
+
+  const { data, loading, error } = useFetch(`/factory-image/?populate=*`);
+
+  console.log(data?.attributes.Image.data);
 
 
   const sendEmail = async (e) => {
@@ -94,7 +104,36 @@ function factory() {
           <img className='factory__top__illu__rope' src="/svg/List/rope.svg" alt="" />
         </section>
       </section>
-      
+
+
+      {data?.attributes.Image.data ?
+      <Swiper spaceBetween={30} navigation={true} slidesPerView={2} loop={true}
+        modules={[Navigation, Pagination]}
+        className="mySwiperFactory"
+
+        breakpoints={{
+          // when window width is >= 480px
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 5,
+          },
+        }}
+      >
+
+        {data?.attributes.Image.data.map((image, index) => {
+          return (
+            <SwiperSlide key={index} >
+              <div className='swiperContent'>
+                <img key={index} src={import.meta.env.VITE_UPLOAD_URL + image.attributes.url} alt="T-Shirt Blanc" />
+              </div>
+            </SwiperSlide>
+          )
+        })} 
+      </Swiper>
+      : null}
+
 
       <form className='factory__form' ref={form} onSubmit={sendEmail}>
         <section className='factory__form__input'>
