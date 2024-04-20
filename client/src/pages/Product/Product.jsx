@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css'
 import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 import Error from "../../components/Error/Error";
 
 
@@ -72,7 +73,7 @@ const Product = () => {
 
 
             <h1 className="product__title">{data?.attributes.title}</h1>
-            <Swiper spaceBetween={0} centerInsufficientSlides={true}
+            <Swiper spaceBetween={0} centerInsufficientSlides={true} navigation={true}
 
                 breakpoints={{
                     // when window width is >= 480px
@@ -95,7 +96,7 @@ const Product = () => {
                     clickable: true,
                     type: "progressbar"
                 }}
-                modules={[Pagination]}
+                modules={[Pagination, Navigation]}
                 className="mySwiper"
             >
                 {data?.attributes.image.data.map((image, index) => {
