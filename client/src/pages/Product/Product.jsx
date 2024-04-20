@@ -30,11 +30,7 @@ const Product = () => {
     const sizeL = useRef(null);
     const sizeXL = useRef(null);
 
-
-
-
     useEffect(() => {
-
 
         if (data) {
 
@@ -63,7 +59,11 @@ const Product = () => {
 
     }, [size]);
 
-    console.log(data);
+    //get today date, and add 7 days to it
+    //get today date and add 10 days to it
+    const today = new Date();
+    const nextWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7);
+    const nextTenDays = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 13);    
 
     if (!data) return (
         <Error title="Oops, il semblerait que cette page n'existe pas..." content="Si cette erreur persite, veuillez contacter Groomit." button="Retourner à la page d'accueil" link="/" />
@@ -168,7 +168,7 @@ const Product = () => {
                     </p>
                     <section className="product__description__text__shipping">
                         <img src="/svg/Product/Description/truck.svg" alt="" />
-                        <p>Livraison en France : entre le ... et le ...</p>
+                        <p>Livraison en France : entre le {nextWeek.getDate() + " " + nextWeek.toLocaleString('fr-FR', { month: 'long' })} et le {nextTenDays.getDate() + " " + nextTenDays.toLocaleString('fr-FR', { month: 'long' })}</p>
                     </section>
 
                 </section>
