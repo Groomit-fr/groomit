@@ -62,6 +62,8 @@ const Product = () => {
 
     }, [size]);
 
+    console.log(data);
+
     if (!data) return (
         <Error title="Oops, il semblerait que cette page n'existe pas..." content="Si cette erreur persite, veuillez contacter Groomit." button="Retourner à la page d'accueil" link="/" />
     );
@@ -70,7 +72,7 @@ const Product = () => {
 
 
             <h1 className="product__title">{data?.attributes.title}</h1>
-            <Swiper  spaceBetween={0} centerInsufficientSlides={true}
+            <Swiper spaceBetween={0} centerInsufficientSlides={true}
 
                 breakpoints={{
                     // when window width is >= 480px
@@ -148,18 +150,10 @@ const Product = () => {
 
                 <section className="product__description__tshirt">
                     <ul className="product__description__tshirt__infos">
-                        <li>
-                            Fabriqué en France
-                        </li>
-                        <li>
-                            Flocage flex
-                        </li>
-                        <li>
-                            100% chanvre
-                        </li>
-                        <li>
-                            Coupe oversized
-                        </li>
+                        {data?.attributes.line1 ? <li> {data?.attributes.line1} </li> : null}
+                        {data?.attributes.line2 ? <li> {data?.attributes.line2} </li> : null}
+                        {data?.attributes.line3 ? <li> {data?.attributes.line3} </li> : null}
+                        {data?.attributes.line4 ? <li> {data?.attributes.line4} </li> : null}
                     </ul>
                     <img className="product__description__tshirt__arrows" src="/svg/Product/Description/arrows.svg" alt="" />
                     <section className="product__description__tshirt__illustration">

@@ -762,14 +762,16 @@ export interface ApiProductProduct extends Schema.CollectionType {
     description: Attribute.Text;
     image: Attribute.Media;
     isAvailaible: Attribute.Boolean & Attribute.DefaultTo<true>;
-    composition: Attribute.Text;
-    careGuide: Attribute.Text;
     price: Attribute.Float;
     category: Attribute.Relation<
       'api::product.product',
       'manyToOne',
       'api::category.category'
     >;
+    line1: Attribute.String;
+    line2: Attribute.String;
+    line3: Attribute.String;
+    line4: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

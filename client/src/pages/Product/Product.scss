@@ -168,6 +168,7 @@
             &__infos {
 
                 list-style: none;
+                min-width: 175px;
 
                 li {
                     color: $black;
@@ -183,7 +184,7 @@
 
             &__arrows {
                 position: absolute;
-                left: 15vw;
+                left: 190px;
             }
 
             &__illustration {

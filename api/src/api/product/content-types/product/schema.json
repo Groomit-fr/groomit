@@ -33,12 +33,6 @@
       "type": "boolean",
       "default": true
     },
-    "composition": {
-      "type": "text"
-    },
-    "careGuide": {
-      "type": "text"
-    },
     "price": {
       "type": "float"
     },
@@ -47,6 +41,18 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "products"
+    },
+    "line1": {
+      "type": "string"
+    },
+    "line2": {
+      "type": "string"
+    },
+    "line3": {
+      "type": "string"
+    },
+    "line4": {
+      "type": "string"
     }
   }
 }
