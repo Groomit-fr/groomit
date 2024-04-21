@@ -10,6 +10,8 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import useFetch from "../../hooks/useFetch";
+import emailjs from '@emailjs/browser';
+
 
 function factory() {
 
@@ -20,6 +22,27 @@ function factory() {
 
   console.log(data?.attributes.Image.data);
 
+  const sendEmailGrommit = () => {
+
+    var templateParams = {
+      name: 'James',
+      notes: 'Check this out!',
+    };
+
+    emailjs
+    .send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, templateParams, {
+      publicKey: import.meta.env.VITE_PUBLIC_KEY,
+    })
+    .then(
+      () => {
+        console.log('SUCCESS!');
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+      },
+    );
+
+}
 
   const sendEmail = async (e) => {
 
@@ -55,6 +78,7 @@ function factory() {
 
         }).then(response => {
           console.log(response);
+          sendEmailGrommit();
           message.current.innerHTML = 'Email envoyé, Groomit reviendra bientôt vers vous !';
         }).catch(error => {
           console.log(error.message);
