@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './Carrousel.scss'
 import CardHomepage from '../CardHomepage/CardHomepage'
+import { useSwipeable } from 'react-swipeable';
+
 
 function Carrousel() {
 
@@ -11,72 +13,105 @@ function Carrousel() {
     let mousedown = false;
 
     let as = false;
-
-    useEffect(() => {
-        document.getElementById('carrousel').addEventListener('mousedown', (e) => {
-            mousedown = true;
-        })
-        document.getElementById('carrousel').addEventListener('mouseup', (e) => {
-            mousedown = false;
-        })
-
-
-        document.getElementById('carrousel').addEventListener('touchmove', (e) => {
-            mousedown = true;
-            if (!as) {
-                touchStart(e);
-            }
-        })
-        document.getElementById('carrousel').addEventListener('touchend', (e) => {
-            mousedown = false;
-        })
-
-
-
-        document.getElementById('carrousel').addEventListener('mousemove', (e) => {
-            if (!as) {
-                touchStart(e);
-            }
-        })
-    })
-
-
     let pos;
     let mov;
 
-    function touchStart(e) {
+    // useEffect(() => {
+    //     document.getElementById('carrousel').addEventListener('mousedown', (e) => {
+    //         mousedown = true;
+    //     })
+    //     document.getElementById('carrousel').addEventListener('mouseup', (e) => {
+    //         mousedown = false;
 
-        if (mousedown) {
+    //     })
 
-            if (!e.clientX) {
-                mov = e.touches[0].clientX - pos;
-            } else {
-                mov = (e.clientX) - pos;
+
+    //     document.getElementById('carrousel').addEventListener('touchmove', (e) => {
+    //         mousedown = true;
+    //         if (!as) {
+    //             touchStart(e);
+    //         }
+    //     })
+    //     document.getElementById('carrousel').addEventListener('touchend', (e) => {
+    //         mousedown = false;
+    //     })
+
+
+
+    //     document.getElementById('carrousel').addEventListener('mousemove', (e) => {
+    //         if (!as) {
+    //             touchStart(e);
+    //         }
+    //     })
+    // })
+
+
+
+
+    // function touchStart(e) {
+
+    //     if (mousedown) {
+
+    //         if (!e.clientX) {
+    //             mov = e.touches[0].clientX - pos;
+    //         } else {
+    //             mov = (e.clientX) - pos;
+    //         }
+
+
+    //         if (mov > 10) {
+    //             if (!isScrolling) {
+    //                 setIsScrolling(true);
+    //                 Prev();
+    //                 as = true;
+    //                 console.log("prev")
+    //             }
+    //         } else if (mov < -10) {
+    //             if (!isScrolling) {
+    //                 setIsScrolling(true);
+    //                 Next();
+    //                 as = true;
+    //                 console.log("next")
+    //             }
+    //         }
+
+    //         console.log(mov)
+
+    //         if (!e.clientX) {
+    //             pos = e.touches[0].clientX;
+    //         } else {
+    //             pos = e.clientX;
+    //         }
+    //     }else{
+    //         if (!e.clientX) {
+    //             pos = e.touches[0].clientX;
+    //         } else {
+    //             pos = e.clientX;
+    //         }
+    //     }
+    // }
+
+    //MAKE THE CARROUSEL GO NEXT AND PREVIOUS WITH CURSOR AND TOUCH please
+    const handlers = useSwipeable({
+        onSwipedLeft: () => {
+            if (!isScrolling) {
+                setIsScrolling(true);
+                Next();
+                as = true;
             }
-
-
-            if (mov > 0) {
-                if (!isScrolling) {
-                    setIsScrolling(true);
-                    Prev();
-                    as = true;
-                }
-            } else if (mov < 0) {
-                if (!isScrolling) {
-                    setIsScrolling(true);
-                    Next();
-                    as = true;
-                }
+        },
+        onSwipedRight: () => {
+            if (!isScrolling) {
+                setIsScrolling(true);
+                Prev();
+                as = true;
             }
+        },
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true,
+    });
 
-            if (!e.clientX) {
-                pos = e.touches[0].clientX;
-            } else {
-                pos = e.clientX;
-            }
 
-        }
-    }
 
     function updateClasses(index, removeClass, addClass) {
         carrouselWrapperElement.current.children[index].classList.remove(removeClass)
@@ -204,7 +239,7 @@ function Carrousel() {
 
     return (
         <>
-            <section className='carrousel' id='carrousel'>
+            <section className='carrousel' id='carrousel' {...handlers}>
                 <section className='carrouselPole'>
                     <img src="/svg/Carrousel/pole.svg" draggable="false" alt="" />
                 </section>
