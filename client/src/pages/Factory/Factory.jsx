@@ -20,29 +20,36 @@ function factory() {
 
   const { data, loading, error } = useFetch(`/factory-image/?populate=*`);
 
-  console.log(data?.attributes.Image.data);
-
   const sendEmailGrommit = () => {
 
+    const formDataText = new FormData(form.current);
+    const formData = {
+      name: formDataText.get('name'),
+      email: formDataText.get('email'),
+      phone: formDataText.get('phone'),
+      message: formDataText.get('message'),
+      file: formDataText.get('file'),
+    };
+
     var templateParams = {
-      name: 'James',
-      notes: 'Check this out!',
+      from_name: formData.name,
+      message: formData.message,
     };
 
     emailjs
-    .send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, templateParams, {
-      publicKey: import.meta.env.VITE_PUBLIC_KEY,
-    })
-    .then(
-      () => {
-        console.log('SUCCESS!');
-      },
-      (error) => {
-        console.log('FAILED...', error.text);
-      },
-    );
+      .send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, templateParams, {
+        publicKey: import.meta.env.VITE_PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
 
-}
+  }
 
   const sendEmail = async (e) => {
 
@@ -131,32 +138,32 @@ function factory() {
 
 
       {data?.attributes.Image.data ?
-      <Swiper spaceBetween={30} navigation={true} slidesPerView={2} loop={true}
-        modules={[Navigation, Pagination]}
-        className="mySwiperFactory"
+        <Swiper spaceBetween={30} navigation={true} slidesPerView={2} loop={true}
+          modules={[Navigation, Pagination]}
+          className="mySwiperFactory"
 
-        breakpoints={{
-          // when window width is >= 480px
-          640: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 5,
-          },
-        }}
-      >
+          breakpoints={{
+            // when window width is >= 480px
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 5,
+            },
+          }}
+        >
 
-        {data?.attributes.Image.data.map((image, index) => {
-          return (
-            <SwiperSlide key={index} >
-              <div className='swiperContent'>
-                <img key={index} src={import.meta.env.VITE_UPLOAD_URL + image.attributes.url} alt="T-Shirt Blanc" />
-              </div>
-            </SwiperSlide>
-          )
-        })} 
-      </Swiper>
-      : null}
+          {data?.attributes.Image.data.map((image, index) => {
+            return (
+              <SwiperSlide key={index} >
+                <div className='swiperContent'>
+                  <img key={index} src={import.meta.env.VITE_UPLOAD_URL + image.attributes.url} alt="T-Shirt Blanc" />
+                </div>
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
+        : null}
 
 
       <form className='factory__form' ref={form} onSubmit={sendEmail}>
