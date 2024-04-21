@@ -10,88 +10,8 @@ function Carrousel() {
     const [isScrolling, setIsScrolling] = useState(false);
     const [carrouselState, setCarrouselState] = useState(0);
 
-    let mousedown = false;
-
     let as = false;
-    let pos;
-    let mov;
 
-    // useEffect(() => {
-    //     document.getElementById('carrousel').addEventListener('mousedown', (e) => {
-    //         mousedown = true;
-    //     })
-    //     document.getElementById('carrousel').addEventListener('mouseup', (e) => {
-    //         mousedown = false;
-
-    //     })
-
-
-    //     document.getElementById('carrousel').addEventListener('touchmove', (e) => {
-    //         mousedown = true;
-    //         if (!as) {
-    //             touchStart(e);
-    //         }
-    //     })
-    //     document.getElementById('carrousel').addEventListener('touchend', (e) => {
-    //         mousedown = false;
-    //     })
-
-
-
-    //     document.getElementById('carrousel').addEventListener('mousemove', (e) => {
-    //         if (!as) {
-    //             touchStart(e);
-    //         }
-    //     })
-    // })
-
-
-
-
-    // function touchStart(e) {
-
-    //     if (mousedown) {
-
-    //         if (!e.clientX) {
-    //             mov = e.touches[0].clientX - pos;
-    //         } else {
-    //             mov = (e.clientX) - pos;
-    //         }
-
-
-    //         if (mov > 10) {
-    //             if (!isScrolling) {
-    //                 setIsScrolling(true);
-    //                 Prev();
-    //                 as = true;
-    //                 console.log("prev")
-    //             }
-    //         } else if (mov < -10) {
-    //             if (!isScrolling) {
-    //                 setIsScrolling(true);
-    //                 Next();
-    //                 as = true;
-    //                 console.log("next")
-    //             }
-    //         }
-
-    //         console.log(mov)
-
-    //         if (!e.clientX) {
-    //             pos = e.touches[0].clientX;
-    //         } else {
-    //             pos = e.clientX;
-    //         }
-    //     }else{
-    //         if (!e.clientX) {
-    //             pos = e.touches[0].clientX;
-    //         } else {
-    //             pos = e.clientX;
-    //         }
-    //     }
-    // }
-
-    //MAKE THE CARROUSEL GO NEXT AND PREVIOUS WITH CURSOR AND TOUCH please
     const handlers = useSwipeable({
         onSwipedLeft: () => {
             if (!isScrolling) {
@@ -111,8 +31,6 @@ function Carrousel() {
         trackMouse: true,
     });
 
-
-
     function updateClasses(index, removeClass, addClass) {
         carrouselWrapperElement.current.children[index].classList.remove(removeClass)
         carrouselWrapperElement.current.children[index].classList.add(addClass)
@@ -122,12 +40,8 @@ function Carrousel() {
         setIsScrolling(false)
     }
 
-
-
-
     function Next() {
         as = true;
-
 
         if (carrouselState < 2) {
             setCarrouselState(carrouselState + 1)
@@ -137,9 +51,8 @@ function Carrousel() {
 
         setIsScrolling(true);
 
-        const carrouselListLength = carrouselWrapperElement.current.children.length
+        const carrouselListLength = carrouselWrapperElement.current.children.length;
         for (let i = carrouselListLength - 1; i >= 0; i--) {
-
 
             if (i === 8) {
                 updateClasses(i, "next4", "next3")

@@ -12,7 +12,7 @@ const LegalNotice = () => {
     dispach(resetCart())
 
     return (
-        <div style={{ margin: " 5rem 5rem" }}>
+        <div style={{ margin: " 5rem 20rem" }}>
 
             <h1 style={{ margin: "2rem 0rem" }}>Mentions Légales</h1>
             <p>
