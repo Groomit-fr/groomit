@@ -9,11 +9,11 @@ function Apropos() {
         <h2>Pour toi + moi + tous ceux qui le veulent</h2>
         <div className="apropos__banner__filter">
           <a className="apropos__banner__filter__item" href='#Qui'>
-            <img src="/img/show_all.svg" />
+            <img src="/svg/apropos/qui.png" />
             <p>C'est qui <br /> Groomit ?</p>
           </a>
           <a className="apropos__banner__filter__item" href='#Quoi'>
-            <img src="/img/show_all.svg" />
+            <img src="svg/apropos/quoi.png" />
             <p>C'est quoi Groomit ?</p>
           </a>
           <a className="apropos__banner__filter__item" href='#Tech'>

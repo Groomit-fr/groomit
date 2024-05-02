@@ -52,7 +52,7 @@
                     height: 102px;
                     transition: 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
                     transform: scale(1) rotate(0deg);
-
+                    object-fit: contain;
                 }
 
                 p {
