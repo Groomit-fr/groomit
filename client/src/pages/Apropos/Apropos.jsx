@@ -80,7 +80,7 @@ function Apropos() {
               </p>
             </section>
             <section className='apropos__body__techs__item__illu'>
-              <img src="/svg/apropos/flex.svg" alt="" />
+              <img src="/svg/apropos/flex.png" alt="" />
             </section>
           </section>
           <section className='apropos__body__techs__item'>
@@ -95,7 +95,7 @@ function Apropos() {
               </p>
             </section>
             <section className='apropos__body__techs__item__illu'>
-              <img src="/svg/apropos/serigraphie.svg" alt="" />
+              <img src="/svg/apropos/serigraphie.png" alt="" />
             </section>
           </section>
           <section className='apropos__body__techs__item'>
@@ -111,7 +111,7 @@ function Apropos() {
               </p>
             </section>
             <section className='apropos__body__techs__item__illu'>
-              <img src="/svg/apropos/print.svg" alt="" />
+              <img src="/svg/apropos/print.png" alt="" />
             </section>
           </section>
 

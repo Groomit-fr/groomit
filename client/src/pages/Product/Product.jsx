@@ -158,7 +158,7 @@ const Product = () => {
                     </ul>
                     <img className="product__description__tshirt__arrows" src="/svg/Product/Description/arrows.svg" alt="" />
                     <section className="product__description__tshirt__illustration">
-                        <img className="product__description__tshirt__illustration__pin" src="/svg/Product/Description/pin.svg" alt="" />
+                        <img className="product__description__tshirt__illustration__pin" src="/svg/Product/Description/pin.png" alt="" />
                         <img className="product__description__tshirt__illustration__image" src={import.meta.env.VITE_UPLOAD_URL + data?.attributes.image.data[0].attributes.url} alt="T-Shirt Blanc" />
                     </section>
                 </section>

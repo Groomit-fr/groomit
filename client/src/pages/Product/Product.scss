@@ -193,11 +193,11 @@
 
                 &__pin {
                     position: absolute;
-                    top: -5%;
-                    left: 50%;
                     transform: translateX(-50%);
                     width: 10rem;
                     z-index: 1;
+                    top: -8%;
+                    left: 51%;
                 }
 
                 &__image {
@@ -236,7 +236,7 @@
             }
 
 
-            
+
             &__tshirt {
                 &__arrows {
                     display: none;
@@ -276,12 +276,13 @@
         align-items: center;
     }
 
-    .swiper-button-prev, .swiper-button-next {
+    .swiper-button-prev,
+    .swiper-button-next {
         color: $black;
     }
 }
 
-.error{
+.error {
     width: 100%;
     display: flex;
     align-items: center;
@@ -290,20 +291,22 @@
     margin: 25vh 0;
     text-align: center;
 
-    h1{
+    h1 {
         margin-bottom: 0.5rem;
         width: 80%;
     }
-    p{
+
+    p {
         margin-bottom: 2rem;
         width: 80%;
     }
 
-    @media screen and (max-width: 768px){
-        h1{
+    @media screen and (max-width: 768px) {
+        h1 {
             font-size: 1.5rem;
         }
-        p{
+
+        p {
             font-size: 1rem;
         }
     }

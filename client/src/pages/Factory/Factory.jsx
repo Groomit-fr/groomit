@@ -131,7 +131,7 @@ function factory() {
           </p>
         </section>
         <section className='factory__top__illu'>
-          <img className='factory__top__illu__shirt' src="/svg/Factory/factoryShirt.svg" alt="" />
+          <img className='factory__top__illu__shirt' src="/svg/Factory/factoryShirt.png" alt="" />
           <img className='factory__top__illu__rope' src="/svg/List/rope.svg" alt="" />
         </section>
       </section>

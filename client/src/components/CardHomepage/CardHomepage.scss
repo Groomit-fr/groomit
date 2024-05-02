@@ -1,6 +1,8 @@
 @import "../../main.scss";
 @import "../../stylesheet/variables";
 
+
+
 .cardHomepage {
     display: flex;
 
@@ -11,7 +13,7 @@
     background-color: $beige;
     border: solid 20px ;
 
-    border-image: url("/svg/CardHomePage/cardHomePage.svg") 30 fill stretch;
+    border-image: url("/svg/CardHomePage/cardHomePage.png") 30 fill stretch;
 
 
     width: 165%;
@@ -76,6 +78,7 @@
 
             .cardContentImg {
                 width: 19rem;
+                object-fit: contain;
             }
 
             .textContent {

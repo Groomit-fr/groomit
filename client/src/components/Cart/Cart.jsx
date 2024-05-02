@@ -58,7 +58,7 @@ const Cart = () => {
                                 </div>
                                 <p className="cart__center__item__details__price">{item.price}€</p>
                             </div>
-                            <img className="cart__center__item__delete" src='/svg/Cart/bin.svg' onClick={() => dispach(removeItem({ id: item.id, size: item.size }))} />
+                            <img className="cart__center__item__delete" src='/svg/Cart/bin.png' onClick={() => dispach(removeItem({ id: item.id, size: item.size }))} />
                         </div>
                     ))}
                 </div>

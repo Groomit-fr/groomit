@@ -15,7 +15,7 @@ function ProductItem(props) {
             <div className="productItem">
                 <p className='productItem__title'>{title}</p>
                 <section className='productItem__illustration'>
-                    <img className='productItem__illustration__pin' src="/svg/ProductItem/pin.svg" alt="" />
+                    <img className='productItem__illustration__pin' src="/svg/Product/Description/pin.png" alt="" />
                     <img className='productItem__illustration__image' src={image} alt={title} />
                 </section>
                 <p className='productItem__price'>{price}€</p>
