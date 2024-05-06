@@ -70,7 +70,6 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
       const session = await stripe.checkout.sessions.retrieve(
         sess
       );
-      console.log(session);
 
       try {
         await strapi.service("api::order.order").create({

@@ -36,7 +36,7 @@ const SuccessOrder = () => {
                     category: item.category
                 })), 
             });
-            console.log(res);
+            // console.log(res);
             dispach(resetCart())
 
         } catch (error) {
@@ -48,9 +48,9 @@ const SuccessOrder = () => {
         let pushed = false;
 
         if (data?.length > 0) {
-            console.log("Order already created")
+            // console.log("Order already created")
         } else if (data?.length === 0) {
-            console.log("Order not created")
+            // console.log("Order not created")
             if (!pushed) {
                 getPosts();
                 pushed = true;
