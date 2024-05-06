@@ -17,9 +17,9 @@ module.exports = ({ env }) => ({
           apiKey: env('SENDGRID_API_KEY'),
         },
         settings: {
-          defaultFrom: 'camille.fourcade-palmier@mmibordeaux.com',
-          defaultReplyTo: 'camille.fourcade-palmier@mmibordeaux.com',
-          testAddress: 'camille.fourcade-palmier@mmibordeaux.com',
+          defaultFrom: 'groomit.factory@gmail.com',
+          defaultReplyTo: 'groomit.factory@gmail.com',
+          testAddress: 'groomit.factory@gmail.com',
         },
       },
     },

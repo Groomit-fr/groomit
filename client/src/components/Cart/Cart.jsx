@@ -29,7 +29,8 @@ const Cart = () => {
                     size: item.size,
                     image: [import.meta.env.VITE_UPLOAD_URL + item.image],
                     category: item.category
-                }))
+                })),
+                type: 'payment',
             });
             await stripe.redirectToCheckout({
                 sessionId: res.data.stripeSession.id,

@@ -1,7 +1,11 @@
 import React from 'react'
 import "./Apropos.scss"
+import { useEffect } from "react";
+
 
 function Apropos() {
+
+
   return (
     <section className='apropos'>
       <div className="apropos__banner" >
