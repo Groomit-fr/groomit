@@ -59,6 +59,11 @@ const Product = () => {
 
     }, [size]);
 
+    useEffect(() => {
+        document.title = data?.attributes.title + " - Groomit";
+    }, [data]);
+
+
     //get today date, and add 7 days to it
     //get today date and add 10 days to it
     const today = new Date();

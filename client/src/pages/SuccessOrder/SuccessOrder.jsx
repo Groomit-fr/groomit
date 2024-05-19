@@ -21,7 +21,6 @@ const SuccessOrder = () => {
     const { data, loading, error } = useFetch(`/orders?filters[stripeId]=${sessionId}&populate=*`);
     const products = useSelector(state => state.cart.products);
 
-
     const getPosts = async () => {
         try {
             const res = await makeRequest.post('/orders', {
@@ -45,6 +44,8 @@ const SuccessOrder = () => {
     }
 
     useEffect(() => {
+        getPosts();
+
         let pushed = false;
 
         if (data?.length > 0) {
@@ -57,6 +58,11 @@ const SuccessOrder = () => {
             }
         }
     }, [data])
+
+    useEffect(() => {
+        document.title = "Achat réussi - Groomit";
+    }, []);
+
 
     return (
         <Error title="Votre commande a bien été enregistrée !" content="Vous recevrez un email de confirmation dans quelques instants." button="Retourner à la page d'accueil" link="/" />

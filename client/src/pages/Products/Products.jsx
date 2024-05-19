@@ -40,6 +40,10 @@ const Products = () => {
 
     }, [clickedCategory]);
 
+    useEffect(() => {
+        document.title = "Produits - Groomit";
+    }, []);
+
 
 
 

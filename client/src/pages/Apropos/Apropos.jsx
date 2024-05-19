@@ -5,6 +5,9 @@ import { useEffect } from "react";
 
 function Apropos() {
 
+  useEffect(() => {
+    document.title = "À propos - Groomit";
+  }, []);
 
   return (
     <section className='apropos'>

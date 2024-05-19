@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import './Factory.scss'
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton'
 import { makeRequest } from '../../makeRequest'
@@ -50,6 +50,10 @@ function factory() {
       );
 
   }
+
+  useEffect(() => {
+    document.title = "Factory - Groomit";
+}, []);
 
   const sendEmail = async (e) => {
 

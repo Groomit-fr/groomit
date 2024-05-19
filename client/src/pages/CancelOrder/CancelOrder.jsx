@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { resetCart } from "../../redux/cartReducer";
 import { useParams } from "react-router-dom";
@@ -22,6 +22,9 @@ const CancelOrder = () => {
 
     const stripePromise = loadStripe("pk_test_51OC0WbDKjeptmAsJhwQoIjyrHCkGyojtJCptfifphvDKxRUESqQB1KutMu3DgCCtxs38MeaRnCK2apt3Jon5kI9O00D538zjbH");
 
+    useEffect(() => {
+        document.title = "Achat annulé - Groomit";
+    }, []);
 
     const handlePayment = async () => {
         try {

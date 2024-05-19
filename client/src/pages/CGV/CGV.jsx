@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { resetCart } from "../../redux/cartReducer";
 import { useParams } from "react-router-dom";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import { useEffect } from "react";
 
 
 const CGV = () => {
@@ -10,6 +11,10 @@ const CGV = () => {
     const dispach = useDispatch();
 
     dispach(resetCart())
+
+    useEffect(() => {
+        document.title = "CGV - Groomit";
+    }, []);
 
     return (
         <div style={{margin:" 5rem 20rem"}}>
