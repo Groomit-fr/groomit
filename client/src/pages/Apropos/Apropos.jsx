@@ -1,16 +1,16 @@
 import React from 'react'
 import "./Apropos.scss"
-import { useEffect } from "react";
+import { Helmet } from 'react-helmet'
 
 
 function Apropos() {
 
-  useEffect(() => {
-    document.title = "À propos - Groomit";
-  }, []);
-
   return (
     <section className='apropos'>
+      <Helmet>
+        <title>À propos de Groomit - Groomit</title>
+        <meta name="description" content="Découvrez l'histoire de Groomit, la marque de vêtements éco-responsable de l'Aveyron." />
+      </Helmet>
       <div className="apropos__banner" >
         <h1>À propos de Groomit</h1>
         <h2>Pour toi + moi + tous ceux qui le veulent</h2>

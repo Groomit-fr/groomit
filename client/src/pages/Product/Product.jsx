@@ -12,6 +12,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import Error from "../../components/Error/Error";
+import Helmet from "react-helmet";
 
 
 const Product = () => {
@@ -59,23 +60,23 @@ const Product = () => {
 
     }, [size]);
 
-    useEffect(() => {
-        document.title = data?.attributes.title + " - Groomit";
-    }, [data]);
-
 
     //get today date, and add 7 days to it
     //get today date and add 10 days to it
     const today = new Date();
     const nextWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7);
-    const nextTenDays = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 13);    
+    const nextTenDays = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 13);
 
     if (!data) return (
         <Error title="Oops, il semblerait que cette page n'existe pas..." content="Si cette erreur persite, veuillez contacter Groomit." button="Retourner à la page d'accueil" link="/" />
     );
     return (
         <div className="product">
-
+            <Helmet>
+                <title>{data?.attributes.title} - Groomit</title>
+                <meta name="description" content="Voilà un produit Groomit, vous en trouverez pas deux des comme ça..." />
+                <meta name="robots" content="noindex"/>
+            </Helmet>
 
             <h1 className="product__title">{data?.attributes.title}</h1>
             <Swiper spaceBetween={0} centerInsufficientSlides={true} navigation={true}

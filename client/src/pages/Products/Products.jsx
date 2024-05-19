@@ -2,10 +2,8 @@ import React from "react";
 import "./Products.scss";
 import List from "../../components/List/List.jsx";
 import useFetch from "../../hooks/useFetch";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 import { useEffect, useState, useRef } from "react";
-import Error from "../../components/Error/Error.jsx";
+import Helmet from "react-helmet";
 
 const Products = () => {
 
@@ -40,10 +38,6 @@ const Products = () => {
 
     }, [clickedCategory]);
 
-    useEffect(() => {
-        document.title = "Produits - Groomit";
-    }, []);
-
 
 
 
@@ -76,6 +70,10 @@ const Products = () => {
 
     return (
         <div className="products">
+            <Helmet>
+                <title>Produits - Groomit</title>
+                <meta name="description" content="Découvrez les produits Groomit. T-shirts, hoodies et accessoires pour toi, moi et tous ceux qui en veulent." />
+            </Helmet>
             <div className="products__banner">
                 <h1>Les produits Groomit</h1>
                 <h2>Pour toi + moi + tous ceux qui en veulent</h2>

@@ -2,12 +2,11 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { resetCart } from "../../redux/cartReducer";
-import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
-import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import Error from "../../components/Error/Error";
 import { makeRequest } from "../../makeRequest";
 import { useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
 
 
 const SuccessOrder = () => {
@@ -16,7 +15,7 @@ const SuccessOrder = () => {
     const sessionId = queryParameters.get("session_id")
 
     const dispach = useDispatch();
-    
+
 
     const { data, loading, error } = useFetch(`/orders?filters[stripeId]=${sessionId}&populate=*`);
     const products = useSelector(state => state.cart.products);
@@ -33,7 +32,7 @@ const SuccessOrder = () => {
                     size: item.size,
                     image: [import.meta.env.VITE_UPLOAD_URL + item.image],
                     category: item.category
-                })), 
+                })),
             });
             // console.log(res);
             dispach(resetCart())
@@ -59,13 +58,15 @@ const SuccessOrder = () => {
         }
     }, [data])
 
-    useEffect(() => {
-        document.title = "Achat réussi - Groomit";
-    }, []);
-
 
     return (
-        <Error title="Votre commande a bien été enregistrée !" content="Vous recevrez un email de confirmation dans quelques instants." button="Retourner à la page d'accueil" link="/" />
+        <>
+            <Error title="Votre commande a bien été enregistrée !" content="Vous recevrez un email de confirmation dans quelques instants." button="Retourner à la page d'accueil" link="/" />
+            <Helmet>
+                <title>Commande validée - Groomit</title>
+                <meta name="description" content="Votre commande a bien été enregistrée" />
+            </Helmet>
+        </>
     )
 }
 

@@ -1,9 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { resetCart } from "../../redux/cartReducer";
-import { useParams } from "react-router-dom";
-import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
-import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 
 const CGV = () => {
@@ -12,12 +10,12 @@ const CGV = () => {
 
     dispach(resetCart())
 
-    useEffect(() => {
-        document.title = "CGV - Groomit";
-    }, []);
-
     return (
         <div style={{margin:" 5rem 20rem"}}>
+            <Helmet>
+                <title>CGV - Groomit</title>
+                <meta name="description" content="Conditions générales de vente de Groomit" />
+            </Helmet>
 
             <h1 style={{margin:"2rem 0rem"}}>CGV de Groomit</h1>
             <p>

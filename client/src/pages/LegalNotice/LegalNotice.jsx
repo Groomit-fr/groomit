@@ -1,9 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { resetCart } from "../../redux/cartReducer";
-import { useParams } from "react-router-dom";
-import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
-import { useEffect } from "react";  
+import { Helmet } from "react-helmet";
+
 
 
 const LegalNotice = () => {
@@ -12,12 +11,15 @@ const LegalNotice = () => {
 
     dispach(resetCart())
 
-    useEffect(() => {
-        document.title = "Mentions légales - Groomit";
-    }, []);
+    
 
     return (
         <div style={{ margin: " 5rem 20rem" }}>
+
+            <Helmet>
+                <title>Mentions Légales - Groomit</title>
+                <meta name="description" content="Les mentions légales de Groomit, de quoi tout savoir ce qu'il faut faire, ou ne pas faire..." />
+            </Helmet>
 
             <h1 style={{ margin: "2rem 0rem" }}>Mentions Légales</h1>
             <p>

@@ -11,6 +11,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import useFetch from "../../hooks/useFetch";
 import emailjs from '@emailjs/browser';
+import { Helmet } from 'react-helmet'
 
 
 function factory() {
@@ -50,10 +51,6 @@ function factory() {
       );
 
   }
-
-  useEffect(() => {
-    document.title = "Factory - Groomit";
-}, []);
 
   const sendEmail = async (e) => {
 
@@ -122,6 +119,10 @@ function factory() {
 
   return (
     <section className='factory'>
+      <Helmet>
+        <title>Groomit Factory - Groomit</title>
+        <meta name="description" content="Groomit Factory, personnalisez vos t-shirts et hoodies en envoyant votre idée à Groomit. Laissez place à votre imagination pour que Groomit réalise vos rêves, dans son atelier de l'Aveyron." />
+      </Helmet>
       <section className='factory__top'>
         <section className='factory__top__text'>
           <h1>Groomit Factory</h1>
