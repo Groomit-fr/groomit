@@ -37,13 +37,13 @@
 
             img {
                 position: absolute;
-                width: 100%;
-                max-width: 16rem;
-                height: auto;
+                width: 96%;
+                height: 98%;
                 mix-blend-mode: darken;
                 left: 50%;
                 top: 50%;
                 transform: translateX(-50%) translateY(-50%);
+                object-fit: contain;
             }
         }
 
