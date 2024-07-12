@@ -28,6 +28,8 @@ const List = ({ categoryTitle }) => {
         return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
     };
 
+    console.log(data);
+
     const renderProducts = () => {
         if (data) {
             const productItems = data.map((product, index) => (
@@ -62,7 +64,7 @@ const List = ({ categoryTitle }) => {
 
     return (
         <div className="list">
-            {data ? renderProducts() : <Error title="Oops, c'est vide ici..." content="Si vous pensez que c'est une erreur, veuillez contacter Groomit." />}
+            {data?.length > 0 ? renderProducts() : <Error title="Oops, c'est vide ici..." content="Ne vous inquiétez pas, Groomit travail sur de nouveaux designs. Si vous pensez que c'est une erreur, veuillez contacter Groomit." />}
         </div>
     )
 };
