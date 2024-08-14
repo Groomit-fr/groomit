@@ -42,8 +42,10 @@ const Footer = () => {
                         <a href="groomit.factory@example.fr">groomit.factory@gmail.com</a>
                         <p>06.26.66.30.73</p>
                     </div>
-                    <p>268 Route de Laval
-                        <br /> 12270 - St André de Najac</p>
+                    <p>
+                        9 rue des Fargues
+                        <br /> 82140 - Saintt Antonin de Noble Val
+                    </p>
                 </div>
             </div>
 
