@@ -134,7 +134,9 @@ function factory() {
             <br />
             Vous pouvez aussi contacter groomit au 06.26.66.30.73
             <br />
-            Ou venir le voir dans sa boutique au 9 rue des Fargues, 82140 - Saint Antonin de Noble Val !
+            Ou venir le voir dans sa boutique au 9 rue des Fargues, 82140 - Saint Antonin de Noble Val
+            <br />
+            Ou dans son atelier au 268 route de Laval, 12270 - Saint André de Najac !
           </p>
         </section>
         <section className='factory__top__illu'>
