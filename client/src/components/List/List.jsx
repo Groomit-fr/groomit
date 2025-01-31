@@ -64,7 +64,7 @@ const List = ({ categoryTitle }) => {
 
     return (
         <div className="list">
-            {data?.length > 0 ? renderProducts() : <Error title="Oops, c'est vide ici..." content="Ne vous inquiétez pas, Groomit travail sur de nouveaux designs. Si vous pensez que c'est une erreur, veuillez contacter Groomit." />}
+            {data?.length > 0 ? renderProducts() : <Error title="Oops, c'est vide ici..." content="Si vous pensez que c'est une erreur, veuillez contacter Groomit." />}
         </div>
     )
 };

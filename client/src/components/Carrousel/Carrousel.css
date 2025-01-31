@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #242424;
+  background-color: #F9F7F2;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1 {
+  font-family: "Gloria", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: #242424;
+  color: #F9F7F2;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Gloria";
+  src: url("/font/GloriaHallelujah-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+.carrousel {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  height: 40rem;
+}
+@media screen and (max-width: 700px) {
+  .carrousel {
+    margin-top: 0;
+  }
+}
+.carrousel .carrouselContainer {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carrousel .carrouselContainer .carrouselWrapper {
+  width: 200%;
+  display: flex;
+  gap: 0;
+  margin-bottom: 4rem;
+  flex-direction: row;
+  justify-content: center;
+  perspective: 1550px;
+}
+.carrousel .carrouselContainer .carrouselWrapper .carrouselElement {
+  position: relative;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  width: 25rem;
+}
+@media screen and (max-width: 700px) {
+  .carrousel .carrouselContainer .carrouselWrapper .carrouselElement {
+    top: 0.75rem;
+    width: 10rem;
+  }
+}
+.carrousel .carrouselContainer .carrouselWrapper .carrouselElement .hanger {
+  position: relative;
+  top: 1.5rem;
+  z-index: 6;
+  width: 150%;
+}
+@media screen and (max-width: 700px) {
+  .carrousel .carrouselContainer .carrouselWrapper .carrouselElement .hanger {
+    top: 1rem;
+    width: 20rem;
+  }
+}
+.carrousel .carrouselContainer .carrouselWrapper .next4 {
+  margin-top: 0rem;
+  z-index: 0;
+  transform: scale(0.75) translateY(-0.5rem) rotateY(-75deg);
+}
+.carrousel .carrouselContainer .carrouselWrapper .next3 {
+  margin-top: 0rem;
+  z-index: 1;
+  transform: scale(0.75) translateY(-0.5rem) rotateY(-75deg);
+}
+.carrousel .carrouselContainer .carrouselWrapper .next2 {
+  margin-top: 0rem;
+  z-index: 2;
+  transform: scale(0.8) translateY(0rem) rotateY(-75deg);
+}
+.carrousel .carrouselContainer .carrouselWrapper .next1 {
+  margin-top: 0rem;
+  z-index: 3;
+  transform: scale(0.85) translateY(0rem) rotateY(-67deg);
+}
+.carrousel .carrouselContainer .carrouselWrapper .current {
+  margin-top: 0rem;
+  z-index: 5;
+  transform: rotateY(0deg);
+}
+.carrousel .carrouselContainer .carrouselWrapper .previous1 {
+  margin-top: 0rem;
+  z-index: 3;
+  transform: scale(0.85) translateY(0rem) rotateY(67deg);
+}
+.carrousel .carrouselContainer .carrouselWrapper .previous2 {
+  margin-top: 0rem;
+  z-index: 2;
+  transform: scale(0.8) translateY(0rem) rotateY(75deg);
+}
+.carrousel .carrouselContainer .carrouselWrapper .previous3 {
+  margin-top: 0rem;
+  z-index: 1;
+  transform: scale(0.75) translateY(-0.5rem) rotateY(75deg);
+}
+.carrousel .carrouselContainer .carrouselWrapper .previous4 {
+  margin-top: 0rem;
+  z-index: 0;
+  transform: scale(0.75) translateY(-0.5rem) rotateY(75deg);
+}
+.carrousel .carrouselPole {
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+  overflow: hidden;
+}
+.carrousel .carrouselPole img {
+  width: 100%;
+  min-width: 1100px;
+}
+.carrousel .buttons {
+  position: absolute;
+  top: 75%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 10%;
+}
+.carrousel .buttons section {
+  cursor: pointer;
+  width: 5.7095rem;
+  height: 5.73563rem;
+  flex-shrink: 0;
+  transform: scale(1) rotate(0deg);
+  transition: transform 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+}
+.carrousel .buttons section img {
+  width: 100%;
+  height: 100%;
+}
+.carrousel .buttons section:first-child {
+  rotate: 180deg;
+}
+.carrousel .buttons section:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+@media screen and (max-width: 768px) {
+  .carrousel .buttons {
+    top: 100%;
+    transform: translateY(-110%);
+    padding: 0 2%;
+  }
+  .carrousel .buttons section:hover {
+    transform: scale(1) rotate(5deg);
+  }
+}
+.carrousel .indicators {
+  display: flex;
+  width: 200px;
+  justify-content: space-evenly;
+}
+.carrousel .indicators img {
+  opacity: 50%;
+  transition: all 0.25s;
+  transform: scale(1);
+}
+.carrousel .indicators .focused {
+  opacity: 100%;
+  transform: scale(1.2);
+}
+@media screen and (max-width: 768px) {
+  .carrousel .indicators {
+    width: 125px;
+  }
+  .carrousel .indicators img {
+    transform: scaleX(0.8);
+  }
+  .carrousel .indicators .focused {
+    transform: scale(1);
+  }
+}
+
+.transition {
+  transition: all 0.5s !important;
+}
+
+.noTransition {
+  transition: none !important;
+}
+
+.deleted {
+  width: 0 !important;
+}/*# sourceMappingURL=Carrousel.css.map */

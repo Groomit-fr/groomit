@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #242424;
+  background-color: #F9F7F2;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1 {
+  font-family: "Gloria", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: #242424;
+  color: #F9F7F2;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Gloria";
+  src: url("/font/GloriaHallelujah-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+.product__title {
+  text-align: center;
+  font-family: "Gloria";
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 1rem 0rem;
+}
+@media screen and (max-width: 768px) {
+  .product__title {
+    font-size: 2rem;
+  }
+}
+.product__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.product__image__wrapper {
+  position: relative;
+  width: 18.125rem;
+  height: 24.375rem;
+  flex-shrink: 0;
+  margin: 1rem 0;
+  background-image: url("/svg/Product/photoBackground.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.product__image__wrapper img {
+  position: absolute;
+  width: 96%;
+  height: 98%;
+  mix-blend-mode: darken;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.product__selectionBar {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 0rem 4rem;
+  justify-content: end;
+}
+.product__selectionBar__size {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.product__selectionBar__size__item {
+  position: relative;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 2.3885rem;
+  height: 2.1875rem;
+}
+.product__selectionBar__size__item :before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  opacity: 0;
+  width: 2.3885rem;
+  height: 2.1875rem;
+  background-image: url("/svg/Product/Size/selection.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.25s cubic-bezier(0.15, -0.56, 0.35, 2.41), opacity 0.15s;
+}
+.product__selectionBar__size__item p {
+  font-family: "Gloria";
+  font-size: 1.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.product__selectionBar__size__item:hover :before {
+  opacity: 0.75;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}
+.product__selectionBar__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.product__selectionBar__right__price {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Gloria";
+}
+@media screen and (max-width: 768px) {
+  .product__selectionBar {
+    padding: 0 1rem;
+    flex-direction: column;
+  }
+  .product__selectionBar__size {
+    transform: unset;
+    position: unset;
+    justify-content: center;
+  }
+  .product__selectionBar__right {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.product__description {
+  position: relative;
+  display: flex;
+  padding: 0rem 5%;
+  align-items: center;
+  margin: 5rem 0rem;
+  justify-content: space-around;
+  gap: 10%;
+  row-gap: 2rem;
+}
+.product__description__rope {
+  position: absolute;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 0;
+  top: 3%;
+}
+.product__description__tshirt {
+  display: flex;
+  align-items: center;
+  gap: 10vw;
+  position: relative;
+}
+.product__description__tshirt__infos {
+  list-style: none;
+  min-width: 175px;
+}
+.product__description__tshirt__infos li {
+  color: #242424;
+  font-family: "Gloria";
+  font-size: 130%;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: -moz-max-content;
+  width: max-content;
+}
+.product__description__tshirt__arrows {
+  position: absolute;
+  left: 190px;
+}
+.product__description__tshirt__illustration {
+  position: relative;
+  width: 20rem;
+}
+.product__description__tshirt__illustration__pin {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 10rem;
+  z-index: 1;
+  top: -8%;
+  left: 51%;
+}
+.product__description__tshirt__illustration__image {
+  width: 100%;
+  mix-blend-mode: darken;
+}
+.product__description__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.product__description__text p {
+  max-width: 39rem;
+}
+.product__description__text__shipping {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+@media screen and (max-width: 1165px) {
+  .product__description {
+    flex-direction: column;
+    align-items: unset;
+  }
+}
+@media screen and (max-width: 768px) {
+  .product__description__rope {
+    display: none;
+  }
+  .product__description__tshirt__arrows {
+    display: none;
+  }
+  .product__description__tshirt__illustration {
+    display: none;
+  }
+  .product__description__tshirt__infos {
+    list-style: auto;
+    margin-left: 1.5rem;
+  }
+}
+.product .active :before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}
+.product .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: #242424;
+}
+.product .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product .swiper-button-prev,
+.product .swiper-button-next {
+  color: #242424;
+}
+
+.error {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 25vh 0;
+  text-align: center;
+}
+.error h1 {
+  margin-bottom: 0.5rem;
+  width: 80%;
+}
+.error p {
+  margin-bottom: 2rem;
+  width: 80%;
+}
+@media screen and (max-width: 768px) {
+  .error h1 {
+    font-size: 1.5rem;
+  }
+  .error p {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=Product.css.map */

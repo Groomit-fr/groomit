@@ -132,11 +132,11 @@ function factory() {
             Personnalisez vos t-shirts et hoodies en envoyant votre idée à Groomit à l’aide du formulaire ci-dessous.
             <br />
             <br />
-            Vous pouvez aussi contacter groomit au 06.26.66.30.73
+            Vous pouvez aussi contacter groomit au ..............
             <br />
-            Ou venir le voir dans sa boutique au 9 rue des Fargues, 82140 - Saint Antonin de Noble Val
+            Ou venir le voir dans sa boutique au .....................................................
             <br />
-            Ou dans son atelier au 268 route de Laval, 12270 - Saint André de Najac !
+            Ou dans son atelier au ................................................ !
           </p>
         </section>
         <section className='factory__top__illu'>

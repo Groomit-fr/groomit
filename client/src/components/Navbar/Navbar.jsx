@@ -64,6 +64,13 @@ const Navbar = () => {
                     </section>
                 </div>
             </div>
+            <div className="downbar">
+                <p>Groomit nous a quitté le 22 décembre 2024.
+                    <br />
+                    En sa mémoire, son site reste ouvert.
+
+                </p>
+            </div>
             {openCart && <Cart />}
             <section className={(openMenu ? "menu open" : "menu")}>
                 <section className="filler"></section>

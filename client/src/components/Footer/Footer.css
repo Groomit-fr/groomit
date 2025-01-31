@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #242424;
+  background-color: #F9F7F2;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1 {
+  font-family: "Gloria", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: #242424;
+  color: #F9F7F2;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Gloria";
+  src: url("/font/GloriaHallelujah-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+.footer {
+  width: 100%;
+  height: 34rem;
+  background-color: #242424;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  color: #F9F7F2;
+  overflow: hidden;
+}
+.footer .wrapper {
+  padding: 2.5rem 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.footer .wrapper .top_items {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .footer .wrapper .top_items {
+    gap: 1rem;
+    flex-direction: column;
+  }
+}
+.footer .wrapper .top_items .link_items {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.footer .wrapper .top_items .link_items .link {
+  transition: all 0.2s ease-in;
+  background: bottom left no-repeat url("/svg/Footer/underline.svg");
+  background-size: 0%;
+}
+.footer .wrapper .top_items .link_items .link:hover {
+  background: bottom left no-repeat url("/svg/Footer/underline.svg");
+  background-size: initial;
+}
+.footer .wrapper .top_items .link_items_right,
+.footer .wrapper .top_items .link_items_left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.footer .bottom_items {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .footer .bottom_items {
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
+.footer .bottom_items a {
+  transition: all 0.2s ease-in;
+  -webkit-text-decoration: transparent;
+          text-decoration: transparent;
+}
+.footer .bottom_items a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=Footer.css.map */

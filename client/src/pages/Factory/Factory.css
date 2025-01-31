@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #242424;
+  background-color: #F9F7F2;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1 {
+  font-family: "Gloria", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: #242424;
+  color: #F9F7F2;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Gloria";
+  src: url("/font/GloriaHallelujah-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+.factory__top {
+  margin-top: 3rem;
+  position: relative;
+}
+.factory__top__text {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  margin: 0 5%;
+}
+.factory__top__text h1 {
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+}
+.factory__top__text p {
+  width: 65%;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+}
+.factory__top__illu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.factory__top__illu__rope {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+}
+.factory__top__illu__shirt {
+  position: absolute;
+  right: 10%;
+  z-index: 1;
+}
+@media screen and (max-width: 768px) {
+  .factory__top {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 0rem;
+  }
+  .factory__top__text {
+    gap: 1rem;
+    margin: 0 5%;
+    align-items: center;
+  }
+  .factory__top__text h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .factory__top__text p {
+    width: 90%;
+  }
+  .factory__top__illu {
+    position: relative;
+    height: 315px;
+  }
+  .factory__top__illu__shirt {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+.factory__form {
+  margin-top: 5rem;
+  margin-left: 5%;
+  gap: 2rem;
+}
+.factory__form__input {
+  display: flex;
+  flex-direction: column;
+}
+.factory__form__input label {
+  margin-bottom: 0.5rem;
+}
+.factory__form__input input {
+  position: relative;
+  width: 80%;
+  height: 4rem;
+  max-width: 720px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  -o-border-image: url("/svg/Factory/inputSmall.svg") 30/20px;
+     border-image: url("/svg/Factory/inputSmall.svg") 30/20px;
+  transition: all 1s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+}
+.factory__form__input input:focus {
+  -o-border-image: url("/svg/Factory/inputSmall.svg") 35/30px;
+     border-image: url("/svg/Factory/inputSmall.svg") 35/30px;
+  outline: none;
+}
+.factory__form__input input:-webkit-autofill,
+.factory__form__input input:-webkit-autofill:hover,
+.factory__form__input input:-webkit-autofill:focus,
+.factory__form__input input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 500px #F9F7F2 inset !important;
+  border-image: url("/svg/Factory/inputSmall.svg") 30/20px !important;
+}
+.factory__form__input textarea {
+  background-color: transparent;
+  padding: 1rem;
+  width: 90%;
+  max-width: none;
+  resize: none;
+  margin-bottom: 2rem;
+  -o-border-image: url("/svg/Factory/inputBig.svg") 30/20px;
+     border-image: url("/svg/Factory/inputBig.svg") 30/20px;
+  transition: all 1s cubic-bezier(0.38, -1.55, 0.59, 3.29);
+}
+.factory__form__input textarea:focus {
+  -o-border-image: url("/svg/Factory/inputBig.svg") 35/30px;
+     border-image: url("/svg/Factory/inputBig.svg") 35/30px;
+  outline: none;
+}
+.factory__form__input__file {
+  display: flex;
+  flex-direction: column;
+}
+.factory__form__input__file label {
+  margin-bottom: 0.5rem;
+}
+.factory__form__input__file input[type=file]::file-selector-button {
+  display: none;
+}
+.factory__form__input__file__selector {
+  padding: 0.5rem 0.75rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  -o-border-image: url("/svg/Factory/inputXSmall.svg") 20/20px;
+     border-image: url("/svg/Factory/inputXSmall.svg") 20/20px;
+  margin-bottom: 0 !important;
+  transform: scale(1) rotate(0deg);
+  transition: all 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+  cursor: pointer;
+}
+.factory__form__input__file__selector p {
+  font-family: "Gloria";
+}
+.factory__form__input__file__selector img {
+  transform: rotate(0deg);
+}
+.factory__form__input__file__selector:hover {
+  transform: scale(1.05) rotate(-1deg);
+  -o-border-image: url("/svg/Factory/inputXSmall.svg") 19/20px;
+     border-image: url("/svg/Factory/inputXSmall.svg") 19/20px;
+}
+.factory__form__input__file__selector:hover img {
+  transform: rotate(18deg);
+}
+.factory__form__input__file div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.factory__form__input.button {
+  margin-bottom: 8rem;
+}
+.factory__form__input.button p {
+  margin-top: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .factory__form {
+    margin-top: 5rem;
+  }
+  .factory__form__input__file input {
+    width: 100px;
+  }
+}
+.factory .mySwiperFactory {
+  margin-top: 5rem;
+}
+.factory .swiperContent {
+  width: 20vw;
+}
+.factory .swiperContent img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1.2;
+}
+@media screen and (max-width: 768px) {
+  .factory .swiperContent {
+    width: 50vw;
+  }
+}
+.factory .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: #242424;
+}
+.factory .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.factory .swiper-button-prev, .factory .swiper-button-next {
+  color: #242424;
+}/*# sourceMappingURL=Factory.css.map */

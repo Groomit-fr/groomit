@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #242424;
+  background-color: #F9F7F2;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1 {
+  font-family: "Gloria", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: #242424;
+  color: #F9F7F2;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Gloria";
+  src: url("/font/GloriaHallelujah-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+.cart__center {
+  position: absolute;
+  background-color: #F9F7F2;
+  right: 0;
+  top: 80px;
+  padding: 20px;
+  z-index: 99;
+  border: solid 5px #242424;
+  border-top: 0;
+  border-right: 0;
+  border-radius: 0 0 0 1rem;
+  filter: drop-shadow(0px 0px 10px #242424);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart__center .center__wrapper {
+  overflow-y: scroll;
+  max-height: 45vh;
+  scrollbar-width: thin;
+}
+.cart__center h1 {
+  margin-bottom: 1.5rem;
+}
+.cart__center__item {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  margin-right: 0.5rem;
+}
+.cart__center__item__illu {
+  width: 100px;
+  height: 100px;
+  mix-blend-mode: darken;
+}
+.cart__center__item__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-left: 1rem;
+  margin-right: 4rem;
+}
+.cart__center__item__details__title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 120px;
+  text-overflow: ellipsis;
+  /* Needed to make it work */
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cart__center__item__details__price {
+  font-weight: bold;
+}
+.cart__center__item__details__quantity {
+  display: flex;
+  gap: 0.5rem;
+  font-family: "Gloria";
+  font-size: 1.2rem;
+}
+.cart__center__item__details__quantity__remove {
+  cursor: pointer;
+  background-color: transparent;
+  color: #242424;
+  font-family: "Gloria";
+  transform: scale(1) rotate(0);
+  transition: all 0.3s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+}
+.cart__center__item__details__quantity__remove:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+.cart__center__item__details__quantity__number {
+  font-family: "Gloria";
+}
+.cart__center__item__details__quantity__add {
+  cursor: pointer;
+  background-color: transparent;
+  color: #242424;
+  font-family: "Gloria";
+  transform: scale(1) rotate(0);
+  transition: all 0.3s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+}
+.cart__center__item__details__quantity__add:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+.cart__center__item__delete {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transform: scale(1) rotate(0);
+  transition: all 0.3s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+}
+.cart__center__item__delete:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+@media screen and (max-width: 768px) {
+  .cart__center__item {
+    gap: unset;
+  }
+  .cart__center__item__details {
+    margin-right: 0;
+  }
+}
+.cart__center__emptyCart {
+  margin-bottom: 1rem;
+}
+.cart__center__total {
+  font-weight: bold;
+  text-align: right;
+  align-self: normal;
+  margin-bottom: 1rem;
+}
+.cart__center__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart__center__buttons__empty {
+  margin-bottom: 0.5rem;
+}/*# sourceMappingURL=Cart.css.map */

@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #242424;
+  background-color: #F9F7F2;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1 {
+  font-family: "Gloria", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: #242424;
+  color: #F9F7F2;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Gloria";
+  src: url("/font/GloriaHallelujah-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+.apropos__banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+}
+.apropos__banner h1 {
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.apropos__banner h2 {
+  font-family: Helvetica;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.apropos__banner__filter {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.apropos__banner__filter__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  height: 10rem;
+  width: 8rem;
+  text-align: center;
+  -o-border-image: url("/svg/List/categoryBackground.svg") 30/0px;
+     border-image: url("/svg/List/categoryBackground.svg") 30/0px;
+  transition: 0.25s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+}
+.apropos__banner__filter__item img {
+  width: 102px;
+  height: 102px;
+  transition: 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+  transform: scale(1) rotate(0deg);
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.apropos__banner__filter__item p {
+  transition: 0.4s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+  transform: scale(1) rotate(0deg);
+}
+.apropos__banner__filter__item:hover {
+  -o-border-image: url("/svg/List/categoryBackground.svg") 30/30px;
+     border-image: url("/svg/List/categoryBackground.svg") 30/30px;
+}
+.apropos__banner__filter__item:hover img {
+  transform: scale(1.2) rotate(2deg);
+}
+.apropos__banner__filter__item:hover p {
+  transform: scale(1.2) rotate(-2deg);
+}
+@media screen and (max-width: 768px) {
+  .apropos__banner h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .apropos__banner h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .apropos__banner__filter {
+    gap: 0;
+  }
+  .apropos__banner__filter__item {
+    height: 10rem;
+    width: 7.5rem;
+  }
+  .apropos__banner__filter__item img {
+    width: 80%;
+  }
+  .apropos__banner__filter__item:hover p {
+    transform: scale(1.05) rotate(-2deg);
+  }
+}
+.apropos__body {
+  width: 100%;
+  overflow-x: hidden;
+}
+.apropos__body__rope {
+  width: 110%;
+}
+.apropos__body__item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+.apropos__body__item__text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 40%;
+  min-width: 450px;
+}
+.apropos__body__item__text h4 {
+  font-family: "Gloria";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  top: 2.5rem;
+}
+.apropos__body__item__text h3 {
+  color: var(--Noir, #242424);
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-family: "Gloria";
+}
+.apropos__body__item__text p {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.apropos__body__item__illu {
+  width: 28.3555rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.apropos__body__item__illu__first {
+  position: relative;
+  top: -4rem;
+}
+.apropos__body__techs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+.apropos__body__techs h3 {
+  font-family: "Gloria";
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 2rem;
+  align-self: flex-start;
+  margin-left: 4rem;
+}
+.apropos__body__techs__item {
+  display: flex;
+  width: 75%;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 64.37494rem;
+}
+.apropos__body__techs__item__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.apropos__body__techs__item__text h4 {
+  position: relative;
+  font-family: "Helvetica";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.apropos__body__techs__item__text h4 img {
+  position: absolute;
+  top: 50%;
+  left: -1rem;
+  transform: translate(-100%, -50%);
+}
+.apropos__body__techs__item__text p {
+  max-width: 700px;
+  font-family: "Helvetica";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.apropos__body__techs__item__illu img {
+  width: 14.31244rem;
+  height: 19.39rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media screen and (max-width: 768px) {
+  .apropos__body__item__text {
+    width: 90%;
+    min-width: unset;
+  }
+  .apropos__body__item__text h3 {
+    font-size: 2rem;
+  }
+  .apropos__body__item__illu {
+    width: 65%;
+    margin-bottom: -5%;
+  }
+  .apropos__body__item__illu img {
+    top: -3.1rem;
+    width: 100%;
+  }
+  .apropos__body__techs h3 {
+    margin: 2rem 5%;
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  .apropos__body__techs__item {
+    flex-direction: column-reverse;
+    margin-bottom: 2rem;
+  }
+  .apropos__body__techs__item__illu {
+    margin: 2rem 0;
+    height: 15rem;
+  }
+  .apropos__body__techs__item__illu img {
+    height: 100%;
+  }
+}
+.apropos .left {
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
+.apropos .right {
+  flex-direction: row-reverse;
+}
+@media screen and (max-width: 916px) {
+  .apropos .right {
+    flex-direction: column-reverse;
+  }
+}/*# sourceMappingURL=Apropos.css.map */

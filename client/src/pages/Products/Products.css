@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #242424;
+  background-color: #F9F7F2;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1 {
+  font-family: "Gloria", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: #242424;
+  color: #F9F7F2;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Gloria";
+  src: url("/font/GloriaHallelujah-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+.products__banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+}
+.products__banner h1 {
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.products__banner h2 {
+  font-family: Helvetica;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.products__banner__filter {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.products__banner__filter__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  height: 10rem;
+  width: 8rem;
+  -o-border-image: url("/svg/List/categoryBackground.svg") 30/0px;
+     border-image: url("/svg/List/categoryBackground.svg") 30/0px;
+  transition: 0.25s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+}
+.products__banner__filter__item img {
+  transition: 0.15s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+  transform: scale(1) rotate(0deg);
+}
+.products__banner__filter__item p {
+  transition: 0.4s cubic-bezier(0.15, -0.56, 0.35, 2.41);
+  transform: scale(1) rotate(0deg);
+}
+.products__banner__filter__item:hover {
+  -o-border-image: url("/svg/List/categoryBackground.svg") 30/30px;
+     border-image: url("/svg/List/categoryBackground.svg") 30/30px;
+}
+.products__banner__filter__item:hover img {
+  transform: scale(1.2) rotate(2deg);
+}
+.products__banner__filter__item:hover p {
+  transform: scale(1.1) rotate(-2deg);
+}
+@media screen and (max-width: 768px) {
+  .products__banner h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .products__banner h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .products__banner__filter {
+    gap: 0;
+  }
+  .products__banner__filter__item {
+    height: 8.5rem;
+    width: 7rem;
+    justify-content: space-evenly;
+  }
+  .products__banner__filter__item img {
+    width: 80%;
+  }
+}
+.products .active {
+  -o-border-image: url("/svg/List/categoryBackground.svg") 30/30px;
+     border-image: url("/svg/List/categoryBackground.svg") 30/30px;
+}
+.products .active img {
+  transform: scale(1.2) rotate(2deg);
+}
+.products .active p {
+  transform: scale(1.1) rotate(-2deg);
+}/*# sourceMappingURL=Products.css.map */

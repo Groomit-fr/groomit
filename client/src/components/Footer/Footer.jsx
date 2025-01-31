@@ -40,11 +40,11 @@ const Footer = () => {
                 <div className="bottom_items">
                     <div>
                         <a href="groomit.factory@example.fr">groomit.factory@gmail.com</a>
-                        <p>06.26.66.30.73</p>
+                        <p>..............</p>
                     </div>
                     <p>
-                        9 rue des Fargues
-                        <br /> 82140 - Saintt Antonin de Noble Val
+                        ................
+                        <br /> ...................................
                     </p>
                 </div>
             </div>
